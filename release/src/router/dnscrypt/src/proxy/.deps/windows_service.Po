@@ -1,0 +1,8 @@
+windows_service.o windows_service.o: windows_service.c ../../config.h \
+  app.h windows_service.h
+
+../../config.h:
+
+app.h:
+
+windows_service.h:

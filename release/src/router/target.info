@@ -1,0 +1,21 @@
+Creating little endian 3.0 filesystem on /home/vicente/tomato/release/src-rt/router/mipsel-uclibc/target.image, block size 65536.
+
+Little endian filesystem, data block size 65536, compressed data, compressed metadata, compressed fragments
+Filesystem size 9299.52 Kbytes (9.08 Mbytes)
+	30.32% of uncompressed filesystem size (30667.23 Kbytes)
+Inode table size 8997 bytes (8.79 Kbytes)
+	23.36% of uncompressed inode table size (38512 bytes)
+Directory table size 9886 bytes (9.65 Kbytes)
+	54.66% of uncompressed directory table size (18085 bytes)
+No duplicate files removed
+Number of inodes 1171
+Number of files 931
+Number of fragments 69
+Number of symbolic links  186
+Number of device nodes 0
+Number of fifo nodes 0
+Number of socket nodes 0
+Number of directories 54
+Number of uids 1
+	root (0)
+Number of gids 0

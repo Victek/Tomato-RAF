@@ -1,0 +1,3531 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:610: checking for gcc
+configure:723: checking whether the C compiler (mipsel-uclibc-gcc -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections  -Wl,--gc-sections) works
+configure:739: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c  1>&5
+configure:765: checking whether the C compiler (mipsel-uclibc-gcc -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections  -Wl,--gc-sections) is a cross-compiler
+configure:770: checking whether we are using GNU C
+configure:779: mipsel-uclibc-gcc -E conftest.c
+configure:798: checking whether mipsel-uclibc-gcc accepts -g
+configure:860: checking for a BSD compatible install
+configure:917: checking for gawk
+configure:949: checking whether mipsel-uclibc-gcc and cc understand -c and -o together
+configure:964: mipsel-uclibc-gcc -c conftest.c -o conftest.o 1>&5
+configure:965: mipsel-uclibc-gcc -c conftest.c -o conftest.o 1>&5
+configure:970: cc -c conftest.c 1>&5
+configure:972: cc -c conftest.c -o conftest.o 1>&5
+configure:973: cc -c conftest.c -o conftest.o 1>&5
+configure:1007: checking that the C compiler understands volatile
+configure:1020: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:1070: checking host system type
+configure:1091: checking target system type
+configure:1109: checking build system type
+configure:1143: checking config.cache system type
+configure:1173: checking for autoconf
+configure:1210: checking for autoheader
+configure:1429: checking for inline
+configure:1443: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:1469: checking how to run the C preprocessor
+configure:1490: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1549: checking for ANSI C header files
+configure:1562: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1657: checking for dirent.h that defines DIR
+configure:1670: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:1695: checking for opendir in -ldir
+configure:1714: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldir   1>&5
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/bin/ld: cannot find -ldir
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 1703 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char opendir();
+
+int main() {
+opendir()
+; return 0; }
+configure:1778: checking whether time.h and sys/time.h may both be included
+configure:1792: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:1813: checking for sys/wait.h that is POSIX.1 compatible
+configure:1834: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:1858: checking for arpa/inet.h
+configure:1868: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1858: checking for sys/fcntl.h
+configure:1868: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1858: checking for sys/select.h
+configure:1868: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1858: checking for fcntl.h
+configure:1868: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1858: checking for sys/time.h
+configure:1868: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1858: checking for sys/unistd.h
+configure:1868: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1898: checking for unistd.h
+configure:1908: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1898: checking for utime.h
+configure:1908: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1898: checking for grp.h
+configure:1908: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1898: checking for sys/id.h
+configure:1908: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1904:20: error: sys/id.h: No such file or directory
+configure: failed program was:
+#line 1903 "configure"
+#include "confdefs.h"
+#include <sys/id.h>
+configure:1898: checking for limits.h
+configure:1908: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1898: checking for memory.h
+configure:1908: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1898: checking for net/if.h
+configure:1908: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1938: checking for compat.h
+configure:1948: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1944:20: error: compat.h: No such file or directory
+configure: failed program was:
+#line 1943 "configure"
+#include "confdefs.h"
+#include <compat.h>
+configure:1938: checking for rpc/rpc.h
+configure:1948: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1938: checking for rpcsvc/nis.h
+configure:1948: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1944:24: error: rpcsvc/nis.h: No such file or directory
+configure: failed program was:
+#line 1943 "configure"
+#include "confdefs.h"
+#include <rpcsvc/nis.h>
+configure:1938: checking for rpcsvc/yp_prot.h
+configure:1948: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1944:28: error: rpcsvc/yp_prot.h: No such file or directory
+configure: failed program was:
+#line 1943 "configure"
+#include "confdefs.h"
+#include <rpcsvc/yp_prot.h>
+configure:1938: checking for rpcsvc/ypclnt.h
+configure:1948: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1944:27: error: rpcsvc/ypclnt.h: No such file or directory
+configure: failed program was:
+#line 1943 "configure"
+#include "confdefs.h"
+#include <rpcsvc/ypclnt.h>
+configure:1978: checking for sys/param.h
+configure:1988: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1978: checking for ctype.h
+configure:1988: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1978: checking for sys/wait.h
+configure:1978: checking for sys/resource.h
+configure:1988: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1978: checking for sys/ioctl.h
+configure:1988: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1978: checking for sys/mode.h
+configure:1988: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:1984:22: error: sys/mode.h: No such file or directory
+configure: failed program was:
+#line 1983 "configure"
+#include "confdefs.h"
+#include <sys/mode.h>
+configure:2018: checking for sys/mman.h
+configure:2028: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2018: checking for sys/filio.h
+configure:2028: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2024:23: error: sys/filio.h: No such file or directory
+configure: failed program was:
+#line 2023 "configure"
+#include "confdefs.h"
+#include <sys/filio.h>
+configure:2018: checking for sys/priv.h
+configure:2028: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2024:22: error: sys/priv.h: No such file or directory
+configure: failed program was:
+#line 2023 "configure"
+#include "confdefs.h"
+#include <sys/priv.h>
+configure:2018: checking for string.h
+configure:2028: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2018: checking for strings.h
+configure:2028: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2018: checking for stdlib.h
+configure:2028: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2018: checking for sys/socket.h
+configure:2028: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2058: checking for sys/mount.h
+configure:2068: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2058: checking for sys/vfs.h
+configure:2068: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2058: checking for sys/fs/s5param.h
+configure:2068: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2064:28: error: sys/fs/s5param.h: No such file or directory
+configure: failed program was:
+#line 2063 "configure"
+#include "confdefs.h"
+#include <sys/fs/s5param.h>
+configure:2058: checking for sys/filsys.h
+configure:2068: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2064:24: error: sys/filsys.h: No such file or directory
+configure: failed program was:
+#line 2063 "configure"
+#include "confdefs.h"
+#include <sys/filsys.h>
+configure:2058: checking for termios.h
+configure:2068: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2058: checking for termio.h
+configure:2068: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2098: checking for sys/termio.h
+configure:2108: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2104:24: error: sys/termio.h: No such file or directory
+configure: failed program was:
+#line 2103 "configure"
+#include "confdefs.h"
+#include <sys/termio.h>
+configure:2098: checking for sys/statfs.h
+configure:2108: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2098: checking for sys/dustat.h
+configure:2108: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2104:24: error: sys/dustat.h: No such file or directory
+configure: failed program was:
+#line 2103 "configure"
+#include "confdefs.h"
+#include <sys/dustat.h>
+configure:2098: checking for sys/statvfs.h
+configure:2108: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2098: checking for stdarg.h
+configure:2108: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2098: checking for sys/sockio.h
+configure:2108: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2104:24: error: sys/sockio.h: No such file or directory
+configure: failed program was:
+#line 2103 "configure"
+#include "confdefs.h"
+#include <sys/sockio.h>
+configure:2170: checking for shadow.h
+configure:2180: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2170: checking for netinet/ip.h
+configure:2180: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2170: checking for netinet/tcp.h
+configure:2180: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2170: checking for netinet/in_systm.h
+configure:2180: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2170: checking for netinet/in_ip.h
+configure:2180: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2176:27: error: netinet/in_ip.h: No such file or directory
+configure: failed program was:
+#line 2175 "configure"
+#include "confdefs.h"
+#include <netinet/in_ip.h>
+configure:2210: checking for sys/security.h
+configure:2220: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2216:26: error: sys/security.h: No such file or directory
+configure: failed program was:
+#line 2215 "configure"
+#include "confdefs.h"
+#include <sys/security.h>
+configure:2210: checking for security/pam_appl.h
+configure:2220: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2216:31: error: security/pam_appl.h: No such file or directory
+configure: failed program was:
+#line 2215 "configure"
+#include "confdefs.h"
+#include <security/pam_appl.h>
+configure:2250: checking for stropts.h
+configure:2260: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2250: checking for poll.h
+configure:2260: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2250: checking for readline.h
+configure:2260: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2256:22: error: readline.h: No such file or directory
+configure: failed program was:
+#line 2255 "configure"
+#include "confdefs.h"
+#include <readline.h>
+configure:2250: checking for history.h
+configure:2260: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2256:21: error: history.h: No such file or directory
+configure: failed program was:
+#line 2255 "configure"
+#include "confdefs.h"
+#include <history.h>
+configure:2250: checking for readline/readline.h
+configure:2260: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2256:31: error: readline/readline.h: No such file or directory
+configure: failed program was:
+#line 2255 "configure"
+#include "confdefs.h"
+#include <readline/readline.h>
+configure:2290: checking for readline/history.h
+configure:2300: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2296:30: error: readline/history.h: No such file or directory
+configure: failed program was:
+#line 2295 "configure"
+#include "confdefs.h"
+#include <readline/history.h>
+configure:2290: checking for sys/capability.h
+configure:2300: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2296:28: error: sys/capability.h: No such file or directory
+configure: failed program was:
+#line 2295 "configure"
+#include "confdefs.h"
+#include <sys/capability.h>
+configure:2290: checking for syscall.h
+configure:2300: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2290: checking for sys/syscall.h
+configure:2300: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2330: checking for sys/acl.h
+configure:2340: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2336:21: error: sys/acl.h: No such file or directory
+configure: failed program was:
+#line 2335 "configure"
+#include "confdefs.h"
+#include <sys/acl.h>
+configure:2330: checking for sys/cdefs.h
+configure:2340: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2330: checking for glob.h
+configure:2340: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2372: checking for utmp.h
+configure:2382: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2372: checking for utmpx.h
+configure:2382: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2378:19: error: utmpx.h: No such file or directory
+configure: failed program was:
+#line 2377 "configure"
+#include "confdefs.h"
+#include <utmpx.h>
+configure:2414: checking for sys/fs/vx_quota.h
+configure:2424: mipsel-uclibc-gcc -E -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c >/dev/null 2>conftest.out
+configure:2420:29: error: sys/fs/vx_quota.h: No such file or directory
+configure: failed program was:
+#line 2419 "configure"
+#include "confdefs.h"
+#include <sys/fs/vx_quota.h>
+configure:2452: checking size of int
+configure:2491: checking size of long
+configure:2530: checking size of short
+configure:2570: checking for working const
+configure:2624: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:2645: checking for inline
+configure:2685: checking whether byte ordering is bigendian
+configure:2703: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:2718: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure: In function 'main':
+configure:2713: error: 'not' undeclared (first use in this function)
+configure:2713: error: (Each undeclared identifier is reported only once
+configure:2713: error: for each function it appears in.)
+configure:2713: error: expected ';' before 'big'
+configure: failed program was:
+#line 2707 "configure"
+#include "confdefs.h"
+#include <sys/types.h>
+#include <sys/param.h>
+int main() {
+
+#if BYTE_ORDER != BIG_ENDIAN
+ not big endian
+#endif
+; return 0; }
+configure:2775: checking whether char is unsigned
+configure:2839: checking return type of signal handlers
+configure:2861: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:2880: checking for uid_t in sys/types.h
+configure:2914: checking for mode_t
+configure:2947: checking for off_t
+configure:2980: checking for size_t
+configure:3013: checking for pid_t
+configure:3046: checking for st_rdev in struct stat
+configure:3059: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:3080: checking for d_off in dirent
+configure:3095: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:3116: checking for ino_t
+configure:3149: checking for loff_t
+configure:3182: checking for offset_t
+configure:3215: checking for ssize_t
+configure:3250: checking for httpConnect in -lcups
+configure:3269: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -lcups   1>&5
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/bin/ld: cannot find -lcups
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 3258 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char httpConnect();
+
+int main() {
+httpConnect()
+; return 0; }
+configure:3299: checking for main in -ldl
+configure:3314: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl   1>&5
+configure:3343: checking for sig_atomic_t type
+configure:3362: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:3383: checking for errno in errno.h
+configure:3396: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:3418: checking for setresuid declaration
+configure:3431: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:3453: checking for setresgid declaration
+configure:3466: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:3489: checking for real setresuid
+configure:3528: checking for real setresgid
+configure:3566: checking for 8-bit clean memcmp
+configure:3607: checking for crypt
+configure:3635: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  1>&5
+/tmp/ccZolF2Z.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `crypt'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 3612 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char crypt(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char crypt();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_crypt) || defined (__stub___crypt)
+choke me
+#else
+crypt();
+#endif
+
+; return 0; }
+configure:3661: checking for crypt in -lcrypt
+configure:3680: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -lcrypt  -ldl  1>&5
+configure:3770: checking for connect
+configure:3798: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4038: checking for execl
+configure:4066: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4050: warning: conflicting types for built-in function 'execl'
+configure:4099: checking for waitpid
+configure:4127: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4099: checking for getcwd
+configure:4127: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4099: checking for strdup
+configure:4127: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4111: warning: conflicting types for built-in function 'strdup'
+configure:4099: checking for strtoul
+configure:4127: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4099: checking for strerror
+configure:4127: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4099: checking for chown
+configure:4127: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4099: checking for chmod
+configure:4127: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4099: checking for chroot
+configure:4127: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4154: checking for fstat
+configure:4182: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4154: checking for strchr
+configure:4182: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4166: warning: conflicting types for built-in function 'strchr'
+configure:4154: checking for utime
+configure:4182: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4154: checking for utimes
+configure:4182: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccVnSRpU.o: In function `main':
+conftest.c:(.text.main+0x18): warning: the use of LEGACY `utimes' is discouraged, use `utime'
+configure:4154: checking for getrlimit
+configure:4182: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4154: checking for fsync
+configure:4182: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4154: checking for bzero
+configure:4182: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4166: warning: conflicting types for built-in function 'bzero'
+configure:4154: checking for memset
+configure:4182: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4166: warning: conflicting types for built-in function 'memset'
+configure:4209: checking for memmove
+configure:4237: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4221: warning: conflicting types for built-in function 'memmove'
+configure:4209: checking for vsnprintf
+configure:4237: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4221: warning: conflicting types for built-in function 'vsnprintf'
+configure:4209: checking for snprintf
+configure:4237: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4221: warning: conflicting types for built-in function 'snprintf'
+configure:4209: checking for setsid
+configure:4237: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4209: checking for glob
+configure:4237: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4209: checking for strpbrk
+configure:4237: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4221: warning: conflicting types for built-in function 'strpbrk'
+configure:4209: checking for pipe
+configure:4237: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4209: checking for crypt16
+configure:4237: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccgUCJBz.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `crypt16'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4214 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char crypt16(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char crypt16();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_crypt16) || defined (__stub___crypt16)
+choke me
+#else
+crypt16();
+#endif
+
+; return 0; }
+configure:4209: checking for getauthuid
+configure:4237: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccpU9TrE.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `getauthuid'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4214 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char getauthuid(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char getauthuid();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_getauthuid) || defined (__stub___getauthuid)
+choke me
+#else
+getauthuid();
+#endif
+
+; return 0; }
+configure:4264: checking for strftime
+configure:4292: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4276: warning: conflicting types for built-in function 'strftime'
+configure:4264: checking for sigprocmask
+configure:4292: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4264: checking for sigblock
+configure:4292: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4264: checking for sigaction
+configure:4292: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4264: checking for innetgr
+configure:4292: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccYZimFY.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `innetgr'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4269 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char innetgr(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char innetgr();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_innetgr) || defined (__stub___innetgr)
+choke me
+#else
+innetgr();
+#endif
+
+; return 0; }
+configure:4264: checking for setnetgrent
+configure:4292: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccZ5UEk0.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `setnetgrent'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4269 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char setnetgrent(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char setnetgrent();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_setnetgrent) || defined (__stub___setnetgrent)
+choke me
+#else
+setnetgrent();
+#endif
+
+; return 0; }
+configure:4264: checking for getnetgrent
+configure:4292: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccQgQUH4.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `getnetgrent'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4269 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char getnetgrent(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char getnetgrent();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_getnetgrent) || defined (__stub___getnetgrent)
+choke me
+#else
+getnetgrent();
+#endif
+
+; return 0; }
+configure:4264: checking for endnetgrent
+configure:4292: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cc1nkQq9.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `endnetgrent'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4269 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char endnetgrent(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char endnetgrent();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_endnetgrent) || defined (__stub___endnetgrent)
+choke me
+#else
+endnetgrent();
+#endif
+
+; return 0; }
+configure:4319: checking for initgroups
+configure:4347: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4319: checking for select
+configure:4347: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4319: checking for rdchk
+configure:4347: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cchdU1Xc.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `rdchk'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4324 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char rdchk(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char rdchk();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_rdchk) || defined (__stub___rdchk)
+choke me
+#else
+rdchk();
+#endif
+
+; return 0; }
+configure:4319: checking for getgrnam
+configure:4347: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4319: checking for getgrent
+configure:4347: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4319: checking for pathconf
+configure:4347: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4374: checking for setpriv
+configure:4402: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccIPDHLt.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `setpriv'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4379 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char setpriv(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char setpriv();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_setpriv) || defined (__stub___setpriv)
+choke me
+#else
+setpriv();
+#endif
+
+; return 0; }
+configure:4374: checking for setgidx
+configure:4402: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccVIMHsy.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `setgidx'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4379 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char setgidx(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char setgidx();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_setgidx) || defined (__stub___setgidx)
+choke me
+#else
+setgidx();
+#endif
+
+; return 0; }
+configure:4374: checking for setuidx
+configure:4402: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cco2nsrE.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `setuidx'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4379 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char setuidx(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char setuidx();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_setuidx) || defined (__stub___setuidx)
+choke me
+#else
+setuidx();
+#endif
+
+; return 0; }
+configure:4374: checking for setgroups
+configure:4402: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4374: checking for sysconf
+configure:4402: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4374: checking for mktime
+configure:4402: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4374: checking for rename
+configure:4402: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4374: checking for ftruncate
+configure:4402: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4374: checking for stat64
+configure:4402: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4374: checking for fstat64
+configure:4402: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4429: checking for lstat64
+configure:4457: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4429: checking for fopen64
+configure:4457: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4429: checking for atexit
+configure:4457: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4429: checking for grantpt
+configure:4457: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4429: checking for dup2
+configure:4457: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4429: checking for lseek64
+configure:4457: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4429: checking for ftruncate64
+configure:4457: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4429: checking for readdir64
+configure:4457: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4484: checking for fseek64
+configure:4512: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cc6AM9uB.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `fseek64'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4489 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char fseek64(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char fseek64();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_fseek64) || defined (__stub___fseek64)
+choke me
+#else
+fseek64();
+#endif
+
+; return 0; }
+configure:4484: checking for fseeko64
+configure:4512: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4484: checking for ftell64
+configure:4512: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cc5VE0cJ.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `ftell64'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4489 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char ftell64(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char ftell64();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_ftell64) || defined (__stub___ftell64)
+choke me
+#else
+ftell64();
+#endif
+
+; return 0; }
+configure:4484: checking for ftello64
+configure:4512: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4484: checking for setluid
+configure:4512: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccsRgRQO.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `setluid'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4489 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char setluid(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char setluid();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_setluid) || defined (__stub___setluid)
+choke me
+#else
+setluid();
+#endif
+
+; return 0; }
+configure:4484: checking for yp_get_default_domain
+configure:4512: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccT2EIQS.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `yp_get_default_domain'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4489 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char yp_get_default_domain(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char yp_get_default_domain();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_yp_get_default_domain) || defined (__stub___yp_get_default_domain)
+choke me
+#else
+yp_get_default_domain();
+#endif
+
+; return 0; }
+configure:4484: checking for getpwanam
+configure:4512: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccSnWTNX.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `getpwanam'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4489 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char getpwanam(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char getpwanam();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_getpwanam) || defined (__stub___getpwanam)
+choke me
+#else
+getpwanam();
+#endif
+
+; return 0; }
+configure:4539: checking for srandom
+configure:4567: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4539: checking for random
+configure:4567: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4539: checking for srand
+configure:4567: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4539: checking for rand
+configure:4567: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4539: checking for setenv
+configure:4567: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4539: checking for usleep
+configure:4567: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4539: checking for mmap64
+configure:4567: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4539: checking for strcasecmp
+configure:4567: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4551: warning: conflicting types for built-in function 'strcasecmp'
+configure:4539: checking for fcvt
+configure:4567: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cc89F5Gs.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `fcvt'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4544 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char fcvt(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char fcvt();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_fcvt) || defined (__stub___fcvt)
+choke me
+#else
+fcvt();
+#endif
+
+; return 0; }
+configure:4539: checking for fcvtl
+configure:4567: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccJdLUSt.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `fcvtl'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4544 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char fcvtl(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char fcvtl();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_fcvtl) || defined (__stub___fcvtl)
+choke me
+#else
+fcvtl();
+#endif
+
+; return 0; }
+configure:4596: checking for syscall
+configure:4624: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:4652: checking for _dup
+configure:4680: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccaKzQaE.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_dup'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4657 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _dup(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _dup();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__dup) || defined (__stub____dup)
+choke me
+#else
+_dup();
+#endif
+
+; return 0; }
+configure:4652: checking for _dup2
+configure:4680: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccRa7ZaI.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_dup2'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4657 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _dup2(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _dup2();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__dup2) || defined (__stub____dup2)
+choke me
+#else
+_dup2();
+#endif
+
+; return 0; }
+configure:4652: checking for _opendir
+configure:4680: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccYaaD0J.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_opendir'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4657 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _opendir(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _opendir();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__opendir) || defined (__stub____opendir)
+choke me
+#else
+_opendir();
+#endif
+
+; return 0; }
+configure:4652: checking for _readdir
+configure:4680: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cc3h5xbO.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_readdir'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4657 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _readdir(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _readdir();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__readdir) || defined (__stub____readdir)
+choke me
+#else
+_readdir();
+#endif
+
+; return 0; }
+configure:4652: checking for _seekdir
+configure:4680: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccm6cQ4S.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_seekdir'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4657 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _seekdir(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _seekdir();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__seekdir) || defined (__stub____seekdir)
+choke me
+#else
+_seekdir();
+#endif
+
+; return 0; }
+configure:4652: checking for _telldir
+configure:4680: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccZWKOGZ.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_telldir'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4657 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _telldir(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _telldir();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__telldir) || defined (__stub____telldir)
+choke me
+#else
+_telldir();
+#endif
+
+; return 0; }
+configure:4652: checking for _closedir
+configure:4680: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccmxUdk3.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_closedir'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4657 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _closedir(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _closedir();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__closedir) || defined (__stub____closedir)
+choke me
+#else
+_closedir();
+#endif
+
+; return 0; }
+configure:4707: checking for __dup
+configure:4735: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cc1C9rq8.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__dup'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4712 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __dup(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __dup();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___dup) || defined (__stub_____dup)
+choke me
+#else
+__dup();
+#endif
+
+; return 0; }
+configure:4707: checking for __dup2
+configure:4735: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccS8GUS9.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__dup2'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4712 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __dup2(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __dup2();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___dup2) || defined (__stub_____dup2)
+choke me
+#else
+__dup2();
+#endif
+
+; return 0; }
+configure:4707: checking for __opendir
+configure:4735: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccpwlTPd.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__opendir'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4712 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __opendir(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __opendir();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___opendir) || defined (__stub_____opendir)
+choke me
+#else
+__opendir();
+#endif
+
+; return 0; }
+configure:4707: checking for __readdir
+configure:4735: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cc8vIpWj.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__readdir'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4712 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __readdir(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __readdir();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___readdir) || defined (__stub_____readdir)
+choke me
+#else
+__readdir();
+#endif
+
+; return 0; }
+configure:4707: checking for __seekdir
+configure:4735: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccCh5VGe.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__seekdir'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4712 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __seekdir(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __seekdir();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___seekdir) || defined (__stub_____seekdir)
+choke me
+#else
+__seekdir();
+#endif
+
+; return 0; }
+configure:4707: checking for __telldir
+configure:4735: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccX5UJRf.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__telldir'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4712 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __telldir(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __telldir();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___telldir) || defined (__stub_____telldir)
+choke me
+#else
+__telldir();
+#endif
+
+; return 0; }
+configure:4707: checking for __closedir
+configure:4735: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccacWwtl.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__closedir'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4712 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __closedir(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __closedir();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___closedir) || defined (__stub_____closedir)
+choke me
+#else
+__closedir();
+#endif
+
+; return 0; }
+configure:4762: checking for __getcwd
+configure:4790: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccfKHynq.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__getcwd'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4767 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __getcwd(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __getcwd();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___getcwd) || defined (__stub_____getcwd)
+choke me
+#else
+__getcwd();
+#endif
+
+; return 0; }
+configure:4762: checking for _getcwd
+configure:4790: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccSPRiuu.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_getcwd'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4767 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _getcwd(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _getcwd();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__getcwd) || defined (__stub____getcwd)
+choke me
+#else
+_getcwd();
+#endif
+
+; return 0; }
+configure:4817: checking for __xstat
+configure:4845: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccrPHB3v.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__xstat'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4822 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __xstat(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __xstat();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___xstat) || defined (__stub_____xstat)
+choke me
+#else
+__xstat();
+#endif
+
+; return 0; }
+configure:4817: checking for __fxstat
+configure:4845: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccy8mNXA.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__fxstat'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4822 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __fxstat(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __fxstat();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___fxstat) || defined (__stub_____fxstat)
+choke me
+#else
+__fxstat();
+#endif
+
+; return 0; }
+configure:4817: checking for __lxstat
+configure:4845: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cc1OkaHG.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__lxstat'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4822 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __lxstat(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __lxstat();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___lxstat) || defined (__stub_____lxstat)
+choke me
+#else
+__lxstat();
+#endif
+
+; return 0; }
+configure:4872: checking for _stat
+configure:4900: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccGzXoXK.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_stat'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4877 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _stat(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _stat();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__stat) || defined (__stub____stat)
+choke me
+#else
+_stat();
+#endif
+
+; return 0; }
+configure:4872: checking for _lstat
+configure:4900: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccbFZhlM.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_lstat'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4877 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _lstat(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _lstat();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__lstat) || defined (__stub____lstat)
+choke me
+#else
+_lstat();
+#endif
+
+; return 0; }
+configure:4872: checking for _fstat
+configure:4900: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccSiw6TQ.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_fstat'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4877 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _fstat(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _fstat();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__fstat) || defined (__stub____fstat)
+choke me
+#else
+_fstat();
+#endif
+
+; return 0; }
+configure:4872: checking for __stat
+configure:4900: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccV7Sk1W.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__stat'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4877 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __stat(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __stat();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___stat) || defined (__stub_____stat)
+choke me
+#else
+__stat();
+#endif
+
+; return 0; }
+configure:4872: checking for __lstat
+configure:4900: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cc4dj701.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__lstat'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4877 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __lstat(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __lstat();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___lstat) || defined (__stub_____lstat)
+choke me
+#else
+__lstat();
+#endif
+
+; return 0; }
+configure:4872: checking for __fstat
+configure:4900: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccnzM2F5.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__fstat'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4877 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __fstat(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __fstat();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___fstat) || defined (__stub_____fstat)
+choke me
+#else
+__fstat();
+#endif
+
+; return 0; }
+configure:4927: checking for _acl
+configure:4955: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccOKA9Q6.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_acl'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4932 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _acl(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _acl();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__acl) || defined (__stub____acl)
+choke me
+#else
+_acl();
+#endif
+
+; return 0; }
+configure:4927: checking for __acl
+configure:4955: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccza7Isd.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__acl'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4932 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __acl(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __acl();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___acl) || defined (__stub_____acl)
+choke me
+#else
+__acl();
+#endif
+
+; return 0; }
+configure:4927: checking for _facl
+configure:4955: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccgYkkli.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_facl'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4932 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _facl(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _facl();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__facl) || defined (__stub____facl)
+choke me
+#else
+_facl();
+#endif
+
+; return 0; }
+configure:4927: checking for __facl
+configure:4955: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccuBGqqa.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__facl'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4932 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __facl(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __facl();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___facl) || defined (__stub_____facl)
+choke me
+#else
+__facl();
+#endif
+
+; return 0; }
+configure:4927: checking for _open
+configure:4955: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccrm37df.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_open'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4932 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _open(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _open();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__open) || defined (__stub____open)
+choke me
+#else
+_open();
+#endif
+
+; return 0; }
+configure:4927: checking for __open
+configure:4955: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccuQUTLl.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__open'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4932 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __open(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __open();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___open) || defined (__stub_____open)
+choke me
+#else
+__open();
+#endif
+
+; return 0; }
+configure:4927: checking for _chdir
+configure:4955: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccRitqLm.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_chdir'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4932 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _chdir(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _chdir();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__chdir) || defined (__stub____chdir)
+choke me
+#else
+_chdir();
+#endif
+
+; return 0; }
+configure:4927: checking for __chdir
+configure:4955: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cc8jeoAq.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__chdir'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4932 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __chdir(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __chdir();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___chdir) || defined (__stub_____chdir)
+choke me
+#else
+__chdir();
+#endif
+
+; return 0; }
+configure:4982: checking for _close
+configure:5010: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccZpbuax.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_close'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4987 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _close(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _close();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__close) || defined (__stub____close)
+choke me
+#else
+_close();
+#endif
+
+; return 0; }
+configure:4982: checking for __close
+configure:5010: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccqMKBlB.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__close'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4987 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __close(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __close();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___close) || defined (__stub_____close)
+choke me
+#else
+__close();
+#endif
+
+; return 0; }
+configure:4982: checking for _fchdir
+configure:5010: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cc7o1ClG.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_fchdir'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4987 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _fchdir(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _fchdir();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__fchdir) || defined (__stub____fchdir)
+choke me
+#else
+_fchdir();
+#endif
+
+; return 0; }
+configure:4982: checking for __fchdir
+configure:5010: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cc6G1x2G.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__fchdir'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4987 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __fchdir(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __fchdir();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___fchdir) || defined (__stub_____fchdir)
+choke me
+#else
+__fchdir();
+#endif
+
+; return 0; }
+configure:4982: checking for _fcntl
+configure:5010: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cczGVICN.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_fcntl'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4987 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _fcntl(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _fcntl();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__fcntl) || defined (__stub____fcntl)
+choke me
+#else
+_fcntl();
+#endif
+
+; return 0; }
+configure:4982: checking for __fcntl
+configure:5010: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cc6vgyDR.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__fcntl'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4987 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __fcntl(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __fcntl();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___fcntl) || defined (__stub_____fcntl)
+choke me
+#else
+__fcntl();
+#endif
+
+; return 0; }
+configure:5037: checking for getdents
+configure:5065: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cc9zF3GW.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `getdents'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5042 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char getdents(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char getdents();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_getdents) || defined (__stub___getdents)
+choke me
+#else
+getdents();
+#endif
+
+; return 0; }
+configure:5037: checking for _getdents
+configure:5065: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccq5RH6X.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_getdents'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5042 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _getdents(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _getdents();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__getdents) || defined (__stub____getdents)
+choke me
+#else
+_getdents();
+#endif
+
+; return 0; }
+configure:5037: checking for __getdents
+configure:5065: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccL2eXZ2.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__getdents'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5042 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __getdents(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __getdents();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___getdents) || defined (__stub_____getdents)
+choke me
+#else
+__getdents();
+#endif
+
+; return 0; }
+configure:5037: checking for _lseek
+configure:5065: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cceGq0c7.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_lseek'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5042 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _lseek(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _lseek();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__lseek) || defined (__stub____lseek)
+choke me
+#else
+_lseek();
+#endif
+
+; return 0; }
+configure:5037: checking for __lseek
+configure:5065: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cc5TjpJd.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__lseek'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5042 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __lseek(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __lseek();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___lseek) || defined (__stub_____lseek)
+choke me
+#else
+__lseek();
+#endif
+
+; return 0; }
+configure:5037: checking for _read
+configure:5065: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccOtJkxh.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_read'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5042 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _read(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _read();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__read) || defined (__stub____read)
+choke me
+#else
+_read();
+#endif
+
+; return 0; }
+configure:5037: checking for __read
+configure:5065: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccKhQKAa.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__read'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5042 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __read(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __read();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___read) || defined (__stub_____read)
+choke me
+#else
+__read();
+#endif
+
+; return 0; }
+configure:5092: checking for _write
+configure:5120: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cc916D6g.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_write'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5097 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _write(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _write();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__write) || defined (__stub____write)
+choke me
+#else
+_write();
+#endif
+
+; return 0; }
+configure:5092: checking for __write
+configure:5120: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccCOmZii.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__write'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5097 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __write(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __write();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___write) || defined (__stub_____write)
+choke me
+#else
+__write();
+#endif
+
+; return 0; }
+configure:5092: checking for _fork
+configure:5120: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccYgQnXl.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_fork'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5097 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _fork(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _fork();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__fork) || defined (__stub____fork)
+choke me
+#else
+_fork();
+#endif
+
+; return 0; }
+configure:5092: checking for __fork
+configure:5120: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccV6ayvs.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__fork'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5097 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __fork(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __fork();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___fork) || defined (__stub_____fork)
+choke me
+#else
+__fork();
+#endif
+
+; return 0; }
+configure:5147: checking for _stat64
+configure:5175: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cckRGRqx.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_stat64'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5152 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _stat64(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _stat64();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__stat64) || defined (__stub____stat64)
+choke me
+#else
+_stat64();
+#endif
+
+; return 0; }
+configure:5147: checking for __stat64
+configure:5175: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccFXdpIy.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__stat64'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5152 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __stat64(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __stat64();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___stat64) || defined (__stub_____stat64)
+choke me
+#else
+__stat64();
+#endif
+
+; return 0; }
+configure:5147: checking for _fstat64
+configure:5175: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cca70piC.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_fstat64'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5152 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _fstat64(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _fstat64();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__fstat64) || defined (__stub____fstat64)
+choke me
+#else
+_fstat64();
+#endif
+
+; return 0; }
+configure:5147: checking for __fstat64
+configure:5175: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cctGV38I.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__fstat64'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5152 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __fstat64(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __fstat64();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___fstat64) || defined (__stub_____fstat64)
+choke me
+#else
+__fstat64();
+#endif
+
+; return 0; }
+configure:5147: checking for _lstat64
+configure:5175: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccIv2PUJ.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_lstat64'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5152 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _lstat64(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _lstat64();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__lstat64) || defined (__stub____lstat64)
+choke me
+#else
+_lstat64();
+#endif
+
+; return 0; }
+configure:5147: checking for __lstat64
+configure:5175: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cc96NXcO.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__lstat64'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5152 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __lstat64(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __lstat64();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___lstat64) || defined (__stub_____lstat64)
+choke me
+#else
+__lstat64();
+#endif
+
+; return 0; }
+configure:5202: checking for __sys_llseek
+configure:5230: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cckaRJhT.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__sys_llseek'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5207 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __sys_llseek(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __sys_llseek();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___sys_llseek) || defined (__stub_____sys_llseek)
+choke me
+#else
+__sys_llseek();
+#endif
+
+; return 0; }
+configure:5202: checking for llseek
+configure:5230: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccrL1XhZ.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `llseek'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5207 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char llseek(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char llseek();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_llseek) || defined (__stub___llseek)
+choke me
+#else
+llseek();
+#endif
+
+; return 0; }
+configure:5202: checking for _llseek
+configure:5230: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccIHToz3.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_llseek'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5207 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _llseek(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _llseek();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__llseek) || defined (__stub____llseek)
+choke me
+#else
+_llseek();
+#endif
+
+; return 0; }
+configure:5202: checking for __llseek
+configure:5230: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccNzreB4.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__llseek'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5207 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __llseek(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __llseek();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___llseek) || defined (__stub_____llseek)
+choke me
+#else
+__llseek();
+#endif
+
+; return 0; }
+configure:5202: checking for readdir64
+configure:5202: checking for _readdir64
+configure:5230: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccUXWHr9.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_readdir64'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5207 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _readdir64(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _readdir64();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__readdir64) || defined (__stub____readdir64)
+choke me
+#else
+_readdir64();
+#endif
+
+; return 0; }
+configure:5202: checking for __readdir64
+configure:5230: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cc75Al3f.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__readdir64'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5207 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __readdir64(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __readdir64();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___readdir64) || defined (__stub_____readdir64)
+choke me
+#else
+__readdir64();
+#endif
+
+; return 0; }
+configure:5257: checking for pread
+configure:5285: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:5257: checking for _pread
+configure:5285: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccnxNaVd.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_pread'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5262 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _pread(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _pread();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__pread) || defined (__stub____pread)
+choke me
+#else
+_pread();
+#endif
+
+; return 0; }
+configure:5257: checking for __pread
+configure:5285: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccEApBTf.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__pread'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5262 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __pread(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __pread();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___pread) || defined (__stub_____pread)
+choke me
+#else
+__pread();
+#endif
+
+; return 0; }
+configure:5257: checking for pread64
+configure:5285: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:5257: checking for _pread64
+configure:5285: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccRDaw0p.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_pread64'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5262 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _pread64(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _pread64();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__pread64) || defined (__stub____pread64)
+choke me
+#else
+_pread64();
+#endif
+
+; return 0; }
+configure:5257: checking for __pread64
+configure:5285: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccyy9v8t.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__pread64'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5262 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __pread64(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __pread64();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___pread64) || defined (__stub_____pread64)
+choke me
+#else
+__pread64();
+#endif
+
+; return 0; }
+configure:5312: checking for pwrite
+configure:5340: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:5312: checking for _pwrite
+configure:5340: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccXFjUzA.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_pwrite'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5317 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _pwrite(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _pwrite();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__pwrite) || defined (__stub____pwrite)
+choke me
+#else
+_pwrite();
+#endif
+
+; return 0; }
+configure:5312: checking for __pwrite
+configure:5340: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccY0wvbF.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__pwrite'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5317 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __pwrite(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __pwrite();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___pwrite) || defined (__stub_____pwrite)
+choke me
+#else
+__pwrite();
+#endif
+
+; return 0; }
+configure:5312: checking for pwrite64
+configure:5340: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:5312: checking for _pwrite64
+configure:5340: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccrcElSP.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_pwrite64'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5317 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _pwrite64(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _pwrite64();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__pwrite64) || defined (__stub____pwrite64)
+choke me
+#else
+_pwrite64();
+#endif
+
+; return 0; }
+configure:5312: checking for __pwrite64
+configure:5340: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccusa4fU.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__pwrite64'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5317 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __pwrite64(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __pwrite64();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___pwrite64) || defined (__stub_____pwrite64)
+choke me
+#else
+__pwrite64();
+#endif
+
+; return 0; }
+configure:5367: checking for open64
+configure:5395: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:5367: checking for _open64
+configure:5395: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccd2huL0.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `_open64'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5372 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _open64(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _open64();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__open64) || defined (__stub____open64)
+choke me
+#else
+_open64();
+#endif
+
+; return 0; }
+configure:5367: checking for __open64
+configure:5395: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccUQnVW4.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `__open64'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5372 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char __open64(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char __open64();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub___open64) || defined (__stub_____open64)
+choke me
+#else
+__open64();
+#endif
+
+; return 0; }
+configure:5367: checking for creat64
+configure:5395: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:5639: checking for putprpwnam in -lsecurity
+configure:5658: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -lsecurity  -ldl  -lcrypt 1>&5
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/bin/ld: cannot find -lsecurity
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5647 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char putprpwnam();
+
+int main() {
+putprpwnam()
+; return 0; }
+configure:5688: checking for putprpwnam
+configure:5716: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccDEGJKj.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `putprpwnam'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5693 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char putprpwnam(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char putprpwnam();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_putprpwnam) || defined (__stub___putprpwnam)
+choke me
+#else
+putprpwnam();
+#endif
+
+; return 0; }
+configure:5800: checking for putprpwnam in -lsec
+configure:5819: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -lsec  -ldl  -lcrypt 1>&5
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/bin/ld: cannot find -lsec
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5808 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char putprpwnam();
+
+int main() {
+putprpwnam()
+; return 0; }
+configure:5849: checking for putprpwnam
+configure:5962: checking for set_auth_parameters in -lsecurity
+configure:5981: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -lsecurity  -ldl  -lcrypt 1>&5
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/bin/ld: cannot find -lsecurity
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 5970 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char set_auth_parameters();
+
+int main() {
+set_auth_parameters()
+; return 0; }
+configure:6011: checking for set_auth_parameters
+configure:6039: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/cc9InVpl.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `set_auth_parameters'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 6016 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char set_auth_parameters(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char set_auth_parameters();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_set_auth_parameters) || defined (__stub___set_auth_parameters)
+choke me
+#else
+set_auth_parameters();
+#endif
+
+; return 0; }
+configure:6123: checking for set_auth_parameters in -lsec
+configure:6142: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -lsec  -ldl  -lcrypt 1>&5
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/bin/ld: cannot find -lsec
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 6131 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char set_auth_parameters();
+
+int main() {
+set_auth_parameters()
+; return 0; }
+configure:6172: checking for set_auth_parameters
+configure:6286: checking for getspnam in -lgen
+configure:6305: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -lgen  -ldl  -lcrypt 1>&5
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/bin/ld: cannot find -lgen
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 6294 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char getspnam();
+
+int main() {
+getspnam()
+; return 0; }
+configure:6335: checking for getspnam
+configure:6363: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:6448: checking for getspnam in -lsecurity
+configure:6467: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -lsecurity  -ldl  -lcrypt 1>&5
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/bin/ld: cannot find -lsecurity
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 6456 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char getspnam();
+
+int main() {
+getspnam()
+; return 0; }
+configure:6497: checking for getspnam
+configure:6609: checking for getspnam in -lsec
+configure:6628: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -lsec  -ldl  -lcrypt 1>&5
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/bin/ld: cannot find -lsec
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 6617 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char getspnam();
+
+int main() {
+getspnam()
+; return 0; }
+configure:6658: checking for getspnam
+configure:6771: checking for bigcrypt in -lsecurity
+configure:6790: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -lsecurity  -ldl  -lcrypt 1>&5
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/bin/ld: cannot find -lsecurity
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 6779 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char bigcrypt();
+
+int main() {
+bigcrypt()
+; return 0; }
+configure:6820: checking for bigcrypt
+configure:6848: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccI1QWqN.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `bigcrypt'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 6825 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char bigcrypt(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char bigcrypt();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_bigcrypt) || defined (__stub___bigcrypt)
+choke me
+#else
+bigcrypt();
+#endif
+
+; return 0; }
+configure:6932: checking for bigcrypt in -lsec
+configure:6951: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -lsec  -ldl  -lcrypt 1>&5
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/bin/ld: cannot find -lsec
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 6940 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char bigcrypt();
+
+int main() {
+bigcrypt()
+; return 0; }
+configure:6981: checking for bigcrypt
+configure:7094: checking for getprpwnam in -lsecurity
+configure:7113: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -lsecurity  -ldl  -lcrypt 1>&5
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/bin/ld: cannot find -lsecurity
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 7102 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char getprpwnam();
+
+int main() {
+getprpwnam()
+; return 0; }
+configure:7143: checking for getprpwnam
+configure:7171: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+/tmp/ccXropyZ.o: In function `main':
+conftest.c:(.text.main+0x18): undefined reference to `getprpwnam'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 7148 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char getprpwnam(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char getprpwnam();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_getprpwnam) || defined (__stub___getprpwnam)
+choke me
+#else
+getprpwnam();
+#endif
+
+; return 0; }
+configure:7255: checking for getprpwnam in -lsec
+configure:7274: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -lsec  -ldl  -lcrypt 1>&5
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/bin/ld: cannot find -lsec
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 7263 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char getprpwnam();
+
+int main() {
+getprpwnam()
+; return 0; }
+configure:7304: checking for getprpwnam
+configure:7492: checking whether mipsel-uclibc-gcc accepts -fpic
+configure:7556: checking for long long
+configure:7597: checking for LL suffix on long long integers
+configure:7610: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:7632: checking for 64 bit off_t
+configure:7670: checking for off64_t
+configure:7712: checking for 64 bit ino_t
+configure:7750: checking for ino64_t
+configure:7792: checking for struct dirent64
+configure:7810: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:7831: checking for union semun
+configure:7871: checking for unsigned char
+configure:7908: checking for sin_len in sock
+configure:7923: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure: In function 'main':
+configure:7919: error: 'struct sockaddr_in' has no member named 'sin_len'
+configure: failed program was:
+#line 7914 "configure"
+#include "confdefs.h"
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+int main() {
+struct sockaddr_in sock; sock.sin_len = sizeof(sock);
+; return 0; }
+configure:7944: checking whether seekdir returns void
+configure:7959: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:7980: checking for __FILE__ macro
+configure:7993: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:8014: checking for __FUNCTION__ macro
+configure:8027: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:8048: checking if gettimeofday takes tz argument
+configure:8088: checking for broken readdir
+configure:8128: checking for utimbuf
+configure:8142: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure: In function 'main':
+configure:8138: warning: incompatible implicit declaration of built-in function 'exit'
+configure:8164: checking for ut_name in utmp
+configure:8177: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:8198: checking for ut_user in utmp
+configure:8211: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:8232: checking for ut_id in utmp
+configure:8245: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:8266: checking for ut_host in utmp
+configure:8279: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:8300: checking for ut_time in utmp
+configure:8313: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:8334: checking for ut_tv in utmp
+configure:8347: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:8368: checking for ut_syslen in utmpx
+configure:8381: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:8375:19: error: utmpx.h: No such file or directory
+configure: In function 'main':
+configure:8377: error: storage size of 'ux' isn't known
+configure: failed program was:
+#line 8374 "configure"
+#include "confdefs.h"
+#include <utmpx.h>
+int main() {
+struct utmpx ux;  ux.ut_syslen = 0;
+; return 0; }
+configure:8402: checking for kernel oplock type definitions
+configure:8416: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure: In function 'main':
+configure:8412: error: 'oplock_stat_t' undeclared (first use in this function)
+configure:8412: error: (Each undeclared identifier is reported only once
+configure:8412: error: for each function it appears in.)
+configure:8412: error: expected ';' before 't'
+configure:8412: error: 't' undeclared (first use in this function)
+configure:8412: error: 'OP_REVOKE' undeclared (first use in this function)
+configure: failed program was:
+#line 8408 "configure"
+#include "confdefs.h"
+#include <sys/types.h>
+#include <fcntl.h>
+int main() {
+oplock_stat_t t; t.os_state = OP_REVOKE; t.os_dev = 1; t.os_ino = 1;
+; return 0; }
+configure:8437: checking for irix specific capabilities
+configure:8489: checking for int16 typedef included by rpc/rpc.h
+configure:8505: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure: In function 'main':
+configure:8501: error: 'int16' undeclared (first use in this function)
+configure:8501: error: (Each undeclared identifier is reported only once
+configure:8501: error: for each function it appears in.)
+configure:8501: error: expected ';' before 'testvar'
+configure: failed program was:
+#line 8495 "configure"
+#include "confdefs.h"
+#include <sys/types.h>
+#if defined(HAVE_RPC_RPC_H)
+#include <rpc/rpc.h>
+#endif
+int main() {
+int16 testvar;
+; return 0; }
+configure:8526: checking for uint16 typedef included by rpc/rpc.h
+configure:8542: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure: In function 'main':
+configure:8538: error: 'uint16' undeclared (first use in this function)
+configure:8538: error: (Each undeclared identifier is reported only once
+configure:8538: error: for each function it appears in.)
+configure:8538: error: expected ';' before 'testvar'
+configure: failed program was:
+#line 8532 "configure"
+#include "confdefs.h"
+#include <sys/types.h>
+#if defined(HAVE_RPC_RPC_H)
+#include <rpc/rpc.h>
+#endif
+int main() {
+uint16 testvar;
+; return 0; }
+configure:8563: checking for int32 typedef included by rpc/rpc.h
+configure:8579: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure: In function 'main':
+configure:8575: error: 'int32' undeclared (first use in this function)
+configure:8575: error: (Each undeclared identifier is reported only once
+configure:8575: error: for each function it appears in.)
+configure:8575: error: expected ';' before 'testvar'
+configure: failed program was:
+#line 8569 "configure"
+#include "confdefs.h"
+#include <sys/types.h>
+#if defined(HAVE_RPC_RPC_H)
+#include <rpc/rpc.h>
+#endif
+int main() {
+int32 testvar;
+; return 0; }
+configure:8600: checking for uint32 typedef included by rpc/rpc.h
+configure:8616: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure: In function 'main':
+configure:8612: error: 'uint32' undeclared (first use in this function)
+configure:8612: error: (Each undeclared identifier is reported only once
+configure:8612: error: for each function it appears in.)
+configure:8612: error: expected ';' before 'testvar'
+configure: failed program was:
+#line 8606 "configure"
+#include "confdefs.h"
+#include <sys/types.h>
+#if defined(HAVE_RPC_RPC_H)
+#include <rpc/rpc.h>
+#endif
+int main() {
+uint32 testvar;
+; return 0; }
+configure:8638: checking for conflicting AUTH_ERROR define in rpc/rpc.h
+configure:8658: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:8679: checking for test routines
+configure:8702: checking for ftruncate extend
+configure:8738: checking for broken getgroups
+configure:8774: checking whether getpass should be replaced
+configure:8795: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 -I./include -I./ubiqx -I./smbwrapper conftest.c 1>&5
+configure:8818: checking for working fnmatch
+configure:8855: checking for secure mkstemp
+configure:8904: checking for broken inet_ntoa
+configure:8950: checking for sysconf(_SC_NGROUPS_MAX)
+configure:8987: checking for root
+configure:9028: checking for iface AIX
+configure:9069: checking for iface ifconf
+configure:9157: checking for setresuid
+configure:9200: checking for setreuid
+configure:9326: checking for shared mmap
+configure:9366: checking for ftruncate needs root
+configure:9402: checking for fcntl locking
+configure:9438: checking for broken (glibc2.1/x86) 64 bit fcntl locking
+configure:9476: checking for 64 bit fcntl locking
+configure:9534: checking for sysv ipc
+configure:9570: checking for IRIX sysv ipc semun problem using gcc
+configure:9606: checking for a crypt that needs truncated salt
+configure:9642: checking for broken nisplus include files
+configure:9658: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5
+configure:9649:21: error: sys/acl.h: No such file or directory
+configure: failed program was:
+#line 9648 "configure"
+#include "confdefs.h"
+#include <sys/acl.h>
+#if defined(HAVE_RPCSVC_NIS_H)
+#include <rpcsvc/nis.h>
+#endif
+int main() {
+return 0;
+; return 0; }
+configure:9682: checking whether to use smbwrapper
+configure:9726: checking whether to use AFS
+configure:9752: checking whether to use DFS auth
+configure:9777: checking whether to use Kerberos IV
+configure:9845: checking whether to use Kerberos 5
+configure:9866: checking whether to use AUTOMOUNT
+configure:9891: checking whether to use SMBMOUNT
+configure:9920: checking whether to use PAM password database
+configure:9947: checking whether to use LDAP password database
+configure:9973: checking whether to use NISPLUS password database
+configure:9998: checking whether to use NISPLUS_HOME
+configure:10023: checking whether to use SSL
+configure:10082: checking whether to use syslog logging
+configure:10107: checking whether to use profiling
+configure:10133: checking whether to support netatalk
+configure:10160: checking whether to support disk-quotas
+configure:10184: checking whether to support utmp accounting
+configure:10284: checking whether to install Using Samba book
+configure:10314: checking how to get filesystem space usage
+configure:10321: checking statvfs64 function (SVR4)
+configure:10376: checking statvfs function (SVR4)
+configure:10389: mipsel-uclibc-gcc -o conftest -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64  -Wl,--gc-sections conftest.c -ldl  -lcrypt 1>&5
+configure:10687: mipsel-uclibc-gcc -c -Os -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -D_GNU_SOURCE -DNDEBUG -DSHMEM_SIZE=524288 -Dfcntl=fcntl64 conftest.c 1>&5

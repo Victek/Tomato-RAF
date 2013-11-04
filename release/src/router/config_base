@@ -1,0 +1,41 @@
+#
+# The baseline configuration for Tomato USB.
+# All other build configurations are derived from this.
+#
+TCONFIG_OPTIMIZE_SHARED_LIBS=y
+TCONFIG_L2TP=y
+TCONFIG_PPTP=y
+TCONFIG_HTTPS=y
+TCONFIG_SSH=y
+TCONFIG_CIFS=y
+TCONFIG_JFFS2=y
+TCONFIG_JFFSV1=y
+TCONFIG_ZEBRA=y
+TCONFIG_DDNS=y
+TCONFIG_L7=y
+TCONFIG_L7PAT=y
+# TCONFIG_IPV6 is not set
+# TCONFIG_EBTABLES is not set
+# TCONFIG_EMF is not set
+TCONFIG_USB=y
+# TCONFIG_MEDIA_SERVER is not set
+TCONFIG_FTP=y
+# TCONFIG_FTP_SSL is not set
+TCONFIG_SAMBASRV=y
+# TCONFIG_SAMBA3 is not set
+# TCONFIG_USB_EXTRAS is not set
+# TCONFIG_NTFS is not set
+# TCONFIG_LZO is not set
+# TCONFIG_OPENVPN is not set
+# TCONFIG_NOCAT is not set
+# TCONFIG_NGINX is not set
+# TCONFIG_DNSCRYPT is not set
+# TCONFIG_ZLIB is not set
+# TCONFIG_SNMP is not set
+# TCONFIG_VLAN is not set
+# TCONFIG_USERPPTP is not set
+# TCONFIG_PPTPD is not set
+# TCONFIG_NVRAM_64K is not set
+# TCONFIG_TCPDUMP is not set
+# TCONFIG_USBAP is not set
+# TCONFIG_REMOVE_USBAPP is not set
