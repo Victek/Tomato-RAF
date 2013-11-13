@@ -1,4 +1,3 @@
-
 #
 # Toplevel Makefile for the BCM947xx Linux Router release
 #
@@ -1230,7 +1229,7 @@ ifeq ($(CONFIG_LINUX26),y)
 	@echo "l600n    Rosewill L600N Build with wl_high module (dualband support)"
 	@echo "       Routers with AC WIRELESS"	
 	@echo "ac66e	ASUS RT-AC66"
-	@ECHO "ac56	ASUS RT-AC56"
+	@echo "ac56	ASUS RT-AC56"
 	@echo "w1800rz	Tenda 1800"
 
 endif
