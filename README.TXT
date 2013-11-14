@@ -17,12 +17,14 @@ There are multiple directories provided here. The release directory contains the
 To build the router firmware using Ubuntu 13.04 64bits version. 
 
 Environment packages.
-sudo apt-get update && sudo apt-get upgrade && sudo apt-get install build-essential linux-headers-$(uname -r) && sudo apt-get install ubuntu-restricted-extras unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller meld kompare putty subversion build-essential libncurses5-dev zlib1g-dev gawk flex quilt git-core libncurses5-dev zlib1g-dev gawk flex quilt libssl-dev xsltproc libxml-parser-perl mercurial bzr ecj cvs
+sudo apt-get update && sudo apt-get upgrade && sudo apt-get install build-essential linux-headers-$(uname -r) && sudo apt-get install ubuntu-restricted-extras unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller build-essential quilt xsltproc libxml-parser-perl mercurial bzr ecj cvs
 
 Important: sudo dpkg-reconfigure dash (n)
 
 For Tomato and development.
-sudo apt-get install libncurses5 libncurses5-dev m4 bison flex libstdc++6-4.4-dev g++-4.4 g++ libtool sqlite gcc g++ binutils patch bzip2 flex bison make gettext unzip zlib1g-dev libc6 libncurses5-dev automake automake1.7 automake1.9 git-core gitk git-gui ia32-libs libc6-i386 lib32z1-dev
+
+sudo apt-get install autoconf autogen automake automake1.7 automake1.9 autoconf autopoint binutils bison bzip2 flex gawk gcc gcc-multilib gettext git-core git gitk git-gui gperf g++ g++-4.4-multilib ia32-libs kompare libc6 libncurses5 libncurses5-dev libstdc++6-4.4-dev libtool libssl-dev libxml2-dev libelf1:i386 libc6-i386 lib32z1-dev meld mtd-utils m4 patch putty pkg-config shtool sqlite subversion zlib1g-dev
+
 
 For MIPSR2 platform:
 + Ensure the tools in the release/tools directory are in your path. 
@@ -42,4 +44,4 @@ For ARM platform:
 
 This site contains all source files for Tomato-RAF-RT-N build 9013 release v1.2v
 
-3rd November 2013
+14rd November 2013
