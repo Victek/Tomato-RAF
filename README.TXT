@@ -1,29 +1,39 @@
 Tomato RAF is a forked version of Tomato firmware created by Jonathan Zarate, 2007.
 
-THIS SOFTWARE IS OFFERED "AS IS", AND THE AUTHOR GRANTS NO WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, BY STATUTE, COMMUNICATION OR OTHERWISE. THE AUTHOR SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A SPECIFIC PURPOSE OR NONINFRINGEMENT CONCERNING THIS SOFTWARE
+THIS SOFTWARE IS OFFERED "AS IS", AND THE AUTHOR GRANTS NO WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, BY STATUTE,
+COMMUNICATION OR OTHERWISE. THE AUTHOR SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+SPECIFIC PURPOSE OR NONINFRINGEMENT CONCERNING THIS SOFTWARE
 
 Firmware packages can be downloaded from the official download site: http://victek.is-a-geek.com
 
 Supported models:
 ASUS: WL500Gp v1-v2, WL520Gu, RT-N10, RT-N12, RT-N16, RT-N53, RT-N66, RT-AC56U, RT-AC66U, RT-AC68U.
 Belkin: F7D3301, F7D3302, F7D4302v1, F7D4301v1, F5D8235-4v3.
-Cisco-Linksys: WRT160Nv3, E800, E900, E1000, E1200, E1500, E1550, E2000, E2500, E3000, E3200, E4200, WRT-320, WRT-610Nv2.
+Cisco-Linksys: WRT160Nv3, E800, E900, E1000, E1200, E1500, E1550, E2000, E2500, E3000, E3200, E4200, WRT-320, WRT-610Nv2
+
 D-Link: DIR320, DIR615, DIR620c1.
 Netgear: WNR2000v2, WNR3500L v1-v2.
 Others: Ovislink WL1600G, CW-5358U, Huawei FiberHome HG320, ChinaNet RG-200E, ZTE H218N, WX-6615GT, TENDA W1800R.
 
-There are multiple directories provided here. The release directory contains the router source package. The uClibc directory contains the source for uClibc and the binary tools required to build are provided as a convenience.
+There are multiple directories provided here. The release directory contains the router source package. The uClibc
+directory contains the source for uClibc and the binary tools required to build are provided as a convenience.
 
 To build the router firmware using Ubuntu 13.04 64bits version. 
 
 Environment packages.
-sudo apt-get update && sudo apt-get upgrade && sudo apt-get install build-essential linux-headers-$(uname -r) && sudo apt-get install ubuntu-restricted-extras unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller build-essential quilt xsltproc libxml-parser-perl mercurial bzr ecj cvs
+sudo apt-get update && sudo apt-get upgrade && sudo apt-get install build-essential linux-headers-$(uname -r) && sudo
+apt-get install ubuntu-restricted-extras unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj
+cabextract file-roller build-essential quilt xsltproc libxml-parser-perl mercurial bzr ecj cvs
 
 Important: sudo dpkg-reconfigure dash (n)
 
 For Tomato and development.
 
-sudo apt-get install autoconf autogen automake automake1.7 automake1.9 autoconf autopoint binutils bison bzip2 flex gawk gcc gcc-multilib gettext git-core git gitk git-gui gperf g++ g++-4.4-multilib ia32-libs kompare libc6 libncurses5 libncurses5-dev libstdc++6-4.4-dev libtool libssl-dev libxml2-dev libelf1:i386 libc6-i386 lib32z1-dev meld mtd-utils m4 patch putty pkg-config shtool sqlite subversion zlib1g-dev
+sudo apt-get install autoconf autogen automake automake1.7 automake1.9 autoconf autopoint binutils bison bzip2 flex gawk
+gcc gcc-multilib gettext git-core git gitk git-gui gperf g++ g++-4.4-multilib ia32-libs kompare libc6 libncurses5
+libncurses5-dev libstdc++6-4.4-dev libtool libssl-dev libxml2-dev libelf1:i386 libc6-i386 lib32z1-dev meld mtd-utils m4
+patch putty pkg-config shtool sqlite subversion zlib1g-dev
+
 
 
 For MIPSR2 platform:
