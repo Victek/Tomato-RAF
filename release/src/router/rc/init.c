@@ -1383,7 +1383,7 @@ static int init_nvram(void)
 			nvram_set("pci/2/1/ledbh10", "7");
 
 			//force USA country for eth2
-			nvram_set("pci/2/1/ccode", "US");
+			nvram_set("pci/2/1/ccode", "EU");
 		}
 		break;
 

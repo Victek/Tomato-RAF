@@ -537,7 +537,7 @@ void dns_to_resolv(void)
 		// Check for VPN DNS entries
 		if (!write_pptpvpn_resolv(f) && !write_vpn_resolv(f)) {
 #ifdef TCONFIG_IPV6
-			if (write_ipv6_dns_servers(f, "nameserver ", nvram_safe_get("ipv6_dns"), "\n", 0) == 0 || nvram_get_int("dns_addget"))
+			if (write_ipv6_dns_servers(f, "nameserver ", nvram_safe_get("ipv6_dns"), "\n", 0) == 0)
 				write_ipv6_dns_servers(f, "nameserver ", nvram_safe_get("ipv6_get_dns"), "\n", 0);
 #endif
 			dns = get_dns();	// static buffer
@@ -2226,15 +2226,6 @@ void start_services(void)
 	start_pptpd();
 #endif
 
-#ifdef TCONFIG_IPV6
-	/* note: starting radvd here might be too early in case of
-	 * DHCPv6 or 6to4 because we won't have received a prefix and
-	 * so it will disable advertisements. To restart them, we have
-	 * to send radvd a SIGHUP, or restart it.
-	 */
-	start_dnsmasq();
-#endif
-
 	restart_nas_services(1, 1);	// !!TB - Samba, FTP and Media Server
 
 #ifdef TCONFIG_SNMP
@@ -2243,6 +2234,19 @@ void start_services(void)
 
 #ifdef TCONFIG_NOCAT
 	start_splashd();
+#endif
+
+#ifdef TCONFIG_NGINX
+	start_enginex();
+#endif
+
+#ifdef TCONFIG_IPV6
+	/* note: starting radvd here might be too early in case of
+	 * DHCPv6 or 6to4 because we won't have received a prefix and
+	 * so it will disable advertisements. To restart them, we have
+	 * to send radvd a SIGHUP, or restart it.
+	 */
+	start_dnsmasq();
 #endif
 
 }
