@@ -12,7 +12,7 @@
 <meta name='robots' content='noindex,nofollow'>
 <title>[<% ident(); %>] Restoring Defaults...</title>
 <script type='text/javascript'>
-var n = 90;
+var n = 80;
 function tick()
 {
 	var e = document.getElementById('continue');

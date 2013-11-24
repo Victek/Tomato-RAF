@@ -2423,6 +2423,9 @@ REMOVE-END */
 /* NGINX-BEGIN */
 		['Web Server',			'nginx.asp'],
 /* NGINX-END */
+/* SIPROXD-BEGIN */
+		['SIP VoIP Telephony',		'siproxd.asp'],
+/* SIPROXD-END */
 /* USB-BEGIN */
 // ---- !!TB - USB, FTP, Samba, Media Server
 		['USB and NAS',			'nas', 0, [

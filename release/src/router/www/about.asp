@@ -103,13 +103,16 @@ function init()
 - HFS/HFS+ MAC OSX read support<br>
 - exFAT MAC OSX / WINDOWS suppport<br>
 <!-- NOCAT-BEGIN -->
-- Captive Portal. (NocatSplash). Copyright (C) 2011 Ofer Chen & Vicente Soriano<br>
+- Captive Portal. (NocatSplash). Copyright ©2011 Ofer Chen & Vicente Soriano<br>
 <!-- NOCAT-END -->
 <!-- NGINX-BEGIN -->
-- Web Server. (NGinX). Copyright (C) 2013 Ofer Chen & Vicente Soriano<br>
+- Web Server. (NGinX). Copyright ©2013 Ofer Chen & Vicente Soriano<br>
 <!-- NGINX-END -->
-Tomato RAF. Copyright (C) 2007-2013 Vicente Soriano. <br>
-<a href='http://www.tomatoraf.com' target='_new'>http://victek.is-a-geek.com</a><br>
+<!-- SIPROXD-BEGIN -->
+- SIP Service. (siproxd). Copyright ©2013 Ofer Chen & Vicente Soriano<br>
+<!-- SIPROXD-END -->
+Tomato RAF. Copyright ©2007-2013 Vicente Soriano. <br>
+<a href='http://victek.is-a-geek.com' target='_new'>http://victek.is-a-geek.com</a><br>
 <br>
 <br>
 <b>Based on TomatoUSB and Original Tomato by Jonathan Zarate.</b><br>

@@ -2236,6 +2236,10 @@ void start_services(void)
 	start_splashd();
 #endif
 
+#ifdef TCONFIG_SIPROXD
+	start_siproxd();
+#endif
+
 #ifdef TCONFIG_NGINX
 	start_enginex();
 #endif
@@ -2278,6 +2282,9 @@ void stop_services(void)
 	stop_httpd();
 #ifdef TCONFIG_NGINX
 	stop_enginex();
+#endif
+#ifdef TCONFIG_SIPROXD
+	stop_siproxd();
 #endif
 	stop_cifs();
 	stop_dnsmasq();
@@ -2432,6 +2439,14 @@ TOP:
 		goto CLEAR;
 	}
 
+#ifdef TCONFIG_SIPROXD
+	if (strcmp(service, "siproxd") == 0) {
+		if (action & A_STOP) stop_siproxd();
+		if (action & A_START) start_siproxd();
+		goto CLEAR;
+	}
+#endif
+
 	if (strcmp(service, "httpd") == 0) {
 		if (action & A_STOP) stop_httpd();
 		if (action & A_START) start_httpd();
@@ -2549,6 +2564,9 @@ TOP:
 			restart_nas_services(1, 0);	// stop Samba, FTP and Media Server
 			stop_jffs2();
 //			stop_cifs();
+#ifdef TCONFIG_SIPROXD
+			stop_siproxd();
+#endif
 #ifdef TCONFIG_NGINX
 			stop_enginex();
 #endif

@@ -120,6 +120,14 @@ config TCONFIG_NGINX
 	bool "NGinX Web Server"
 	default n
 
+config TCONFIG_SIPROXD
+	bool "Siproxd Telephony Service"
+	default n
+
+config TCONFIG_LIBOSIP2
+	bool "Siproxd parser service"
+	default n
+
 config TCONFIG_ZLIB
 	bool "Compressor"
 	default n

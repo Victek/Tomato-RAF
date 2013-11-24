@@ -161,17 +161,33 @@ sub fixDyn
 #	fixDynDep("libbcm.so", "libshared.so");
 #	fixDynDep("libbcm.so", "libc.so.0");
 
+#Tomato RAF - Siproxd
+	fixDynDep("httpd", "libosipparser2.so.10.0.0");
+	fixDynDep("siproxd", "libosipparser2.so.10.0.0");
+	fixDynDep("siproxd", "libosip2.so.10.0.0");
+	fixDynDep("siproxd", "libresolv.so.0");
+#Tomato RAF - Siproxd fix plugins deletion by libfoo
+	fixDynDep("siproxd", "plugin_defaulttarget.so");
+	fixDynDep("siproxd", "plugin_demo.so");
+	fixDynDep("siproxd", "plugin_fix_bogus_via.so");
+	fixDynDep("siproxd", "plugin_logcall.so");
+	fixDynDep("siproxd", "plugin_shortdial.so");
+	fixDynDep("siproxd", "plugin_stun.so");
+	fixDynDep("siproxd", "plugin_prefix.so");
+	fixDynDep("siproxd", "plugin_regex.so");
+#Tomato RAF - NocatSplash
+	fixDynDep("splashd","libglib-1.2.so.0.0.10");
+#Tomato RAF - php
+	fixDynDep("php-cli","libz.so.1.2.5");
+	fixDynDep("php-cgi","libz.so.1.2.5");
+
 #!!TB - Updated Broadcom WL driver
 	fixDynDep("libbcmcrypto.so", "libc.so.0");
 	fixDynDep("nas", "libbcmcrypto.so");
 	fixDynDep("wl", "libbcmcrypto.so");
 	fixDynDep("nas", "libc.so.0");
 	fixDynDep("wl", "libc.so.0");
-#Roadkill for NocatSplash
-	fixDynDep("splashd","libglib-1.2.so.0.0.10");
-#Roadkill for php
-	fixDynDep("php-cli","libz.so.1.2.5");
-	fixDynDep("php-cgi","libz.so.1.2.5");
+
 }
 
 sub usersOf
@@ -463,6 +479,10 @@ genSO("${root}/usr/lib/liblzo2.so.2", "${router}/lzo/src/.libs/liblzo2.a");
 #	genSO("${root}/usr/lib/libnvram.so", "${router}/nvram/libnvram.a");
 #	genSO("${root}/usr/lib/libusb-1.0.so.0", "${router}/libusb10/libusb/.libs/libusb-1.0.a");
 #	genSO("${root}/usr/lib/libusb-0.1.so.4", "${router}/libusb/libusb/.libs/libusb.a", "", "-L${router}/libusb10/libusb/.libs");
+
+#Tomato RAF - Siproxd
+genSO("${root}/usr/lib/libbcmcrypto.so", "${router}/libbcmcrypto/libbcmcrypto.a");
+genSO("${root}/usr/lib/libosipparser2.so.10.0.0", "${router}/libosip2/src/osipparser2/.libs/libosipparser2.a");
 
 genSO("${root}/usr/lib/libbcmcrypto.so", "${router}/libbcmcrypto/libbcmcrypto.a");
 genSO("${root}/usr/lib/libnfnetlink.so.0.2.0", "${router}/libnfnetlink/src/.libs/libnfnetlink.a");

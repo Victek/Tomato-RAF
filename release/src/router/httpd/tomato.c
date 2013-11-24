@@ -396,6 +396,9 @@ const aspapi_t aspapi[] = {
 #ifdef TCONFIG_PPTPD
 	{ "pptpd_userol",		asp_pptpd_userol	},
 #endif
+#ifdef TCONFIG_SIPROXD
+	{ "siproxd_stat",		asp_siproxd_stat			},
+#endif
 	{ "wlstats",			asp_wlstats		},
 	{ "wlclient",			asp_wlclient		},
 	{ "wlnoise",			asp_wlnoise			},
@@ -969,6 +972,7 @@ static const nvset_t nvset_list[] = {
 	{ "sshd_authkeys",		V_TEXT(0, 4096)		},
 	{ "rmgt_sip",			V_LENGTH(0, 512)	},
 	{ "ne_shlimit",			V_TEXT(1, 50)		},
+	{ "http_username",      V_LENGTH(0, 64)    	},
 
 // admin-bwm
 	{ "rstats_enable",		V_01			},
@@ -1364,6 +1368,36 @@ static const nvset_t nvset_list[] = {
 	{ "vpn_client2_tlsremote",V_01                },
 	{ "vpn_client2_cn",       V_NONE              },
 #endif // vpn
+
+#ifdef TCONFIG_SIPROXD
+// siproxd
+	{ "siproxd_enable",			V_01			}, // 1-enabled 0-disabled
+	{ "siproxd_reboot",			V_01			}, // 1-enabled 0-disabled - reboot mode do not restart service reboot the unit instead
+	{ "siproxd_if_inbound",			V_LENGTH(2, 5)		}, // br0 lan-ifname
+	{ "siproxd_if_outbound",		V_LENGTH(2, 5)		}, // vlan1 wan ifname
+	{ "siproxd_intcpt",			V_01			}, //1-enabled 0-disabled
+	{ "siproxd_listen_port",		V_PORT			}, // Port to listen for incoming SIP messages usually 5060
+	{ "siproxd_default_expires",		V_LENGTH(2,4)		}, // Default Expiration timeout for Registrations
+	{ "siproxd_daemonize",			V_01			}, // siproxd daemonize 0/1
+	{ "siproxd_autosave_registrations",	V_LENGTH(0,4)		}, // save current registration every 'n' seconds
+	{ "siproxd_rtp_proxy",			V_01			}, // 0 - RTP proxy disabled, 1 - RTP proxy (UDP relay of siproxd)
+	{ "siproxd_rtp_port_low",		V_PORT			}, // Port range to allocate listen ports from for incoming RTP traffic
+	{ "siproxd_rtp_port_high",		V_PORT			}, // This should be a range that is not blocked by the firewall
+	{ "siproxd_rtp_timeout",		V_LENGTH(0,4)		}, // Timeout for RTP streams
+	{ "siproxd_rtp_dscp",			V_LENGTH(0,4)		}, // DSCP (differentiated services) value to be assigned to RTP and SIP UDP packets.
+	{ "siproxd_sip_dscp",			V_LENGTH(0,4)		}, // Allows QOS aware routers to handle different types traffic with different priorities.
+	{ "siproxd_silence_log",		V_RANGE(0, 4)		}, // what shall be logged to syslog : 0 - DEBUGs, INFOs, WARNINGs and ERRORs, 1 - INFOs, WARNINGs and ERRORs (this is the default), 2 - WARNINGs and ERRORs, 3 - only ERRORs, 4 - absolutely nothing
+	{ "siproxd_logcall",			V_01			}, // 0/1 Log Call Plugin
+	{ "siproxd_shortdial",			V_01			}, // 0/1 Quick Dial (Short Dial Plug in)
+	{ "siproxd_pi_shortdial_akey",		V_LENGTH(0, 4)		}, // allows qpeed dials *01 to *99
+	{ "siproxd_pi_shortdial1",		V_LENGTH(0, 16)		}, // pi shortdial #1
+	{ "siproxd_pi_shortdial2",		V_LENGTH(0, 16)		}, // pi shortdial #2
+	{ "siproxd_pi_shortdial3",		V_LENGTH(0, 16)		}, // pi shortdial #3
+	{ "siproxd_pi_shortdial4",		V_LENGTH(0, 16)		}, // pi shortdial #4
+	{ "siproxd_pi_shortdial5",		V_LENGTH(0, 16)		}, // pi shortdial #5
+	{ "siproxd_debug_level",		V_RANGE(0,12)		}, /* 0 0x00000000 debug disabled, 1 0x00000001 babble (like entering/leaving func), 2 0x00000002 network, 3 0x00000004 SIP manipulations, 4 0x00000008 Client registration, 5 0x00000010 non specified  class, 6 0x00000020 proxy, 7 0x00000040 DNS stuff, 8 0x00000080 network traffic, 9 0x00000100 configuration, 10 0x00000200 RTP proxy, 11 0x00000400 Access list evaluation, 12 0x00000800 Authentication */
+	{ "siproxd_debug_port",			V_RANGE(0, 65535)	}, // TCP debug port 0 - Feature Disabled
+#endif
 
 // pptp server
 	{ "pptpd_enable",		V_01				},

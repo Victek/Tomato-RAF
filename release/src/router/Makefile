@@ -62,9 +62,6 @@ obj-y += cyassl
 obj-y += mssl
 obj-y += mdu
 
-#Roadkill
-obj-$(TCONFIG_NOCAT) += nocat
-
 # !!TB
 obj-$(TCONFIG_USB) += p910nd
 
@@ -132,17 +129,18 @@ obj-$(TCONFIG_PPTPD) += pptpd
 obj-$(TCONFIG_HTTPS) += openssl
 obj-$(TCONFIG_SSH) += dropbear
 obj-$(TCONFIG_ZEBRA) += zebra
-#	obj-$(TCONFIG_IPP2P) += ipp2p
 obj-$(TCONFIG_LZO) += lzo
 obj-$(TCONFIG_OPENVPN) += openvpn
 obj-$(TCONFIG_EMF) += emf
 obj-$(TCONFIG_EMF) += igs
-
-#Roadkill - NGinX
+# Tomato RAF
 obj-$(TCONFIG_NGINX) += openssl
 obj-$(TCONFIG_NGINX) += pcre
 obj-$(TCONFIG_NGINX) += php
 obj-$(TCONFIG_NGINX) += nginx
+obj-$(TCONFIG_NOCAT) += nocat
+obj-$(TCONFIG_SIPROXD) += siproxd
+obj-$(TCONFIG_LIBOSIP2) += libosip2
 
 obj-$(CONFIG_LINUX26) += hotplug2
 obj-$(CONFIG_LINUX26) += udevtrigger
@@ -314,6 +312,12 @@ endif
 ifeq ($(TCONFIG_SSH),y)
 	install $(LIBDIR)/libutil.so.0 $(TARGETDIR)/lib/
 endif
+
+ifeq ($(TCONFIG_SIPROXD),y)
+	install $(LIBDIR)/libpthread.so.0 $(TARGETDIR)/lib/
+	install $(LIBDIR)/libresolv.so.0 $(TARGETDIR)/lib/
+endif
+
 ifneq ($(TCONFIG_OPTIMIZE_SHARED_LIBS),y)
 	install $(LIBDIR)/libresolv.so.0 $(TARGETDIR)/lib/
 	$(STRIP) $(TARGETDIR)/lib/*.so.0
@@ -594,7 +598,7 @@ busybox-config:
 	$(MAKE) -C busybox menuconfig
 
 
-httpd: shared nvram mssl
+httpd: shared nvram mssl libosip2
 	@$(SEP)
 	@$(MAKE) -C httpd
 
@@ -810,6 +814,54 @@ miniupnpd-clean:
 miniupnpd-install:
 	install -D miniupnpd/miniupnpd $(INSTALLDIR)/miniupnpd/usr/sbin/miniupnpd
 	$(STRIP) $(INSTALLDIR)/miniupnpd/usr/sbin/miniupnpd
+
+##Tomato RAF - Siproxd&libosip2 
+libosip2/stamp-h1:
+	@$(SEP)
+	cd libosip2 && $(CONFIGURE) --enable-shared --disable-debug --disable-trace --enable-pthread --enable-semaphore --enable-nTime
+	$(MAKE) -C libosip2
+
+libosip2: libosip2/stamp-h1
+
+libosip2-clean:
+	@$(MAKE) -C libosip2 clean
+	@rm -f libosip2/stamp-h1
+
+libosip2-install:
+	install -D libosip2/src/osip2/.libs/libosip2.so.10.0.0 $(INSTALLDIR)/libosip2/usr/lib/libosip2.so.10.0.0
+	$(STRIP) $(INSTALLDIR)/libosip2/usr/lib/libosip2.so.10.0.0
+	install -D libosip2/src/osipparser2/.libs/libosipparser2.so.10.0.0 $(INSTALLDIR)/libosip2/usr/lib/libosipparser2.so.10.0.0
+	$(STRIP) $(INSTALLDIR)/libosip2/usr/lib/libosipparser2.so.10.0.0
+	cd $(INSTALLDIR)/libosip2/usr/lib && \
+	ln -s libosipparser2.so.10.0.0 libosipparser2.so && \
+	ln -s libosipparser2.so.10.0.0 libosipparser2.so.10 && \
+	ln -s libosip2.so.10.0.0 libosip2.so && \
+	ln -s libosip2.so.10.0.0 libosip2.so.10
+
+siproxd/stamp-h1: libosip2
+	@$(SEP)
+	cd siproxd && \
+	CC=$(CC) CFLAGS="-Os -Wall $(EXTRACFLAGS) -ffunction-sections -fdata-sections" \
+	CPPFLAGS="-I$(TOP)/libosip2/include -I$(TOP)/siproxd/libltdl" \
+	LDFLAGS="-L$(TOP)/libosip2/src/osipparser2/.libs -L$(TOP)/libosip2/src/osip2/.libs -L$(TOP)/siproxd/libltdl/.libs" \
+	$(CONFIGURE) --target=$(TARGET) --enable-static=no --disable-debug --disable-trace --enable-pthread --enable-semaphore --enable-ntime --disable-doc
+	$(MAKE) -C siproxd
+	@touch siproxd/stamp-h1
+
+siproxd: siproxd/stamp-h1
+
+siproxd-clean:
+	$(MAKE) -C siproxd clean
+	@rm -f siproxd/stamp-h1
+
+siproxd-install:
+	install -D siproxd/src/.libs/siproxd $(INSTALLDIR)/siproxd/usr/bin/siproxd
+	$(STRIP) $(INSTALLDIR)/siproxd/usr/bin/siproxd
+	chmod 0500 $(INSTALLDIR)/siproxd/usr/bin/siproxd
+	install -d $(INSTALLDIR)/siproxd/usr/lib/siproxd/
+	install -D siproxd/src/.libs/plugin_*.so* $(INSTALLDIR)/siproxd/usr/lib/siproxd/
+	install -D siproxd/src/plugin_*.la* $(INSTALLDIR)/siproxd/usr/lib/siproxd/
+##Roadkill - Siproxd&libosip2
 
 # !!TB
 shared: busybox
@@ -1413,7 +1465,7 @@ ebtables-install: ebtables
 ebtables-clean:
 	-@$(MAKE) -C ebtables clean
 
-#Roadkill
+#Tomato RAF
 glib/stamp-h1:
 	@$(SEP)
 	@cd glib && $(CONFIGURE) --prefix=/usr glib_cv_prog_cc_ansi_proto=no glib_cv_has__inline=yes glib_cv_has__inline__=yes glib_cv_hasinline=yes \
@@ -1434,7 +1486,7 @@ glib-clean:
 glib-install: glib
 	@$(MAKE) -C glib DESTDIR=$(INSTALLDIR)/glib install
 
-#Roadkill
+#Tomato RAF
 nocat/stamp-h1: glib-install
 	@$(SEP)
 	@cd nocat && \
@@ -1613,7 +1665,7 @@ tcpdump-install: tcpdump
 	install -D tcpdump/tcpdump $(INSTALLDIR)/tcpdump/usr/sbin/tcpdump
 	$(STRIP) $(INSTALLDIR)/tcpdump/usr/sbin/tcpdump
 
-#Libpcre
+#Tomato RAF
 pcre/stamp-h1:
 	$(SEP)
 	cd pcre && \
@@ -1636,7 +1688,7 @@ pcre-clean:
 		$(MAKE) -C pcre clean; \
 		rm -rf pcre/stamp-h1; \
 	fi )
-#PHP
+#Tomato RAF
 php/stamp-h1: pcre zlib-install
 	@$(SEP)
 #install pcre-nginx
@@ -1726,7 +1778,7 @@ php-install: php
 	cd $(INSTALLDIR)/php/usr/sbin && ln -sf php-cgi php-fcgi
 	$(STRIP) $(INSTALLDIR)/php/usr/sbin/php-cgi
 
-#NGinx
+#Tomato RAF
 nginx/stamp-h1: zlib pcre
 	@$(SEP)
 	( if [ ! -f openssl-nginx/Makefile ]; then \
