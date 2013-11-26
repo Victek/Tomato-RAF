@@ -52,6 +52,4 @@ For ARM platform:
 + export PATH=$PATH:/opt/brcm/hndtools-mipsel-linux/bin:/opt/brcm/hndtools-mipsel-uclibc/bin:/opt/brcm-arm/bin 
 + Type 'make help' to see the options to build for each model.
 
-This site contains all source files for Tomato-RAF-RT-N build 9013 release v1.2v
-
-14rd November 2013
+This site contains all source files for Tomato-RAF-RT-N build 9013
