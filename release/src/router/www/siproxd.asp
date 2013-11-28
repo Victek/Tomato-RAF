@@ -19,6 +19,7 @@
 <title>[<% ident(); %>] Siproxd</title>
 <link rel='stylesheet' type='text/css' href='tomato.css'>
 <link rel='stylesheet' type='text/css' href='color.css'>
+<% css(); %>
 <script type='text/javascript' src='tomato.js'></script>
 
 <!-- / / / -->
@@ -427,7 +428,7 @@ W('<input type="button" value="' + (siproxdup ? 'Stop' : 'Start') + ' Now" oncli
 <input type='hidden' id='siproxd_if_inbound' name='siproxd_if_inbound'>
 <input type='hidden' id='siproxd_if_outbound' name='siproxd_if_outbound'>
 <input type='hidden' id='siproxd_intcpt' name='siproxd_intcpt'>
-<input type='hidden' id='siproxd_liesten_port' name='siproxd_listen_port'>
+<input type='hidden' id='siproxd_listen_port' name='siproxd_listen_port'>
 <input type='hidden' id='siproxd_default_expires' name='siproxd_default_expires'>
 
 <input type='hidden' id='siproxd_rtp_proxy' name='siproxd_rtp_proxy'>
@@ -548,6 +549,9 @@ W('<input type="button" value="' + (siproxdup ? 'Stop' : 'Start') + ' Now" oncli
 </td></tr>
 </table>
 </form>
-<script type='text/javascript'>sgsetup();</script>
+/* REMOVE-BEGIN
+	!!- added verifyFields
+REMOVE-END */
+<script type='text/javascript'>sgsetup();verifyFields(null, 1);</script>
 </body>
 </html>
