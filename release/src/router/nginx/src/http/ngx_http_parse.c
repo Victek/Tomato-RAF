@@ -614,8 +614,7 @@ ngx_http_parse_request_line(ngx_http_request_t *r, ngx_buf_t *b)
             default:
                 r->space_in_uri = 1;
                 state = sw_check_uri;
-		//Patch for intrusion foo page updated in NGINX 1.4.4
-		p--;
+                p--;
                 break;
             }
             break;
@@ -669,8 +668,7 @@ ngx_http_parse_request_line(ngx_http_request_t *r, ngx_buf_t *b)
             default:
                 r->space_in_uri = 1;
                 state = sw_uri;
-		//Patch for intrusion foo page updated in NGINX 1.4.4
-		p--;
+                p--;
                 break;
             }
             break;
