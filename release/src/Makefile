@@ -1068,13 +1068,13 @@ n64n:
 	@$(MAKE) r2n NVRAM_SIZE=64 LINKSYS_E_64=y
 
 n64nc:
-	@$(MAKE) r2nc NVRAM_SIZE=64 LINKSYS_E=y
+	@$(MAKE) r2nc NVRAM_SIZE=64 LINKSYS_E_64=y
 
 n64nf:
-	@$(MAKE) r2nf NVRAM_SIZE=64 LINKSYS_E=y
+	@$(MAKE) r2nf NVRAM_SIZE=64 LINKSYS_E_64=y
 
 n64nm:
-	@$(MAKE) r2nm NVRAM_SIZE=64 LINKSYS_E=y
+	@$(MAKE) r2nm NVRAM_SIZE=64 LINKSYS_E_64=y
 
 n64o:
 	@$(MAKE) r2o NVRAM_SIZE=64 LINKSYS_E_64=y
@@ -1113,7 +1113,7 @@ rtn53:
 	@$(MAKE) bin MIPS32=r2 OPENVPN=y USERPPTP=y NTFS=y BBEXTRAS=y NO_LIBOPT=y EBTABLES=y IPV6SUPP=y BUILD_DESC="RT-N53" USB="USB" SNMP=y DNSCRYPT=y PPTPD=y VLAN=y NOCAT=y USBAP=y NO_USBAPP=y
 		
 e2500:
-	@$(MAKE) bin MIPS32=r2 OPENVPN=y USERPPTP=y PPTPD=y NTFS=y BBEXTRAS=y NO_LIBOPT=y VLAN=y EBTABLES=y IPV6SUPP=y SNMP=y NOCAT=y NGINX=n USBAP=y NO_USBAPP=y NVRAM_SIZE=60 BUILD_DESC+="-$(VLAN)" BUILD_DESC="$(VPN)" BUILD_DESC+="-$(NC)" LINKSYS_E2500=y
+	@$(MAKE) bin MIPS32=r2 OPENVPN=y USERPPTP=y PPTPD=y NTFS=y BBEXTRAS=y NO_LIBOPT=y VLAN=y EBTABLES=y IPV6SUPP=y SNMP=y SIPROXD=n NOCAT=y NGINX=n USBAP=y NO_USBAPP=y NVRAM_SIZE=60 BUILD_DESC+="-$(VLAN)" BUILD_DESC="$(VPN)" BUILD_DESC+="-$(NC)" LINKSYS_E2500=y
 	
 e3200:
 	@$(MAKE) nf MIPS32=r2 USBAP=y NVRAM_SIZE=60 LINKSYS_E3200=y
@@ -1125,7 +1125,7 @@ w1800rz:
 	@$(MAKE) z MIPS32=r2 NVRAM_64K=y W1800R=1
 
 l600n:
-	@$(MAKE) bin MIPS32=r2 OPENVPN=y USERPPTP=y PPTPD=y NTFS=y BBEXTRAS=y USBEXTRAS=y EBTABLES=y NO_LIBOPT=y MEDIASRV=y IPV6SUPP=y B=NC BUILD_DESC="$(VPN)" USB="USB" VLAN="$(VLAN)" SNMP=y NOCAT=y USBAP=y B=NC BUILD_DESC+="-$(NC)"  BUILD_DESC+="$(L600N)"
+	@$(MAKE) bin MIPS32=r2 OPENVPN=y USERPPTP=y PPTPD=y NTFS=y BBEXTRAS=y USBEXTRAS=y EBTABLES=y NO_LIBOPT=y MEDIASRV=n IPV6SUPP=y  BUILD_DESC="$(VPN)" USB="USB" VLAN=y SNMP=y NOCAT=y USBAP=y B=NC BUILD_DESC+="-$(NC)" BUILD_DESC+="$(L600N)"
 	
 setprofile:
 	echo '#ifndef TOMATO_PROFILE' > router/shared/tomato_profile.h
@@ -1214,7 +1214,9 @@ ifeq ($(CONFIG_LINUX26),y)
 	@echo "r2fs         MIPS Release 2 FS build (no USB support minus JFFS, CIFS, RIPv1/2, Zebra)"
 	@echo "r2i          MIPS Release 2 I build (IPv6 with no USB support minus CIFS and RIPv1/2)"
 	@echo "r2m          MIPS Release 2 M build (standard plus extras)"
-	@echo "r2nc         MIPS Release 2 NC build (standard plus VPN, extras and NOCAT)"
+	@echo "r2nc         MIPS Release 2 build (Communicator RAF version)"
+	@echo "r2nf         MIPS Release 2 build (Full RAF version)"
+	@echo "r2nm         MIPS Release 2 build (Media RAF version)"
 	@echo "r2ncm        MIPS Release 2 NCM build (no USB support, plus NOCAT)"
 	@echo "r2ncs        MIPS Release 2 NCS build (standard plus NOCAT)"
 	@echo "r2s          MIPS Release 2 S build (no USB support)"
@@ -1226,14 +1228,18 @@ ifeq ($(CONFIG_LINUX26),y)
 	@echo "       Linksys E-Series with 60k Nvram"
 	@echo "n60m         Linksys E-series build (60KB NVRAM, standard plus extras)"
 	@echo "n60e         Linksys E-series build (60KB NVRAM, standard plus VPN and extras)"
-	@echo "n60nc        Linksys E-series build (60KB NVRAM, standard plus extras, plus VPN, plus NOCAT)"
+	@echo "n60nc        Linksys E-series build (60KB NVRAM, Communicator RAF version)"
+	@echo "n60nf        Linksys E-series build (60KB NVRAM, Full RAF version)"
+	@echo "n60nm        Linksys E-series build (60KB NVRAM, Media RAF version)"
 	@echo "n60s         Linksys E-series build (60KB NVRAM, no USB support)"
 	@echo "n60v         Linksys E-series build (60KB NVRAM, VPN with no USB support)"
 
 	@echo "       Linksys E-Series with 64k Nvram/8MB Flash(E800/E900/E1200v2/E1500)"
 	@echo "n64m         Linksys E-series build (64KB NVRAM, standard plus extras)"
 	@echo "n64e         Linksys E-series build (64KB NVRAM, standard plus VPN and extras)"
-	@echo "n64nc        Linksys E-series build (64KB NVRAM, standard plus extras, plus VPN, plus NOCAT)"
+	@echo "n64nc        Linksys E-series build (64KB NVRAM, Communicator RAF version)"
+	@echo "n64nf        Linksys E-series build (64KB NVRAM, Full RAF version)"
+	@echo "n64nm        Linksys E-series build (64KB NVRAM, Media RAF version)"
 	@echo "n64s         Linksys E-series build (64KB NVRAM, no USB support)"
 	@echo "n64v         Linksys E-series build (64KB NVRAM, VPN with no USB support)"
 
