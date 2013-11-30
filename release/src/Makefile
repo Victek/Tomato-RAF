@@ -168,7 +168,6 @@ ifeq ($(W1800R),1)
 	@rm -f image/linux-lzma.trx
 	@echo ""
 endif
-
 ifeq ($(WNR3500LV2),y)
 	@echo "Creating Firmware for Netgear WNR3500L v2 .... "
 	mipsel-uclibc-objcopy -O binary -g $(LINUXDIR)/vmlinux image/vmlinux.bin
@@ -181,7 +180,6 @@ ifeq ($(WNR3500LV2),y)
 	@echo "Cleanup ...."
 	rm -f image/*image.chk image/*.trx
 endif
-
 ifeq ($(WRT54),y)
 ifneq ($(current_TOMATO_MIPS32),r2)
 	@rm -f image/tomato-WRT54*$(current_BUILD_USB)-$(current_TOMATO_VER).$(current_TOMATO_V1)$(mips_rev)$(beta)$(current_TOMATO_V2)-$(current_BUILD_DESC).bin
@@ -888,19 +886,18 @@ else
 	@$(MAKE) bin NTFS=y BBEXTRAS=y USBEXTRAS=y B=M BUILD_DESC="Ext" USB="USB" VLAN="$(VLAN)" SNMP=y USERPPTP=y PPTPD=y DNSCRYPT=y TCPDUMP="$(TCPDUMP)"
 endif
 
-## Full Tomato RAF
-## Make the "VLAN + VPN + NOCAT + NGINX + SIPROXD + USB" build
+## Tomato RAF versions.
+## Make the "Communicator version.
 nc:
-ifeq ($(CONFIG_LINUX26),y)
-	@$(MAKE) bin OPENVPN=y USERPPTP=y PPTPD=y NTFS=y BBEXTRAS=y USBEXTRAS=y EBTABLES=y NO_LIBOPT=y MEDIASRV=y IPV6SUPP=y DNSCRYPT=y SIPROXD=y NGINX=y B=NC USB="USB" SNMP=y VLAN=y NOCAT=y TCPDUMP="$(TCPDUMP)"
-else
-	@$(MAKE) bin OPENVPN=y USERPPTP=y PPTPD=y NTFS=y DNSCRYPT=y B=NC BUILD_DESC="$(VPN)" USB="USB" VLAN="$(VLAN)" NOCAT=y TCPDUMP="$(TCPDUMP)" BUILD_DESC+=" $(NC)"
-endif
+	@$(MAKE) bin OPENVPN=y USERPPTP=y PPTPD=y NTFS=y BBEXTRAS=y USBEXTRAS=y EBTABLES=y NO_LIBOPT=y MEDIASRV=n IPV6SUPP=y DNSCRYPT=y SIPROXD=y NGINX=y B=NC USB="USB" SNMP=y VLAN=y NOCAT=y TCPDUMP="$(TCPDUMP)"
 
-## Toastman
-## Make the "Mini: no USB, + NOCAT" build - for 4MB routers
-ncm:
-	@$(MAKE) bin JFFSv1=y NOCAT=y B=NCM BUILD_DESC="Mini-NOCAT" USB="" VLAN="$(VLAN)"
+## Make the "Full version".
+nf:
+	@$(MAKE) bin OPENVPN=y USERPPTP=y PPTPD=y NTFS=y BBEXTRAS=y USBEXTRAS=y EBTABLES=y NO_LIBOPT=y MEDIASRV=y IPV6SUPP=y DNSCRYPT=y SIPROXD=y NGINX=y B=NF USB="USB" SNMP=y VLAN=y NOCAT=y TCPDUMP="$(TCPDUMP)"
+
+## Make the "Media Version".
+nm:
+	@$(MAKE) bin OPENVPN=y USERPPTP=y PPTPD=y NTFS=y BBEXTRAS=y USBEXTRAS=y EBTABLES=y NO_LIBOPT=y MEDIASRV=y IPV6SUPP=y DNSCRYPT=y SIPROXD=n NGINX=n B=NM USB="USB" SNMP=y VLAN=y NOCAT=n TCPDUMP="$(TCPDUMP)"
 
 ## Toastman
 ## Make the "normal" build + NOCAT
@@ -984,6 +981,12 @@ r2n:
 r2nc:
 	@$(MAKE) nc MIPS32=r2
 
+r2nf:
+	@$(MAKE) nf MIPS32=r2
+
+r2nm:
+	@$(MAKE) nm MIPS32=r2
+
 r2r:
 	@$(MAKE) r MIPS32=r2
 
@@ -1025,6 +1028,12 @@ n60n:
 n60nc:
 	@$(MAKE) r2nc NVRAM_SIZE=60 LINKSYS_E=y
 
+n60nf:
+	@$(MAKE) r2nf NVRAM_SIZE=60 LINKSYS_E=y
+
+n60nm:
+	@$(MAKE) r2nm NVRAM_SIZE=60 LINKSYS_E=y
+
 n60o:
 	@$(MAKE) r2o NVRAM_SIZE=60 LINKSYS_E=y
 
@@ -1059,7 +1068,13 @@ n64n:
 	@$(MAKE) r2n NVRAM_SIZE=64 LINKSYS_E_64=y
 
 n64nc:
-	@$(MAKE) r2nc NVRAM_SIZE=64 LINKSYS_E_64=y
+	@$(MAKE) r2nc NVRAM_SIZE=64 LINKSYS_E=y
+
+n64nf:
+	@$(MAKE) r2nf NVRAM_SIZE=64 LINKSYS_E=y
+
+n64nm:
+	@$(MAKE) r2nm NVRAM_SIZE=64 LINKSYS_E=y
 
 n64o:
 	@$(MAKE) r2o NVRAM_SIZE=64 LINKSYS_E_64=y
@@ -1101,10 +1116,10 @@ e2500:
 	@$(MAKE) bin MIPS32=r2 OPENVPN=y USERPPTP=y PPTPD=y NTFS=y BBEXTRAS=y NO_LIBOPT=y VLAN=y EBTABLES=y IPV6SUPP=y SNMP=y NOCAT=y NGINX=n USBAP=y NO_USBAPP=y NVRAM_SIZE=60 BUILD_DESC+="-$(VLAN)" BUILD_DESC="$(VPN)" BUILD_DESC+="-$(NC)" LINKSYS_E2500=y
 	
 e3200:
-	@$(MAKE) nc MIPS32=r2 USBAP=y NVRAM_SIZE=60 LINKSYS_E3200=y
+	@$(MAKE) nf MIPS32=r2 USBAP=y NVRAM_SIZE=60 LINKSYS_E3200=y
 
 ac66e:
-	@$(MAKE) nc MIPS32=r2 NVRAM_64K=y NAND=y AC66U=1 NO_JFFS=y
+	@$(MAKE) nf MIPS32=r2 NVRAM_64K=y NAND=y AC66U=1 NO_JFFS=y
 
 w1800rz:
 	@$(MAKE) z MIPS32=r2 NVRAM_64K=y W1800R=1

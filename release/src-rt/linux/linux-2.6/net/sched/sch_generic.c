@@ -553,7 +553,7 @@ void dev_deactivate(struct net_device *dev)
 {
 	struct Qdisc *qdisc;
 	struct sk_buff *skb;
-	int running
+	int running;
 
 	spin_lock_bh(&dev->queue_lock);
 	qdisc = dev->qdisc;
