@@ -53,7 +53,6 @@
 FILE * nginx_conf_file;
 FILE * fastcgi_conf_file;
 FILE * mimetypes_file;
-unsigned int fastpath=0;
 
 void nginx_write(const char *format, ...) {
 	va_list args;
@@ -288,24 +287,9 @@ int build_nginx_conf(void) {
 // Start the NGINX module according environment directives.
 void start_nginx(void)
 {
-	if (fastpath != 1) {
-		if(!nvram_match("nginx_enable", "1")){
-		syslog(LOG_INFO,"NGinX - daemon not enabled cancelled generation of config file\n");
-		return;
-		}
-	}else{
-		syslog(LOG_INFO,"NGinX - fastpath forced generation of config file\n");
-	}
-
-	if (fastpath != 1) {
-		stop_nginx();
-	}else{
-		stop_nginxfp();
-	}
-
 	if (!f_exists(fastcgiconf)) build_fastcgi_conf();
 	if (!f_exists(mimetypes)) build_mime_types();
-	if ((fastpath != 1) && (!nvram_match("nginx_keepconf", "1"))) {
+	if (!nvram_match("nginx_keepconf", "1")) {
 		build_nginx_conf();
 	}else{
 		if (!f_exists(nginxconf)) build_nginx_conf();
@@ -322,13 +306,6 @@ void start_nginx(void)
 		syslog(LOG_INFO,"NGinX - running daemon\n");
 			xstart(nginxbin, "-c", nginxconf);
 }
-// Start NGinx using fastpath method no checks
-void start_nginxfp(void)
-{
-fastpath = 1;
-start_nginx();
-fastpath = 0;
-}
 // Stopping NGINX and remove traces of the process.
 void stop_nginx(void)
 {
@@ -343,21 +320,21 @@ void stop_nginx(void)
 //			syslog(LOG_INFO,"NGinX - removed pid file %s\n", nginxpid);
 		}
 		if (f_exists(fastcgiconf)) {
-			if ((fastpath != 1) && (!nvram_match("nginx_keepconf", "1"))) {
+			if (!nvram_match("nginx_keepconf", "1")) {
 				unlink(fastcgiconf);
 //				syslog(LOG_INFO,"NGinX - removed fastcgi config file %s\n", fastcgiconf);
 			}
 //			syslog(LOG_INFO,"NGinX - skip removal of fastcgi config file %s due to fastpath method\n", fastcgiconf);
 		}
 		if (f_exists(mimetypes)) {
-			if ((fastpath != 1) && (!nvram_match("nginx_keepconf", "1"))) {
+			if (!nvram_match("nginx_keepconf", "1")) {
 				unlink(mimetypes);
 //				syslog(LOG_INFO,"NGinX - remove mime types file %s\n", mimetypes);
 			}
 //			syslog(LOG_INFO,"NGinX - skip removal of mime types config file %s due to fastpath method\n", mimetypes);
 		}
 		if (f_exists(nginxconf)) {
-			if ((fastpath != 1) && (!nvram_match("nginx_keepconf", "1"))) {
+			if (!nvram_match("nginx_keepconf", "1")) {
 			unlink(nginxconf);
 //			syslog(LOG_INFO,"NGinX - removed nginx config file %s\n", nginxconf);
 			}
@@ -365,11 +342,3 @@ void stop_nginx(void)
 		}
 	}
 }
-// Stop NGinx using fastpath method no checks
-void stop_nginxfp(void)
-{
-fastpath = 1;
-stop_nginx();
-fastpath = 0;
-}
-

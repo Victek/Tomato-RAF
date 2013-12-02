@@ -37,20 +37,6 @@
 //	<% nvram("nginx_enable,nginx_keepconf,nginx_port,nginx_fqdn,nginx_docroot,nginx_priority,nginx_custom"); %>
 
 changed = 0;
-nginxup = parseInt ('<% psup("nginx"); %>');
-
-function toggle(service, isup)
-{
-	if (changed) {
-		if (!confirm("Unsaved changes will be lost. Continue anyway?")) return;
-	}
-	E('_' + service + '_button').disabled = true;
-	form.submitHidden('/service.cgi', {
-		_redirect: 'nginx.asp',
-		_sleep: ((service == 'nginxfp') && (!isup)) ? '10' : '5',
-		_service: service + (isup ? '-stop' : '-start')
-	});
-}
 
 function verifyFields(focused, quiet)
 {
@@ -120,10 +106,13 @@ function save()
 	
 	form.submit(fom, 1);
 }
+function init()
+{
+	verifyFields(null, 1);
+}
 </script>
 </head>
-<body>
-<form id='_fom' method='post' action='tomato.cgi'>
+<body onLoad="init()">
 <table id='container' cellspacing=0>
 <tr><td colspan=2 id='header'>
 	<div class='title'>Tomato RAF</div>

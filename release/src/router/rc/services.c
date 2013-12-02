@@ -1421,20 +1421,6 @@ void stop_enginex(void)
 	stop_nginx();
 }
 
-void start_nginxfastpath(void)
-{
-	pid_nginx =-1;
-	start_nginxfp();
-	if (!nvram_contains_word("debug_norestart","nginxfp")) {
-		pid_nginx = -2;
-	}
-}
-void stop_nginxfastpath(void)
-{
-	pid_nginx = -1;
-	stop_nginxfp();
-}
-
 #endif
 // -----------------------------------------------------------------------------
 void set_tz(void)
@@ -2457,11 +2443,6 @@ TOP:
 	if (strcmp(service, "enginex") == 0) {
 		if (action & A_STOP) stop_enginex();
 		if (action & A_START) start_enginex();
-		goto CLEAR;
-	}
-	if (strcmp(service, "nginxfp") == 0) {
-		if (action & A_STOP) stop_nginxfastpath();
-		if (action & A_START) start_nginxfastpath();
 		goto CLEAR;
 	}
 #endif
