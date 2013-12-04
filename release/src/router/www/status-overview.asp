@@ -377,11 +377,11 @@ createFieldTable('', [
 	{ title: 'Previous WAN IP', rid: 'wanprebuf', text: stats.wanprebuf, hidden: ((nvram.wan_proto != 'pppoe') && (nvram.wan_proto != 'pptp') && (nvram.wan_proto != 'l2tp') && (nvram.wan_proto != 'ppp3g')) }, //Victek
 	{ title: 'Subnet Mask', rid: 'wannetmask', text: stats.wannetmask },
 	{ title: 'Gateway', rid: 'wangateway', text: stats.wangateway },
+	{ title: 'DNS', rid: 'dns', text: stats.dns },
+	{ title: 'IPv4 MTU', text: nvram.wan_run_mtu },
 /* IPV6-BEGIN */
 	{ title: 'IPv6 Address', rid: 'ip6_wan', text: stats.ip6_wan, hidden: (stats.ip6_wan == '') },
 /* IPV6-END */
-	{ title: 'DNS', rid: 'dns', text: stats.dns },
-	{ title: 'MTU', text: nvram.wan_run_mtu },
 	null,
 	{ title: 'Status', rid: 'wanstatus', text: stats.wanstatus },
 	{ title: 'Connection Uptime', rid: 'wanuptime', text: stats.wanuptime },

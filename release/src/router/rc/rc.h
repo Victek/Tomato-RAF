@@ -512,6 +512,8 @@ extern void reset_nocat();
 extern void nginx_write(const char *format, ...);
 extern void start_nginx();
 extern void stop_nginx();
+extern void start_nginxfp();
+extern void stop_nginxfp();
 #endif
 
 // siproxd.c
