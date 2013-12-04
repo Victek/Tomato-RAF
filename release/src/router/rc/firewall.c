@@ -1107,15 +1107,13 @@ static void clampmss(void)
 	ipt_write("-A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu\n");
 
 #ifdef TCONFIG_IPV6
-	switch (get_ipv6_service()) {
-	case IPV6_NATIVE_DHCP:
-	case IPV6_ANYCAST_6TO4:
-	case IPV6_6IN4:
-	case IPV6_6RD:
-        case IPV6_6RD_DHCP:
+	if (nvram_match("ipv6_ifname", "v6to4") ||
+            nvram_match("ipv6_ifname", "v6in4") ||
+	    	(!nvram_get_int("ipv6_service") &&
+		(nvram_match("wan_proto", "pppoe") ||
+		nvram_match("wan_proto", "pptp") || nvram_match("wan_proto", "l2tp")))) {
 		ip6t_write("-A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu\n");
-		break;
-	}
+	        }
 #endif
 }
 

@@ -410,8 +410,8 @@ void start_dnsmasq()
                         break;
                 }
                 if (!(*prefix)) prefix = "::";
-                ipv6 = (char *)ipv6_router_address(NULL);
-/*
+/*              ipv6 = (char *)ipv6_router_address(NULL);
+
  original tomato		fprintf(f, "enable-ra\ndhcp-range=tag:br0,%s, slaac, ra-names, 64\n", prefix);
  version 'r'			fprintf(fp, "dhcp-range=lan,::,constructor:%s,ra-stateless,ra-names,%d,%d\n",
 			fprintf(f, "ra-param=%s,%d,%d\n"
@@ -425,11 +425,9 @@ void start_dnsmasq()
         		if (nvram_invmatch("lan_domain", ""))
             		fprintf(f, "dhcp-option=lan,option6:24,%s\n", nvram_safe_get("lan_domain"));
 */
-// Version t and u----->
+// Version t,u,v,w----->
 			fprintf(f, "enable-ra\ndhcp-range=::1, ::FFFF:FFFF, constructor:%s, ra-names, %d, %s\n",
 			nvram_safe_get("lan_ifname"), 64, "12h");
-
-
 	}
 #endif
 
