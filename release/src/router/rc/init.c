@@ -1220,14 +1220,14 @@ static int init_nvram(void)
 		nvram_set_int("led_usb3_gpio", 0|GPIO_ACTIVE_LOW);	// change led gpio(usb2/usb3) to sync the outer case
 		nvram_set_int("btn_wps_gpio", 15|GPIO_ACTIVE_LOW);
 		nvram_set_int("btn_rst_gpio", 11|GPIO_ACTIVE_LOW);
-#ifdef RTCONFIG_WIFI_TOG_BTN
+#ifdef TCONFIG_WIFI_TOG_BTN
 		nvram_set_int("btn_wltog_gpio", 7|GPIO_ACTIVE_LOW);
 #endif
-#ifdef RTCONFIG_TURBO
+#ifdef TCONFIG_TURBO
 		nvram_set_int("btn_turbo_gpio", 5);
 #endif
 
-#ifdef RTCONFIG_XHCIMODE
+#ifdef TCONFIG_XHCIMODE
 		nvram_set("xhci_ports", "1-1");
 		nvram_set("ehci_ports", "2-1 2-2");
 		nvram_set("ohci_ports", "3-1 3-2");
@@ -1254,6 +1254,7 @@ static int init_nvram(void)
 		add_rc_support("nandflash");
 		break;
 */
+
 	case MODEL_RTN66U:
 		mfr = "Asus";
 #ifdef CONFIG_BCMWL6

@@ -82,6 +82,7 @@ function verifyFields(focused, quiet)
 			vis._ipv6_tun_addrlen = 0;
 			vis._ipv6_tun_ttl = 0;
 			vis._ipv6_tun_mtu = 0;
+			
 			if (c == 'other') {
 				E('_f_ipv6_rtr_addr_auto').value = 1;
 				vis._f_ipv6_rtr_addr_auto = 2;
@@ -199,7 +200,7 @@ REMOVE-END */
 		if ((vis[b[0]]) && (!v_range(b[0], quiet || !ok, b[1], b[2]))) ok = 0;
 	}
 
-	// mtu
+	// tun_mtu
 	b = '_ipv6_tun_mtu';
 	if (vis[b]) {
 		if ((!v_range(b, 1, 0, 0)) && (!v_range(b, quiet || !ok, 1280, 1480))) ok = 0;

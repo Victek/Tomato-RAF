@@ -30,13 +30,25 @@
 	margin-bottom: 10px;
 }
 </style>
-
-<script type='text/javascript' src='debug.js'></script>
-<script type='text/javascript'>
+<script type='text/javascript' defer>
 
 //	<% nvram("nginx_enable,nginx_keepconf,nginx_port,nginx_fqdn,nginx_docroot,nginx_priority,nginx_custom"); %>
 
 changed = 0;
+nginxup = parseInt ('<% psup("nginx"); %>');
+
+function toggle(service, isup)
+{
+	if (changed) {
+		if (!confirm("Unsaved changes will be lost. Continue anyway?")) return;
+	}
+	E('_' + service + '_button').disabled = true;
+	form.submitHidden('/service.cgi', {
+		_redirect: 'nginx.asp',
+		_sleep: ((service == 'nginxfp') && (!isup)) ? '10' : '5',
+		_service: service + (isup ? '-stop' : '-start')
+	});
+}
 
 function verifyFields(focused, quiet)
 {
@@ -44,8 +56,8 @@ function verifyFields(focused, quiet)
 	var a, b, c;
 	var i;
 	var vis = {
-			_f_nginx_keepconf : 1,
 			_f_nginx_port : 1,
+			_f_nginx_keepconf : 1,
 			_f_nginx_fqdn : 1,
 			_f_nginx_docroot : 1,
 			_f_nginx_priority : 1,
@@ -118,7 +130,7 @@ function init()
 	<div class='title'>Tomato RAF</div>
 	<div class='version'>Version <% version(); %></div>
 </td></tr>
-<tr id='body'><td id='navi'><script type='text/javascript'>navi()</script></td>
+<tr id='body'><td id='navi'><script type='text/javascript' defer>navi()</script></td>
 <td id='content'>
 <div id='ident'><% ident(); %></div>
 
@@ -151,8 +163,8 @@ function init()
 
 <script type='text/javascript'>
 createFieldTable('', [
-	{ title: 'Enable Server on Start', name: 'f_nginx_enable', type: 'checkbox', value: (nvram.nginx_enable != '0') },
-	{ title: 'Keep Config Files', name: 'f_nginx_keepconf', type: 'checkbox', value: (nvram.nginx_keepconf != '0') },
+	{ title: 'Enable Server on Start', name: 'f_nginx_enable', type: 'checkbox', value: nvram.nginx_enable == '1'},
+	{ title: 'Keep Config Files', name: 'f_nginx_keepconf', type: 'checkbox', value: (nvram.nginx_keepconf != '0') },	
 	{ title: 'Web Server Port', name: 'f_nginx_port', type: 'text', maxlen: 5, size: 7, value: fixPort(nvram.nginx_port, 85), suffix: '<small> default: 85</small>' },
 	{ title: 'Web Server Name', name: 'f_nginx_fqdn', type: 'text', maxlen: 255, size: 20, value: nvram.nginx_fqdn },
 	{ title: 'Server Root Path', name: 'f_nginx_docroot', type: 'text', maxlen: 255, size: 40, value: nvram.nginx_docroot, suffix: '<span>&nbsp;/index.html / index.htm / index.php</span>' },
