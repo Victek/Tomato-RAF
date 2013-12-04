@@ -1101,14 +1101,18 @@ static void filter_input(void)
 	// default policy: DROP
 }
 
-// clamp TCP MSS to PMTU of WAN interface (IPv4 only?)
+// clamp TCP MSS to PMTU of WAN interface (IPv4 and IPv6)
 static void clampmss(void)
 {
 	ipt_write("-A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu\n");
+
 #ifdef TCONFIG_IPV6
 	switch (get_ipv6_service()) {
+	case IPV6_NATIVE_DHCP:
 	case IPV6_ANYCAST_6TO4:
 	case IPV6_6IN4:
+	case IPV6_6RD:
+        case IPV6_6RD_DHCP:
 		ip6t_write("-A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu\n");
 		break;
 	}
