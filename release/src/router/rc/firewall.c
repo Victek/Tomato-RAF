@@ -1105,8 +1105,21 @@ static void filter_input(void)
 static void clampmss(void)
 {
 	ipt_write("-A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu\n");
-
+/* It's not working....
+{
+	ipt_write("-A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu\n");
 #ifdef TCONFIG_IPV6
+	switch (get_ipv6_service()) {
+	case IPV6_ANYCAST_6TO4:
+	case IPV6_6IN4:
+		ip6t_write("-A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu\n");
+		break;
+	}
+#endif
+}
+*/
+
+#ifdef TCONFIG_IPV6 //victek 05.12.13 adding when ppp dialing is also used.
 	if (nvram_match("ipv6_ifname", "v6to4") ||
             nvram_match("ipv6_ifname", "v6in4") ||
 	    	(!nvram_get_int("ipv6_service") &&
@@ -1116,7 +1129,6 @@ static void clampmss(void)
 	        }
 #endif
 }
-
 static void filter_forward(void)
 {
 	char dst[64];
