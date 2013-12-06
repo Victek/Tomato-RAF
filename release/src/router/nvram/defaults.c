@@ -936,7 +936,7 @@ const defaults_t defaults[] = {
 #ifdef TCONFIG_SIPROXD
 // Tomato RAF. siproxd
 	{ "siproxd_enable",	 		"0"	 },
- 	{ "siproxd_reboot",			"1"	 },
+ 	{ "siproxd_reboot",			"0"	 },
  	{ "siproxd_if_inbound",			"vlan2"	 },
 	{ "siproxd_if_outbound",		"br0"	 },
 	{ "siproxd_intcpt",			"0"	 },
