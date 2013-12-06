@@ -168,6 +168,7 @@ ifeq ($(W1800R),1)
 	@rm -f image/linux-lzma.trx
 	@echo ""
 endif
+
 ifeq ($(WNR3500LV2),y)
 	@echo "Creating Firmware for Netgear WNR3500L v2 .... "
 	mipsel-uclibc-objcopy -O binary -g $(LINUXDIR)/vmlinux image/vmlinux.bin
@@ -180,6 +181,7 @@ ifeq ($(WNR3500LV2),y)
 	@echo "Cleanup ...."
 	rm -f image/*image.chk image/*.trx
 endif
+
 ifeq ($(WRT54),y)
 ifneq ($(current_TOMATO_MIPS32),r2)
 	@rm -f image/tomato-WRT54*$(current_BUILD_USB)-$(current_TOMATO_VER).$(current_TOMATO_V1)$(mips_rev)$(beta)$(current_TOMATO_V2)-$(current_BUILD_DESC).bin
