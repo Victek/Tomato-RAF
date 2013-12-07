@@ -157,6 +157,7 @@ sub fixDyn
 	fixDynDep("libcrypto.so.1.0.0", "libssl.so.1.0.0");
 #shibby
 	fixDynDep("miniupnpd", "libnfnetlink.so.0.2.0");
+	fixDynDep("dnscrypt-proxy", "libsodium.so.4.5.0");
 
 #	fixDynDep("libbcm.so", "libshared.so");
 #	fixDynDep("libbcm.so", "libc.so.0");
@@ -484,8 +485,8 @@ genSO("${root}/usr/lib/liblzo2.so.2", "${router}/lzo/src/.libs/liblzo2.a");
 genSO("${root}/usr/lib/libbcmcrypto.so", "${router}/libbcmcrypto/libbcmcrypto.a");
 genSO("${root}/usr/lib/libosipparser2.so.10.0.0", "${router}/libosip2/src/osipparser2/.libs/libosipparser2.a");
 
-genSO("${root}/usr/lib/libbcmcrypto.so", "${router}/libbcmcrypto/libbcmcrypto.a");
 genSO("${root}/usr/lib/libnfnetlink.so.0.2.0", "${router}/libnfnetlink/src/.libs/libnfnetlink.a");
+genSO("${root}/usr/lib/libsodium.so.4.5.0", "${router}/libsodium/src/libsodium/.libs/libsodium.a");
 
 print "\n";
 
