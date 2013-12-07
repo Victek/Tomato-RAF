@@ -1,0 +1,12 @@
+crypto_stream/aes256estream/libsodium_la-stream_aes256estream_api.lo \
+  crypto_stream/aes256estream/libsodium_la-stream_aes256estream_api.o:  \
+ crypto_stream/aes256estream/stream_aes256estream_api.c \
+  include/sodium/crypto_stream_aes256estream.h \
+  /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/include/stddef.h \
+  include/sodium/export.h
+
+include/sodium/crypto_stream_aes256estream.h:
+
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/include/stddef.h:
+
+include/sodium/export.h:

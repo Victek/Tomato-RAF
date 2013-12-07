@@ -1,0 +1,13 @@
+crypto_sign/libsodium_la-crypto_sign.lo \
+  crypto_sign/libsodium_la-crypto_sign.o: crypto_sign/crypto_sign.c \
+  include/sodium/crypto_sign.h \
+  /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/include/stddef.h \
+  include/sodium/crypto_sign_ed25519.h include/sodium/export.h
+
+include/sodium/crypto_sign.h:
+
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/include/stddef.h:
+
+include/sodium/crypto_sign_ed25519.h:
+
+include/sodium/export.h:

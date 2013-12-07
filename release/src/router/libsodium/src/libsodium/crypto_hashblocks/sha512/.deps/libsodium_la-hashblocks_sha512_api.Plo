@@ -1,0 +1,12 @@
+crypto_hashblocks/sha512/libsodium_la-hashblocks_sha512_api.lo \
+  crypto_hashblocks/sha512/libsodium_la-hashblocks_sha512_api.o:  \
+ crypto_hashblocks/sha512/hashblocks_sha512_api.c \
+  include/sodium/crypto_hashblocks_sha512.h \
+  /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/include/stddef.h \
+  include/sodium/export.h
+
+include/sodium/crypto_hashblocks_sha512.h:
+
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/include/stddef.h:
+
+include/sodium/export.h:

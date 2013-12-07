@@ -1,0 +1,16 @@
+crypto_hash/sha512/ref/libsodium_la-hash_sha512.lo \
+  crypto_hash/sha512/ref/libsodium_la-hash_sha512.o:  \
+ crypto_hash/sha512/ref/hash_sha512.c crypto_hash/sha512/ref/api.h \
+  include/sodium/crypto_hash_sha512.h \
+  /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/include/stddef.h \
+  include/sodium/export.h include/sodium/crypto_hashblocks_sha512.h
+
+crypto_hash/sha512/ref/api.h:
+
+include/sodium/crypto_hash_sha512.h:
+
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/include/stddef.h:
+
+include/sodium/export.h:
+
+include/sodium/crypto_hashblocks_sha512.h:

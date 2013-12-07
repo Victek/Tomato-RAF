@@ -1,0 +1,11 @@
+crypto_verify/16/libsodium_la-verify_16_api.lo \
+  crypto_verify/16/libsodium_la-verify_16_api.o:  \
+ crypto_verify/16/verify_16_api.c include/sodium/crypto_verify_16.h \
+  /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/include/stddef.h \
+  include/sodium/export.h
+
+include/sodium/crypto_verify_16.h:
+
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/include/stddef.h:
+
+include/sodium/export.h:

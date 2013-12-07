@@ -1,0 +1,17 @@
+crypto_auth/hmacsha256/ref/libsodium_la-hmac_hmacsha256.lo \
+  crypto_auth/hmacsha256/ref/libsodium_la-hmac_hmacsha256.o:  \
+ crypto_auth/hmacsha256/ref/hmac_hmacsha256.c \
+  crypto_auth/hmacsha256/ref/api.h \
+  include/sodium/crypto_auth_hmacsha256.h \
+  /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/include/stddef.h \
+  include/sodium/export.h include/sodium/crypto_hashblocks_sha256.h
+
+crypto_auth/hmacsha256/ref/api.h:
+
+include/sodium/crypto_auth_hmacsha256.h:
+
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/include/stddef.h:
+
+include/sodium/export.h:
+
+include/sodium/crypto_hashblocks_sha256.h:

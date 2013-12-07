@@ -1,0 +1,13 @@
+crypto_shorthash/libsodium_la-crypto_shorthash.lo \
+  crypto_shorthash/libsodium_la-crypto_shorthash.o:  \
+ crypto_shorthash/crypto_shorthash.c include/sodium/crypto_shorthash.h \
+  /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/include/stddef.h \
+  include/sodium/crypto_shorthash_siphash24.h include/sodium/export.h
+
+include/sodium/crypto_shorthash.h:
+
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/include/stddef.h:
+
+include/sodium/crypto_shorthash_siphash24.h:
+
+include/sodium/export.h:

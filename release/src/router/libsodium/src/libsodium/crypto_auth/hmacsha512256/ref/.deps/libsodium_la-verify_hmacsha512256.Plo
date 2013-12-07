@@ -1,0 +1,17 @@
+crypto_auth/hmacsha512256/ref/libsodium_la-verify_hmacsha512256.lo \
+  crypto_auth/hmacsha512256/ref/libsodium_la-verify_hmacsha512256.o:  \
+ crypto_auth/hmacsha512256/ref/verify_hmacsha512256.c \
+  crypto_auth/hmacsha512256/ref/api.h \
+  include/sodium/crypto_auth_hmacsha512256.h \
+  /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/include/stddef.h \
+  include/sodium/export.h include/sodium/crypto_verify_32.h
+
+crypto_auth/hmacsha512256/ref/api.h:
+
+include/sodium/crypto_auth_hmacsha512256.h:
+
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/include/stddef.h:
+
+include/sodium/export.h:
+
+include/sodium/crypto_verify_32.h:

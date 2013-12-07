@@ -1,0 +1,14 @@
+crypto_core/salsa20/ref/libsodium_la-core_salsa20.lo \
+  crypto_core/salsa20/ref/libsodium_la-core_salsa20.o:  \
+ crypto_core/salsa20/ref/core_salsa20.c crypto_core/salsa20/ref/api.h \
+  include/sodium/crypto_core_salsa20.h \
+  /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/include/stddef.h \
+  include/sodium/export.h
+
+crypto_core/salsa20/ref/api.h:
+
+include/sodium/crypto_core_salsa20.h:
+
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/include/stddef.h:
+
+include/sodium/export.h:

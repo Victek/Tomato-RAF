@@ -15,6 +15,7 @@
 
 
 
+
 am__make_dryrun = \
   { \
     am__dry=no; \
@@ -52,25 +53,27 @@ build_triplet = x86_64-pc-linux-gnu
 host_triplet = mipsel-unknown-linux-gnu
 subdir = .
 DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
-	$(srcdir)/Makefile.in $(top_srcdir)/configure \
+	$(srcdir)/Makefile.in $(srcdir)/libsodium.pc.in \
+	$(top_srcdir)/configure \
 	$(top_srcdir)/src/libsodium/include/sodium/crypto_scalarmult_curve25519.h.in \
 	$(top_srcdir)/src/libsodium/include/sodium/crypto_stream_salsa20.h.in \
 	$(top_srcdir)/src/libsodium/include/sodium/version.h.in \
-	AUTHORS COPYING ChangeLog INSTALL NEWS THANKS config.guess \
-	config.sub depcomp install-sh ltmain.sh missing
+	AUTHORS ChangeLog THANKS compile config.guess config.sub \
+	depcomp install-sh ltmain.sh missing
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/ax_check_compile_flag.m4 \
 	$(top_srcdir)/m4/ax_check_link_flag.m4 \
 	$(top_srcdir)/m4/ld-output-def.m4 $(top_srcdir)/m4/libtool.m4 \
 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
 	$(top_srcdir)/m4/ltversion.m4 $(top_srcdir)/m4/lt~obsolete.m4 \
-	$(top_srcdir)/configure.ac
+	$(top_srcdir)/m4/pkg.m4 $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
-CONFIG_CLEAN_FILES = src/libsodium/include/sodium/version.h \
+CONFIG_CLEAN_FILES = libsodium.pc \
+	src/libsodium/include/sodium/version.h \
 	src/libsodium/include/sodium/crypto_scalarmult_curve25519.h \
 	src/libsodium/include/sodium/crypto_stream_salsa20.h
 CONFIG_CLEAN_VPATH_FILES =
@@ -94,6 +97,35 @@ am__can_run_installinfo = \
     n|no|NO) false;; \
     *) (install-info --version) >/dev/null 2>&1;; \
   esac
+am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
+am__vpath_adj = case $$p in \
+    $(srcdir)/*) f=`echo "$$p" | sed "s|^$$srcdirstrip/||"`;; \
+    *) f=$$p;; \
+  esac;
+am__strip_dir = f=`echo $$p | sed -e 's|^.*/||'`;
+am__install_max = 40
+am__nobase_strip_setup = \
+  srcdirstrip=`echo "$(srcdir)" | sed 's/[].[^$$\\*|]/\\\\&/g'`
+am__nobase_strip = \
+  for p in $$list; do echo "$$p"; done | sed -e "s|$$srcdirstrip/||"
+am__nobase_list = $(am__nobase_strip_setup); \
+  for p in $$list; do echo "$$p $$p"; done | \
+  sed "s| $$srcdirstrip/| |;"' / .*\//!s/ .*/ ./; s,\( .*\)/[^/]*$$,\1,' | \
+  $(AWK) 'BEGIN { files["."] = "" } { files[$$2] = files[$$2] " " $$1; \
+    if (++n[$$2] == $(am__install_max)) \
+      { print $$2, files[$$2]; n[$$2] = 0; files[$$2] = "" } } \
+    END { for (dir in files) print dir, files[dir] }'
+am__base_list = \
+  sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | \
+  sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
+am__uninstall_files_from_dir = { \
+  test -z "$$files" \
+    || { test ! -d "$$dir" && test ! -f "$$dir" && test ! -r "$$dir"; } \
+    || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
+         $(am__cd) "$$dir" && rm -f $$files; }; \
+  }
+am__installdirs = "$(DESTDIR)$(pkgconfigdir)"
+DATA = $(pkgconfig_DATA)
 RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
   distclean-recursive maintainer-clean-recursive
 AM_RECURSIVE_TARGETS = $(RECURSIVE_TARGETS:-recursive=) \
@@ -142,26 +174,26 @@ distuninstallcheck_listfiles = find . -type f -print
 am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
   | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/missing --run aclocal-1.11
+ACLOCAL = ${SHELL} /home/vicente/tomato/release/src-rt/router/libsodium/missing --run aclocal-1.11
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
 AR = mipsel-uclibc-ar
 AS = mipsel-uclibc-as
-AUTOCONF = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/missing --run automake-1.11
+AUTOCONF = ${SHELL} /home/vicente/tomato/release/src-rt/router/libsodium/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/vicente/tomato/release/src-rt/router/libsodium/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/vicente/tomato/release/src-rt/router/libsodium/missing --run automake-1.11
 AWK = gawk
 CC = mipsel-uclibc-gcc -std=gnu99
 CCAS = mipsel-uclibc-gcc -std=gnu99
-CCASDEPMODE = depmode=none
-CCASFLAGS =  -g -O2 -fPIC -fPIE -fwrapv -fno-strict-aliasing -fno-strict-overflow -Winit-self -Wwrite-strings -Wdiv-by-zero
-CCDEPMODE = depmode=none
-CFLAGS =  -g -O2 -fPIC -fPIE -fwrapv -fno-strict-aliasing -fno-strict-overflow -Winit-self -Wwrite-strings -Wdiv-by-zero -fvisibility=hidden -fPIC -fPIE -fwrapv -fno-strict-aliasing -fno-strict-overflow -Winit-self -Wwrite-strings -Wdiv-by-zero
+CCASDEPMODE = depmode=gcc3
+CCASFLAGS = -g -O2
+CCDEPMODE = depmode=gcc3
+CFLAGS = -g -O2 -fvisibility=hidden -fPIC -fPIE -fwrapv -fno-strict-aliasing -fno-strict-overflow -Winit-self -Wwrite-strings -Wdiv-by-zero
 CPP = mipsel-uclibc-gcc -std=gnu99 -E
-CPPFLAGS =  -D_FORTIFY_SOURCE=2 -I/usr/local/include -D_FORTIFY_SOURCE=2 -I/usr/local/include
+CPPFLAGS =  -D_FORTIFY_SOURCE=2
 CWFLAGS =  -Wall -Wextra -Wbad-function-cast -Wcast-align -Wcast-qual -Wchar-subscripts -Wcomment -Wfloat-equal -Wformat=2 -Wimplicit -Wmissing-declarations -Wmissing-prototypes -Wnormalized=id -Woverride-init -Wparentheses -Wpointer-arith -Wredundant-decls -Wstrict-prototypes -Wswitch-enum
 CYGPATH_W = echo
-DEFS = -DPACKAGE_NAME=\"libsodium\" -DPACKAGE_TARNAME=\"libsodium\" -DPACKAGE_VERSION=\"0.4.1\" -DPACKAGE_STRING=\"libsodium\ 0.4.1\" -DPACKAGE_BUGREPORT=\"https://github.com/jedisct1/libsodium/issues\" -DPACKAGE_URL=\"https://github.com/jedisct1/libsodium\" -DPACKAGE=\"libsodium\" -DVERSION=\"0.4.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -D__EXTENSIONS__=1 -D_ALL_SOURCE=1 -D_GNU_SOURCE=1 -D_POSIX_PTHREAD_SEMANTICS=1 -D_TANDEM_SOURCE=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DNATIVE_LITTLE_ENDIAN=1
+DEFS = -DPACKAGE_NAME=\"libsodium\" -DPACKAGE_TARNAME=\"libsodium\" -DPACKAGE_VERSION=\"0.4.5\" -DPACKAGE_STRING=\"libsodium\ 0.4.5\" -DPACKAGE_BUGREPORT=\"https://github.com/jedisct1/libsodium/issues\" -DPACKAGE_URL=\"https://github.com/jedisct1/libsodium\" -DPACKAGE=\"libsodium\" -DVERSION=\"0.4.5\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -D__EXTENSIONS__=1 -D_ALL_SOURCE=1 -D_GNU_SOURCE=1 -D_POSIX_PTHREAD_SEMANTICS=1 -D_TANDEM_SOURCE=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DNATIVE_LITTLE_ENDIAN=1 -DCPU_ALIGNED_ACCESS_REQUIRED=1
 DEPDIR = .deps
 DLLTOOL = false
 DLL_VERSION = 4
@@ -176,25 +208,26 @@ FGREP = /bin/grep -F
 GREP = /bin/grep
 HAVE_AMD64_ASM_V = 0
 HAVE_CPUID_V = 0
+HAVE_PKG_CONFIG = 
 HAVE_TI_MODE_V = 0
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-ISODATE = 2013-10-29
+ISODATE = 2013-12-07
 LD = mipsel-uclibc-ld
-LDFLAGS =  -pie -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -L/usr/local/lib -pie -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -L/usr/local/lib
+LDFLAGS =  -pie -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack
 LIBOBJS = 
-LIBS = -ldl -ldl -lm 
+LIBS = 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBTOOL_DEPS = ./ltmain.sh
-LIBTOOL_EXTRA_FLAGS = -version-info 5:0:1
+LIBTOOL_EXTRA_FLAGS = -version-info 9:0:5
 LIPO = 
 LN_S = ln -s
 LTLIBOBJS = 
 MAINT = #
-MAKEINFO = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/vicente/tomato/release/src-rt/router/libsodium/missing --run makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /bin/mkdir -p
 NM = mipsel-uclibc-nm
@@ -206,25 +239,28 @@ OTOOL64 =
 PACKAGE = libsodium
 PACKAGE_BUGREPORT = https://github.com/jedisct1/libsodium/issues
 PACKAGE_NAME = libsodium
-PACKAGE_STRING = libsodium 0.4.1
+PACKAGE_STRING = libsodium 0.4.5
 PACKAGE_TARNAME = libsodium
 PACKAGE_URL = https://github.com/jedisct1/libsodium
-PACKAGE_VERSION = 0.4.1
+PACKAGE_VERSION = 0.4.5
 PATH_SEPARATOR = :
+PKG_CONFIG = /usr/bin/pkg-config
+PKG_CONFIG_LIBDIR = 
+PKG_CONFIG_PATH = 
 RANLIB = mipsel-uclibc-ranlib
 SAFECODE_HOME = 
 SED = /bin/sed
 SET_MAKE = 
 SHELL = /bin/sh
-SODIUM_LIBRARY_VERSION = 5:0:1
+SODIUM_LIBRARY_VERSION = 9:0:5
 SODIUM_LIBRARY_VERSION_MAJOR = 4
-SODIUM_LIBRARY_VERSION_MINOR = 1
+SODIUM_LIBRARY_VERSION_MINOR = 4
 STRIP = mipsel-uclibc-strip
-VERSION = 0.4.1
-abs_builddir = /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium
-abs_srcdir = /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium
-abs_top_builddir = /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium
-abs_top_srcdir = /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium
+VERSION = 0.4.5
+abs_builddir = /home/vicente/tomato/release/src-rt/router/libsodium
+abs_srcdir = /home/vicente/tomato/release/src-rt/router/libsodium
+abs_top_builddir = /home/vicente/tomato/release/src-rt/router/libsodium
+abs_top_srcdir = /home/vicente/tomato/release/src-rt/router/libsodium
 ac_ct_AR = 
 ac_ct_CC = 
 ac_ct_DUMPBIN = 
@@ -253,7 +289,7 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/install-sh
+install_sh = ${SHELL} /home/vicente/tomato/release/src-rt/router/libsodium/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -274,15 +310,22 @@ top_build_prefix =
 top_builddir = .
 top_srcdir = .
 ACLOCAL_AMFLAGS = -I m4
-AUTOMAKE_OPTIONS = gnu
 EXTRA_DIST = \
 	autogen.sh \
+	libsodium.sln \
+	libsodium.vcxproj \
+	libsodium.vcxproj.filters \
+	LICENSE \
+	README.markdown \
 	THANKS
 
 SUBDIRS = \
+	msvc-scripts \
 	src \
 	test
 
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = libsodium.pc
 all: all-recursive
 
 .SUFFIXES:
@@ -292,15 +335,15 @@ $(srcdir)/Makefile.in: # $(srcdir)/Makefile.am  $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
-	      echo ' cd $(srcdir) && $(AUTOMAKE) --gnu'; \
-	      $(am__cd) $(srcdir) && $(AUTOMAKE) --gnu \
+	      echo ' cd $(srcdir) && $(AUTOMAKE) --foreign'; \
+	      $(am__cd) $(srcdir) && $(AUTOMAKE) --foreign \
 		&& exit 0; \
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu Makefile
+	  $(AUTOMAKE) --foreign Makefile
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
@@ -320,6 +363,8 @@ $(top_srcdir)/configure: # $(am__configure_deps)
 $(ACLOCAL_M4): # $(am__aclocal_m4_deps)
 	$(am__cd) $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
 $(am__aclocal_m4_deps):
+libsodium.pc: $(top_builddir)/config.status $(srcdir)/libsodium.pc.in
+	cd $(top_builddir) && $(SHELL) ./config.status $@
 src/libsodium/include/sodium/version.h: $(top_builddir)/config.status $(top_srcdir)/src/libsodium/include/sodium/version.h.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 src/libsodium/include/sodium/crypto_scalarmult_curve25519.h: $(top_builddir)/config.status $(top_srcdir)/src/libsodium/include/sodium/crypto_scalarmult_curve25519.h.in
@@ -335,6 +380,27 @@ clean-libtool:
 
 distclean-libtool:
 	-rm -f libtool config.lt
+install-pkgconfigDATA: $(pkgconfig_DATA)
+	@$(NORMAL_INSTALL)
+	@list='$(pkgconfig_DATA)'; test -n "$(pkgconfigdir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(pkgconfigdir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(pkgconfigdir)" || exit 1; \
+	fi; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  echo "$$d$$p"; \
+	done | $(am__base_list) | \
+	while read files; do \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(pkgconfigdir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(pkgconfigdir)" || exit $$?; \
+	done
+
+uninstall-pkgconfigDATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(pkgconfig_DATA)'; test -n "$(pkgconfigdir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+	dir='$(DESTDIR)$(pkgconfigdir)'; $(am__uninstall_files_from_dir)
 
 # This directory's subdirectories are mostly independent; you can cd
 # into them and run `make' without going through this Makefile.
@@ -660,9 +726,12 @@ distcleancheck: distclean
 	       exit 1; } >&2
 check-am: all-am
 check: check-recursive
-all-am: Makefile
+all-am: Makefile $(DATA)
 installdirs: installdirs-recursive
 installdirs-am:
+	for dir in "$(DESTDIR)$(pkgconfigdir)"; do \
+	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+	done
 install: install-recursive
 install-exec: install-exec-recursive
 install-data: install-data-recursive
@@ -715,7 +784,7 @@ info: info-recursive
 
 info-am:
 
-install-data-am:
+install-data-am: install-pkgconfigDATA
 
 install-dvi: install-dvi-recursive
 
@@ -761,7 +830,7 @@ ps: ps-recursive
 
 ps-am:
 
-uninstall-am:
+uninstall-am: uninstall-pkgconfigDATA
 
 .MAKE: $(RECURSIVE_CLEAN_TARGETS) $(RECURSIVE_TARGETS) ctags-recursive \
 	install-am install-strip tags-recursive
@@ -776,11 +845,12 @@ uninstall-am:
 	install install-am install-data install-data-am install-dvi \
 	install-dvi-am install-exec install-exec-am install-html \
 	install-html-am install-info install-info-am install-man \
-	install-pdf install-pdf-am install-ps install-ps-am \
-	install-strip installcheck installcheck-am installdirs \
-	installdirs-am maintainer-clean maintainer-clean-generic \
-	mostlyclean mostlyclean-generic mostlyclean-libtool pdf pdf-am \
-	ps ps-am tags tags-recursive uninstall uninstall-am
+	install-pdf install-pdf-am install-pkgconfigDATA install-ps \
+	install-ps-am install-strip installcheck installcheck-am \
+	installdirs installdirs-am maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-generic \
+	mostlyclean-libtool pdf pdf-am ps ps-am tags tags-recursive \
+	uninstall uninstall-am uninstall-pkgconfigDATA
 
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.

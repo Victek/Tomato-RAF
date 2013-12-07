@@ -60,7 +60,7 @@ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_check_compile_flag.m4 \
 	$(top_srcdir)/m4/ld-output-def.m4 $(top_srcdir)/m4/libtool.m4 \
 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
 	$(top_srcdir)/m4/ltversion.m4 $(top_srcdir)/m4/lt~obsolete.m4 \
-	$(top_srcdir)/configure.ac
+	$(top_srcdir)/m4/pkg.m4 $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(install_sh) -d
@@ -74,11 +74,12 @@ am__EXEEXT_1 = auth$(EXEEXT) auth2$(EXEEXT) auth3$(EXEEXT) \
 	hash3$(EXEEXT) onetimeauth$(EXEEXT) onetimeauth2$(EXEEXT) \
 	onetimeauth7$(EXEEXT) randombytes$(EXEEXT) scalarmult$(EXEEXT) \
 	scalarmult2$(EXEEXT) scalarmult5$(EXEEXT) scalarmult6$(EXEEXT) \
-	secretbox$(EXEEXT) secretbox2$(EXEEXT) secretbox7$(EXEEXT) \
-	secretbox8$(EXEEXT) shorthash$(EXEEXT) sodium_core$(EXEEXT) \
-	sodium_utils$(EXEEXT) sodium_version$(EXEEXT) stream$(EXEEXT) \
-	stream2$(EXEEXT) stream3$(EXEEXT) stream4$(EXEEXT) \
-	stream5$(EXEEXT) stream6$(EXEEXT)
+	scalarmult7$(EXEEXT) scalarmult8$(EXEEXT) secretbox$(EXEEXT) \
+	secretbox2$(EXEEXT) secretbox7$(EXEEXT) secretbox8$(EXEEXT) \
+	shorthash$(EXEEXT) sodium_core$(EXEEXT) sodium_utils$(EXEEXT) \
+	sodium_version$(EXEEXT) stream$(EXEEXT) stream2$(EXEEXT) \
+	stream3$(EXEEXT) stream4$(EXEEXT) stream5$(EXEEXT) \
+	stream6$(EXEEXT)
 auth_SOURCES = auth.c
 auth_OBJECTS = auth.$(OBJEXT)
 auth_DEPENDENCIES = $(TESTS_LDADD)
@@ -160,6 +161,12 @@ scalarmult5_DEPENDENCIES = $(TESTS_LDADD)
 scalarmult6_SOURCES = scalarmult6.c
 scalarmult6_OBJECTS = scalarmult6.$(OBJEXT)
 scalarmult6_DEPENDENCIES = $(TESTS_LDADD)
+scalarmult7_SOURCES = scalarmult7.c
+scalarmult7_OBJECTS = scalarmult7.$(OBJEXT)
+scalarmult7_DEPENDENCIES = $(TESTS_LDADD)
+scalarmult8_SOURCES = scalarmult8.c
+scalarmult8_OBJECTS = scalarmult8.$(OBJEXT)
+scalarmult8_DEPENDENCIES = $(TESTS_LDADD)
 secretbox_SOURCES = secretbox.c
 secretbox_OBJECTS = secretbox.$(OBJEXT)
 secretbox_DEPENDENCIES = $(TESTS_LDADD)
@@ -232,18 +239,19 @@ SOURCES = auth.c auth2.c auth3.c auth5.c box.c box2.c box7.c box8.c \
 	core1.c core2.c core3.c core4.c core5.c core6.c generichash.c \
 	generichash2.c hash.c hash3.c onetimeauth.c onetimeauth2.c \
 	onetimeauth7.c randombytes.c scalarmult.c scalarmult2.c \
-	scalarmult5.c scalarmult6.c secretbox.c secretbox2.c \
-	secretbox7.c secretbox8.c shorthash.c sodium_core.c \
-	sodium_utils.c sodium_version.c stream.c stream2.c stream3.c \
-	stream4.c stream5.c stream6.c
+	scalarmult5.c scalarmult6.c scalarmult7.c scalarmult8.c \
+	secretbox.c secretbox2.c secretbox7.c secretbox8.c shorthash.c \
+	sodium_core.c sodium_utils.c sodium_version.c stream.c \
+	stream2.c stream3.c stream4.c stream5.c stream6.c
 DIST_SOURCES = auth.c auth2.c auth3.c auth5.c box.c box2.c box7.c \
 	box8.c core1.c core2.c core3.c core4.c core5.c core6.c \
 	generichash.c generichash2.c hash.c hash3.c onetimeauth.c \
 	onetimeauth2.c onetimeauth7.c randombytes.c scalarmult.c \
-	scalarmult2.c scalarmult5.c scalarmult6.c secretbox.c \
-	secretbox2.c secretbox7.c secretbox8.c shorthash.c \
-	sodium_core.c sodium_utils.c sodium_version.c stream.c \
-	stream2.c stream3.c stream4.c stream5.c stream6.c
+	scalarmult2.c scalarmult5.c scalarmult6.c scalarmult7.c \
+	scalarmult8.c secretbox.c secretbox2.c secretbox7.c \
+	secretbox8.c shorthash.c sodium_core.c sodium_utils.c \
+	sodium_version.c stream.c stream2.c stream3.c stream4.c \
+	stream5.c stream6.c
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -254,26 +262,26 @@ CTAGS = ctags
 am__tty_colors = \
 red=; grn=; lgn=; blu=; std=
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/missing --run aclocal-1.11
+ACLOCAL = ${SHELL} /home/vicente/tomato/release/src-rt/router/libsodium/missing --run aclocal-1.11
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
 AR = mipsel-uclibc-ar
 AS = mipsel-uclibc-as
-AUTOCONF = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/missing --run automake-1.11
+AUTOCONF = ${SHELL} /home/vicente/tomato/release/src-rt/router/libsodium/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/vicente/tomato/release/src-rt/router/libsodium/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/vicente/tomato/release/src-rt/router/libsodium/missing --run automake-1.11
 AWK = gawk
 CC = mipsel-uclibc-gcc -std=gnu99
 CCAS = mipsel-uclibc-gcc -std=gnu99
-CCASDEPMODE = depmode=none
-CCASFLAGS =  -g -O2 -fPIC -fPIE -fwrapv -fno-strict-aliasing -fno-strict-overflow -Winit-self -Wwrite-strings -Wdiv-by-zero
-CCDEPMODE = depmode=none
-CFLAGS =  -g -O2 -fPIC -fPIE -fwrapv -fno-strict-aliasing -fno-strict-overflow -Winit-self -Wwrite-strings -Wdiv-by-zero -fvisibility=hidden -fPIC -fPIE -fwrapv -fno-strict-aliasing -fno-strict-overflow -Winit-self -Wwrite-strings -Wdiv-by-zero
+CCASDEPMODE = depmode=gcc3
+CCASFLAGS = -g -O2
+CCDEPMODE = depmode=gcc3
+CFLAGS = -g -O2 -fvisibility=hidden -fPIC -fPIE -fwrapv -fno-strict-aliasing -fno-strict-overflow -Winit-self -Wwrite-strings -Wdiv-by-zero
 CPP = mipsel-uclibc-gcc -std=gnu99 -E
-CPPFLAGS =  -D_FORTIFY_SOURCE=2 -I/usr/local/include -D_FORTIFY_SOURCE=2 -I/usr/local/include
+CPPFLAGS =  -D_FORTIFY_SOURCE=2
 CWFLAGS =  -Wall -Wextra -Wbad-function-cast -Wcast-align -Wcast-qual -Wchar-subscripts -Wcomment -Wfloat-equal -Wformat=2 -Wimplicit -Wmissing-declarations -Wmissing-prototypes -Wnormalized=id -Woverride-init -Wparentheses -Wpointer-arith -Wredundant-decls -Wstrict-prototypes -Wswitch-enum
 CYGPATH_W = echo
-DEFS = -DPACKAGE_NAME=\"libsodium\" -DPACKAGE_TARNAME=\"libsodium\" -DPACKAGE_VERSION=\"0.4.1\" -DPACKAGE_STRING=\"libsodium\ 0.4.1\" -DPACKAGE_BUGREPORT=\"https://github.com/jedisct1/libsodium/issues\" -DPACKAGE_URL=\"https://github.com/jedisct1/libsodium\" -DPACKAGE=\"libsodium\" -DVERSION=\"0.4.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -D__EXTENSIONS__=1 -D_ALL_SOURCE=1 -D_GNU_SOURCE=1 -D_POSIX_PTHREAD_SEMANTICS=1 -D_TANDEM_SOURCE=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DNATIVE_LITTLE_ENDIAN=1
+DEFS = -DPACKAGE_NAME=\"libsodium\" -DPACKAGE_TARNAME=\"libsodium\" -DPACKAGE_VERSION=\"0.4.5\" -DPACKAGE_STRING=\"libsodium\ 0.4.5\" -DPACKAGE_BUGREPORT=\"https://github.com/jedisct1/libsodium/issues\" -DPACKAGE_URL=\"https://github.com/jedisct1/libsodium\" -DPACKAGE=\"libsodium\" -DVERSION=\"0.4.5\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -D__EXTENSIONS__=1 -D_ALL_SOURCE=1 -D_GNU_SOURCE=1 -D_POSIX_PTHREAD_SEMANTICS=1 -D_TANDEM_SOURCE=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DNATIVE_LITTLE_ENDIAN=1 -DCPU_ALIGNED_ACCESS_REQUIRED=1
 DEPDIR = .deps
 DLLTOOL = false
 DLL_VERSION = 4
@@ -288,25 +296,26 @@ FGREP = /bin/grep -F
 GREP = /bin/grep
 HAVE_AMD64_ASM_V = 0
 HAVE_CPUID_V = 0
+HAVE_PKG_CONFIG = 
 HAVE_TI_MODE_V = 0
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-ISODATE = 2013-10-29
+ISODATE = 2013-12-07
 LD = mipsel-uclibc-ld
-LDFLAGS =  -pie -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -L/usr/local/lib -pie -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -L/usr/local/lib
+LDFLAGS =  -pie -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack
 LIBOBJS = 
-LIBS = -ldl -ldl -lm 
+LIBS = 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBTOOL_DEPS = ./ltmain.sh
-LIBTOOL_EXTRA_FLAGS = -version-info 5:0:1
+LIBTOOL_EXTRA_FLAGS = -version-info 9:0:5
 LIPO = 
 LN_S = ln -s
 LTLIBOBJS = 
 MAINT = #
-MAKEINFO = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/vicente/tomato/release/src-rt/router/libsodium/missing --run makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /bin/mkdir -p
 NM = mipsel-uclibc-nm
@@ -318,25 +327,28 @@ OTOOL64 =
 PACKAGE = libsodium
 PACKAGE_BUGREPORT = https://github.com/jedisct1/libsodium/issues
 PACKAGE_NAME = libsodium
-PACKAGE_STRING = libsodium 0.4.1
+PACKAGE_STRING = libsodium 0.4.5
 PACKAGE_TARNAME = libsodium
 PACKAGE_URL = https://github.com/jedisct1/libsodium
-PACKAGE_VERSION = 0.4.1
+PACKAGE_VERSION = 0.4.5
 PATH_SEPARATOR = :
+PKG_CONFIG = /usr/bin/pkg-config
+PKG_CONFIG_LIBDIR = 
+PKG_CONFIG_PATH = 
 RANLIB = mipsel-uclibc-ranlib
 SAFECODE_HOME = 
 SED = /bin/sed
 SET_MAKE = 
 SHELL = /bin/sh
-SODIUM_LIBRARY_VERSION = 5:0:1
+SODIUM_LIBRARY_VERSION = 9:0:5
 SODIUM_LIBRARY_VERSION_MAJOR = 4
-SODIUM_LIBRARY_VERSION_MINOR = 1
+SODIUM_LIBRARY_VERSION_MINOR = 4
 STRIP = mipsel-uclibc-strip
-VERSION = 0.4.1
-abs_builddir = /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/test/default
-abs_srcdir = /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/test/default
-abs_top_builddir = /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium
-abs_top_srcdir = /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium
+VERSION = 0.4.5
+abs_builddir = /home/vicente/tomato/release/src-rt/router/libsodium/test/default
+abs_srcdir = /home/vicente/tomato/release/src-rt/router/libsodium/test/default
+abs_top_builddir = /home/vicente/tomato/release/src-rt/router/libsodium
+abs_top_srcdir = /home/vicente/tomato/release/src-rt/router/libsodium
 ac_ct_AR = 
 ac_ct_CC = 
 ac_ct_DUMPBIN = 
@@ -365,7 +377,7 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/install-sh
+install_sh = ${SHELL} /home/vicente/tomato/release/src-rt/router/libsodium/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -387,6 +399,7 @@ top_builddir = ../..
 top_srcdir = ../..
 EXTRA_DIST = \
 	cmptest.h \
+	wintest.bat \
 	auth.exp \
 	auth2.exp \
 	auth3.exp \
@@ -413,6 +426,8 @@ EXTRA_DIST = \
 	scalarmult2.exp \
 	scalarmult5.exp \
 	scalarmult6.exp \
+	scalarmult7.exp \
+	scalarmult8.exp \
 	secretbox.exp \
 	secretbox2.exp \
 	secretbox7.exp \
@@ -455,6 +470,8 @@ DISTCLEANFILES = \
 	scalarmult2.res \
 	scalarmult5.res \
 	scalarmult6.res \
+	scalarmult7.res \
+	scalarmult8.res \
 	secretbox.res \
 	secretbox2.res \
 	secretbox7.res \
@@ -505,6 +522,8 @@ TESTS_TARGETS = \
 	scalarmult2 \
 	scalarmult5 \
 	scalarmult6 \
+	scalarmult7 \
+	scalarmult8 \
 	secretbox \
 	secretbox2 \
 	secretbox7 \
@@ -575,6 +594,10 @@ scalarmult5_SOURCE = cmptest.h scalarmult5.c
 scalarmult5_LDADD = $(TESTS_LDADD)
 scalarmult6_SOURCE = cmptest.h scalarmult6.c
 scalarmult6_LDADD = $(TESTS_LDADD)
+scalarmult7_SOURCE = cmptest.h scalarmult7.c
+scalarmult7_LDADD = $(TESTS_LDADD)
+scalarmult8_SOURCE = cmptest.h scalarmult8.c
+scalarmult8_LDADD = $(TESTS_LDADD)
 secretbox_SOURCE = cmptest.h secretbox.c
 secretbox_LDADD = $(TESTS_LDADD)
 secretbox2_SOURCE = cmptest.h secretbox2.c
@@ -616,9 +639,9 @@ $(srcdir)/Makefile.in: # $(srcdir)/Makefile.am  $(am__configure_deps)
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu test/default/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign test/default/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu test/default/Makefile
+	  $(AUTOMAKE) --foreign test/default/Makefile
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
@@ -724,6 +747,12 @@ scalarmult5$(EXEEXT): $(scalarmult5_OBJECTS) $(scalarmult5_DEPENDENCIES) $(EXTRA
 scalarmult6$(EXEEXT): $(scalarmult6_OBJECTS) $(scalarmult6_DEPENDENCIES) $(EXTRA_scalarmult6_DEPENDENCIES) 
 	@rm -f scalarmult6$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(scalarmult6_OBJECTS) $(scalarmult6_LDADD) $(LIBS)
+scalarmult7$(EXEEXT): $(scalarmult7_OBJECTS) $(scalarmult7_DEPENDENCIES) $(EXTRA_scalarmult7_DEPENDENCIES) 
+	@rm -f scalarmult7$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(scalarmult7_OBJECTS) $(scalarmult7_LDADD) $(LIBS)
+scalarmult8$(EXEEXT): $(scalarmult8_OBJECTS) $(scalarmult8_DEPENDENCIES) $(EXTRA_scalarmult8_DEPENDENCIES) 
+	@rm -f scalarmult8$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(scalarmult8_OBJECTS) $(scalarmult8_LDADD) $(LIBS)
 secretbox$(EXEEXT): $(secretbox_OBJECTS) $(secretbox_DEPENDENCIES) $(EXTRA_secretbox_DEPENDENCIES) 
 	@rm -f secretbox$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(secretbox_OBJECTS) $(secretbox_LDADD) $(LIBS)
@@ -773,67 +802,72 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-#include ./$(DEPDIR)/auth.Po
-#include ./$(DEPDIR)/auth2.Po
-#include ./$(DEPDIR)/auth3.Po
-#include ./$(DEPDIR)/auth5.Po
-#include ./$(DEPDIR)/box.Po
-#include ./$(DEPDIR)/box2.Po
-#include ./$(DEPDIR)/box7.Po
-#include ./$(DEPDIR)/box8.Po
-#include ./$(DEPDIR)/core1.Po
-#include ./$(DEPDIR)/core2.Po
-#include ./$(DEPDIR)/core3.Po
-#include ./$(DEPDIR)/core4.Po
-#include ./$(DEPDIR)/core5.Po
-#include ./$(DEPDIR)/core6.Po
-#include ./$(DEPDIR)/generichash.Po
-#include ./$(DEPDIR)/generichash2.Po
-#include ./$(DEPDIR)/hash.Po
-#include ./$(DEPDIR)/hash3.Po
-#include ./$(DEPDIR)/onetimeauth.Po
-#include ./$(DEPDIR)/onetimeauth2.Po
-#include ./$(DEPDIR)/onetimeauth7.Po
-#include ./$(DEPDIR)/randombytes.Po
-#include ./$(DEPDIR)/scalarmult.Po
-#include ./$(DEPDIR)/scalarmult2.Po
-#include ./$(DEPDIR)/scalarmult5.Po
-#include ./$(DEPDIR)/scalarmult6.Po
-#include ./$(DEPDIR)/secretbox.Po
-#include ./$(DEPDIR)/secretbox2.Po
-#include ./$(DEPDIR)/secretbox7.Po
-#include ./$(DEPDIR)/secretbox8.Po
-#include ./$(DEPDIR)/shorthash.Po
-#include ./$(DEPDIR)/sodium_core.Po
-#include ./$(DEPDIR)/sodium_utils.Po
-#include ./$(DEPDIR)/sodium_version.Po
-#include ./$(DEPDIR)/stream.Po
-#include ./$(DEPDIR)/stream2.Po
-#include ./$(DEPDIR)/stream3.Po
-#include ./$(DEPDIR)/stream4.Po
-#include ./$(DEPDIR)/stream5.Po
-#include ./$(DEPDIR)/stream6.Po
+include ./$(DEPDIR)/auth.Po
+include ./$(DEPDIR)/auth2.Po
+include ./$(DEPDIR)/auth3.Po
+include ./$(DEPDIR)/auth5.Po
+include ./$(DEPDIR)/box.Po
+include ./$(DEPDIR)/box2.Po
+include ./$(DEPDIR)/box7.Po
+include ./$(DEPDIR)/box8.Po
+include ./$(DEPDIR)/core1.Po
+include ./$(DEPDIR)/core2.Po
+include ./$(DEPDIR)/core3.Po
+include ./$(DEPDIR)/core4.Po
+include ./$(DEPDIR)/core5.Po
+include ./$(DEPDIR)/core6.Po
+include ./$(DEPDIR)/generichash.Po
+include ./$(DEPDIR)/generichash2.Po
+include ./$(DEPDIR)/hash.Po
+include ./$(DEPDIR)/hash3.Po
+include ./$(DEPDIR)/onetimeauth.Po
+include ./$(DEPDIR)/onetimeauth2.Po
+include ./$(DEPDIR)/onetimeauth7.Po
+include ./$(DEPDIR)/randombytes.Po
+include ./$(DEPDIR)/scalarmult.Po
+include ./$(DEPDIR)/scalarmult2.Po
+include ./$(DEPDIR)/scalarmult5.Po
+include ./$(DEPDIR)/scalarmult6.Po
+include ./$(DEPDIR)/scalarmult7.Po
+include ./$(DEPDIR)/scalarmult8.Po
+include ./$(DEPDIR)/secretbox.Po
+include ./$(DEPDIR)/secretbox2.Po
+include ./$(DEPDIR)/secretbox7.Po
+include ./$(DEPDIR)/secretbox8.Po
+include ./$(DEPDIR)/shorthash.Po
+include ./$(DEPDIR)/sodium_core.Po
+include ./$(DEPDIR)/sodium_utils.Po
+include ./$(DEPDIR)/sodium_version.Po
+include ./$(DEPDIR)/stream.Po
+include ./$(DEPDIR)/stream2.Po
+include ./$(DEPDIR)/stream3.Po
+include ./$(DEPDIR)/stream4.Po
+include ./$(DEPDIR)/stream5.Po
+include ./$(DEPDIR)/stream6.Po
 
 .c.o:
-#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	$(AM_V_CC)source='$<' object='$@' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(COMPILE) -c $<
+	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
+	$(COMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
+	$(am__mv) $$depbase.Tpo $$depbase.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c -o $@ $<
 
 .c.obj:
-#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	$(AM_V_CC)source='$<' object='$@' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(COMPILE) -c `$(CYGPATH_W) '$<'`
+	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.obj$$||'`;\
+	$(COMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ `$(CYGPATH_W) '$<'` &&\
+	$(am__mv) $$depbase.Tpo $$depbase.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
 
 .c.lo:
-#	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
-#	$(AM_V_CC)source='$<' object='$@' libtool=yes 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(LTCOMPILE) -c -o $@ $<
+	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.lo$$||'`;\
+	$(LTCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
+	$(am__mv) $$depbase.Tpo $$depbase.Plo
+#	$(AM_V_CC)source='$<' object='$@' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
 
 mostlyclean-libtool:
 	-rm -f *.lo

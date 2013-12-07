@@ -60,7 +60,7 @@ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_check_compile_flag.m4 \
 	$(top_srcdir)/m4/ld-output-def.m4 $(top_srcdir)/m4/libtool.m4 \
 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
 	$(top_srcdir)/m4/ltversion.m4 $(top_srcdir)/m4/lt~obsolete.m4 \
-	$(top_srcdir)/configure.ac
+	$(top_srcdir)/m4/pkg.m4 $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(install_sh) -d
@@ -106,31 +106,31 @@ am__uninstall_files_from_dir = { \
     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
-am__installdirs = "$(DESTDIR)$(includedir)"
-HEADERS = $(nobase_include_HEADERS)
+am__installdirs = "$(DESTDIR)$(includedir)" "$(DESTDIR)$(includedir)"
+HEADERS = $(nobase_include_HEADERS) $(nobase_nodist_include_HEADERS)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/missing --run aclocal-1.11
+ACLOCAL = ${SHELL} /home/vicente/tomato/release/src-rt/router/libsodium/missing --run aclocal-1.11
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
 AR = mipsel-uclibc-ar
 AS = mipsel-uclibc-as
-AUTOCONF = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/missing --run automake-1.11
+AUTOCONF = ${SHELL} /home/vicente/tomato/release/src-rt/router/libsodium/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/vicente/tomato/release/src-rt/router/libsodium/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/vicente/tomato/release/src-rt/router/libsodium/missing --run automake-1.11
 AWK = gawk
 CC = mipsel-uclibc-gcc -std=gnu99
 CCAS = mipsel-uclibc-gcc -std=gnu99
-CCASDEPMODE = depmode=none
-CCASFLAGS =  -g -O2 -fPIC -fPIE -fwrapv -fno-strict-aliasing -fno-strict-overflow -Winit-self -Wwrite-strings -Wdiv-by-zero
-CCDEPMODE = depmode=none
-CFLAGS =  -g -O2 -fPIC -fPIE -fwrapv -fno-strict-aliasing -fno-strict-overflow -Winit-self -Wwrite-strings -Wdiv-by-zero -fvisibility=hidden -fPIC -fPIE -fwrapv -fno-strict-aliasing -fno-strict-overflow -Winit-self -Wwrite-strings -Wdiv-by-zero
+CCASDEPMODE = depmode=gcc3
+CCASFLAGS = -g -O2
+CCDEPMODE = depmode=gcc3
+CFLAGS = -g -O2 -fvisibility=hidden -fPIC -fPIE -fwrapv -fno-strict-aliasing -fno-strict-overflow -Winit-self -Wwrite-strings -Wdiv-by-zero
 CPP = mipsel-uclibc-gcc -std=gnu99 -E
-CPPFLAGS =  -D_FORTIFY_SOURCE=2 -I/usr/local/include -D_FORTIFY_SOURCE=2 -I/usr/local/include
+CPPFLAGS =  -D_FORTIFY_SOURCE=2
 CWFLAGS =  -Wall -Wextra -Wbad-function-cast -Wcast-align -Wcast-qual -Wchar-subscripts -Wcomment -Wfloat-equal -Wformat=2 -Wimplicit -Wmissing-declarations -Wmissing-prototypes -Wnormalized=id -Woverride-init -Wparentheses -Wpointer-arith -Wredundant-decls -Wstrict-prototypes -Wswitch-enum
 CYGPATH_W = echo
-DEFS = -DPACKAGE_NAME=\"libsodium\" -DPACKAGE_TARNAME=\"libsodium\" -DPACKAGE_VERSION=\"0.4.1\" -DPACKAGE_STRING=\"libsodium\ 0.4.1\" -DPACKAGE_BUGREPORT=\"https://github.com/jedisct1/libsodium/issues\" -DPACKAGE_URL=\"https://github.com/jedisct1/libsodium\" -DPACKAGE=\"libsodium\" -DVERSION=\"0.4.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -D__EXTENSIONS__=1 -D_ALL_SOURCE=1 -D_GNU_SOURCE=1 -D_POSIX_PTHREAD_SEMANTICS=1 -D_TANDEM_SOURCE=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DNATIVE_LITTLE_ENDIAN=1
+DEFS = -DPACKAGE_NAME=\"libsodium\" -DPACKAGE_TARNAME=\"libsodium\" -DPACKAGE_VERSION=\"0.4.5\" -DPACKAGE_STRING=\"libsodium\ 0.4.5\" -DPACKAGE_BUGREPORT=\"https://github.com/jedisct1/libsodium/issues\" -DPACKAGE_URL=\"https://github.com/jedisct1/libsodium\" -DPACKAGE=\"libsodium\" -DVERSION=\"0.4.5\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -D__EXTENSIONS__=1 -D_ALL_SOURCE=1 -D_GNU_SOURCE=1 -D_POSIX_PTHREAD_SEMANTICS=1 -D_TANDEM_SOURCE=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DNATIVE_LITTLE_ENDIAN=1 -DCPU_ALIGNED_ACCESS_REQUIRED=1
 DEPDIR = .deps
 DLLTOOL = false
 DLL_VERSION = 4
@@ -145,25 +145,26 @@ FGREP = /bin/grep -F
 GREP = /bin/grep
 HAVE_AMD64_ASM_V = 0
 HAVE_CPUID_V = 0
+HAVE_PKG_CONFIG = 
 HAVE_TI_MODE_V = 0
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-ISODATE = 2013-10-29
+ISODATE = 2013-12-07
 LD = mipsel-uclibc-ld
-LDFLAGS =  -pie -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -L/usr/local/lib -pie -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -L/usr/local/lib
+LDFLAGS =  -pie -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack
 LIBOBJS = 
-LIBS = -ldl -ldl -lm 
+LIBS = 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBTOOL_DEPS = ./ltmain.sh
-LIBTOOL_EXTRA_FLAGS = -version-info 5:0:1
+LIBTOOL_EXTRA_FLAGS = -version-info 9:0:5
 LIPO = 
 LN_S = ln -s
 LTLIBOBJS = 
 MAINT = #
-MAKEINFO = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/vicente/tomato/release/src-rt/router/libsodium/missing --run makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /bin/mkdir -p
 NM = mipsel-uclibc-nm
@@ -175,25 +176,28 @@ OTOOL64 =
 PACKAGE = libsodium
 PACKAGE_BUGREPORT = https://github.com/jedisct1/libsodium/issues
 PACKAGE_NAME = libsodium
-PACKAGE_STRING = libsodium 0.4.1
+PACKAGE_STRING = libsodium 0.4.5
 PACKAGE_TARNAME = libsodium
 PACKAGE_URL = https://github.com/jedisct1/libsodium
-PACKAGE_VERSION = 0.4.1
+PACKAGE_VERSION = 0.4.5
 PATH_SEPARATOR = :
+PKG_CONFIG = /usr/bin/pkg-config
+PKG_CONFIG_LIBDIR = 
+PKG_CONFIG_PATH = 
 RANLIB = mipsel-uclibc-ranlib
 SAFECODE_HOME = 
 SED = /bin/sed
 SET_MAKE = 
 SHELL = /bin/sh
-SODIUM_LIBRARY_VERSION = 5:0:1
+SODIUM_LIBRARY_VERSION = 9:0:5
 SODIUM_LIBRARY_VERSION_MAJOR = 4
-SODIUM_LIBRARY_VERSION_MINOR = 1
+SODIUM_LIBRARY_VERSION_MINOR = 4
 STRIP = mipsel-uclibc-strip
-VERSION = 0.4.1
-abs_builddir = /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/src/libsodium/include
-abs_srcdir = /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/src/libsodium/include
-abs_top_builddir = /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium
-abs_top_srcdir = /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium
+VERSION = 0.4.5
+abs_builddir = /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include
+abs_srcdir = /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include
+abs_top_builddir = /home/vicente/tomato/release/src-rt/router/libsodium
+abs_top_srcdir = /home/vicente/tomato/release/src-rt/router/libsodium
 ac_ct_AR = 
 ac_ct_CC = 
 ac_ct_DUMPBIN = 
@@ -222,7 +226,7 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libsodium/install-sh
+install_sh = ${SHELL} /home/vicente/tomato/release/src-rt/router/libsodium/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -264,9 +268,8 @@ SODIUM_EXPORT = \
 	sodium/crypto_onetimeauth.h \
 	sodium/crypto_onetimeauth_poly1305.h \
 	sodium/crypto_onetimeauth_poly1305_53.h \
-	sodium/crypto_onetimeauth_poly1305_ref.h \
+	sodium/crypto_onetimeauth_poly1305_donna.h \
 	sodium/crypto_scalarmult.h \
-	sodium/crypto_scalarmult_curve25519.h \
 	sodium/crypto_secretbox.h \
 	sodium/crypto_secretbox_xsalsa20poly1305.h \
 	sodium/crypto_shorthash.h \
@@ -277,7 +280,6 @@ SODIUM_EXPORT = \
 	sodium/crypto_stream.h \
 	sodium/crypto_stream_aes128ctr.h \
 	sodium/crypto_stream_aes256estream.h \
-	sodium/crypto_stream_salsa20.h \
 	sodium/crypto_stream_salsa2012.h \
 	sodium/crypto_stream_salsa208.h \
 	sodium/crypto_stream_xsalsa20.h \
@@ -293,8 +295,7 @@ SODIUM_EXPORT = \
 	sodium/randombytes.h \
 	sodium/randombytes_salsa20_random.h \
 	sodium/randombytes_sysrandom.h \
-	sodium/utils.h \
-	sodium/version.h
+	sodium/utils.h
 
 EXTRA_SRC = $(SODIUM_EXPORT) \
 	sodium/crypto_scalarmult_curve25519.h.in \
@@ -302,6 +303,11 @@ EXTRA_SRC = $(SODIUM_EXPORT) \
 	sodium/version.h.in
 
 nobase_include_HEADERS = $(SODIUM_EXPORT)
+nobase_nodist_include_HEADERS = \
+	sodium/crypto_scalarmult_curve25519.h \
+	sodium/crypto_stream_salsa20.h \
+	sodium/version.h
+
 all: all-am
 
 .SUFFIXES:
@@ -314,9 +320,9 @@ $(srcdir)/Makefile.in: # $(srcdir)/Makefile.am  $(am__configure_deps)
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu src/libsodium/include/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/libsodium/include/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu src/libsodium/include/Makefile
+	  $(AUTOMAKE) --foreign src/libsodium/include/Makefile
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
@@ -363,6 +369,30 @@ install-nobase_includeHEADERS: $(nobase_include_HEADERS)
 uninstall-nobase_includeHEADERS:
 	@$(NORMAL_UNINSTALL)
 	@list='$(nobase_include_HEADERS)'; test -n "$(includedir)" || list=; \
+	$(am__nobase_strip_setup); files=`$(am__nobase_strip)`; \
+	dir='$(DESTDIR)$(includedir)'; $(am__uninstall_files_from_dir)
+install-nobase_nodist_includeHEADERS: $(nobase_nodist_include_HEADERS)
+	@$(NORMAL_INSTALL)
+	@list='$(nobase_nodist_include_HEADERS)'; test -n "$(includedir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(includedir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(includedir)" || exit 1; \
+	fi; \
+	$(am__nobase_list) | while read dir files; do \
+	  xfiles=; for file in $$files; do \
+	    if test -f "$$file"; then xfiles="$$xfiles $$file"; \
+	    else xfiles="$$xfiles $(srcdir)/$$file"; fi; done; \
+	  test -z "$$xfiles" || { \
+	    test "x$$dir" = x. || { \
+	      echo " $(MKDIR_P) '$(DESTDIR)$(includedir)/$$dir'"; \
+	      $(MKDIR_P) "$(DESTDIR)$(includedir)/$$dir"; }; \
+	    echo " $(INSTALL_HEADER) $$xfiles '$(DESTDIR)$(includedir)/$$dir'"; \
+	    $(INSTALL_HEADER) $$xfiles "$(DESTDIR)$(includedir)/$$dir" || exit $$?; }; \
+	done
+
+uninstall-nobase_nodist_includeHEADERS:
+	@$(NORMAL_UNINSTALL)
+	@list='$(nobase_nodist_include_HEADERS)'; test -n "$(includedir)" || list=; \
 	$(am__nobase_strip_setup); files=`$(am__nobase_strip)`; \
 	dir='$(DESTDIR)$(includedir)'; $(am__uninstall_files_from_dir)
 
@@ -452,7 +482,7 @@ check-am: all-am
 check: check-am
 all-am: Makefile $(HEADERS)
 installdirs:
-	for dir in "$(DESTDIR)$(includedir)"; do \
+	for dir in "$(DESTDIR)$(includedir)" "$(DESTDIR)$(includedir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-am
@@ -505,7 +535,8 @@ info: info-am
 
 info-am:
 
-install-data-am: install-nobase_includeHEADERS
+install-data-am: install-nobase_includeHEADERS \
+	install-nobase_nodist_includeHEADERS
 
 install-dvi: install-dvi-am
 
@@ -549,7 +580,8 @@ ps: ps-am
 
 ps-am:
 
-uninstall-am: uninstall-nobase_includeHEADERS
+uninstall-am: uninstall-nobase_includeHEADERS \
+	uninstall-nobase_nodist_includeHEADERS
 
 .MAKE: install-am install-strip
 
@@ -560,11 +592,13 @@ uninstall-am: uninstall-nobase_includeHEADERS
 	install-data-am install-dvi install-dvi-am install-exec \
 	install-exec-am install-html install-html-am install-info \
 	install-info-am install-man install-nobase_includeHEADERS \
-	install-pdf install-pdf-am install-ps install-ps-am \
-	install-strip installcheck installcheck-am installdirs \
-	maintainer-clean maintainer-clean-generic mostlyclean \
-	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
-	tags uninstall uninstall-am uninstall-nobase_includeHEADERS
+	install-nobase_nodist_includeHEADERS install-pdf \
+	install-pdf-am install-ps install-ps-am install-strip \
+	installcheck installcheck-am installdirs maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-generic \
+	mostlyclean-libtool pdf pdf-am ps ps-am tags uninstall \
+	uninstall-am uninstall-nobase_includeHEADERS \
+	uninstall-nobase_nodist_includeHEADERS
 
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.

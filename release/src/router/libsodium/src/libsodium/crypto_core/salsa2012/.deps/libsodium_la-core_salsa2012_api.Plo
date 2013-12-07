@@ -1,0 +1,12 @@
+crypto_core/salsa2012/libsodium_la-core_salsa2012_api.lo \
+  crypto_core/salsa2012/libsodium_la-core_salsa2012_api.o:  \
+ crypto_core/salsa2012/core_salsa2012_api.c \
+  include/sodium/crypto_core_salsa2012.h \
+  /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/include/stddef.h \
+  include/sodium/export.h
+
+include/sodium/crypto_core_salsa2012.h:
+
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/include/stddef.h:
+
+include/sodium/export.h:
