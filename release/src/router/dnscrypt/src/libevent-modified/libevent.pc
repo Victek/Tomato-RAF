@@ -11,6 +11,6 @@ Version: 2.0.21-stable-dev
 Requires:
 Conflicts:
 Libs: -L${libdir} -levent
-Libs.private: -ldl -ldl -lm 
+Libs.private: -ldl -lsodium -ldl -lm 
 Cflags: -I${includedir}
 

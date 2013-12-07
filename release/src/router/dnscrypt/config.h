@@ -71,6 +71,9 @@
 /* Define to 1 if you have the `getpwnam' function. */
 #define HAVE_GETPWNAM 1
 
+/* Define to 1 if you have the `gmtime_r' function. */
+#define HAVE_GMTIME_R 1
+
 /* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1
 
@@ -176,6 +179,9 @@
 /* This value is set to 1 to indicate that the system argz facility works */
 /* #undef HAVE_WORKING_ARGZ */
 
+/* Define to 1 if you have the <ws2tcpip.h> header file. */
+/* #undef HAVE_WS2TCPIP_H */
+
 /* define if you have __ss_family */
 /* #undef HAVE___SS_FAMILY */
 
@@ -186,7 +192,7 @@
 /* #undef LTDL_DLOPEN_DEPLIBS */
 
 /* Define to the system default library search path. */
-#define LT_DLSEARCH_PATH "/lib:/usr/lib:/usr/lib/i386-linux-gnu/mesa:/lib/i386-linux-gnu:/usr/lib/i386-linux-gnu:/lib/i686-linux-gnu:/usr/lib/i686-linux-gnu:/usr/local/lib:/usr/lib/nvidia-settings-304:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu/mesa-egl:/usr/lib/x86_64-linux-gnu/mesa:/lib32:/usr/lib32:/libx32:/usr/libx32"
+#define LT_DLSEARCH_PATH "/lib:/usr/lib:/lib/i386-linux-gnu:/usr/lib/i386-linux-gnu:/lib/i686-linux-gnu:/usr/lib/i686-linux-gnu:/usr/local/lib:/usr/lib/nvidia-settings:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu/mesa-egl:/usr/lib/x86_64-linux-gnu/mesa:/lib32:/usr/lib32:/libx32:/usr/libx32"
 
 /* The archive extension */
 #define LT_LIBEXT "a"
@@ -226,7 +232,7 @@
 #define PACKAGE_NAME "dnscrypt-proxy"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "dnscrypt-proxy 1.3.0"
+#define PACKAGE_STRING "dnscrypt-proxy 1.3.3"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "dnscrypt-proxy"
@@ -235,7 +241,7 @@
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "1.3.0"
+#define PACKAGE_VERSION "1.3.3"
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1
@@ -269,7 +275,7 @@
 
 
 /* Version number of package */
-#define VERSION "1.3.0"
+#define VERSION "1.3.3"
 
 /* Define WORDS_BIGENDIAN to 1 if your processor stores words with the most
    significant byte first (like Motorola and SPARC, unlike Intel). */

@@ -52,23 +52,14 @@ POST_UNINSTALL = :
 build_triplet = x86_64-pc-linux-gnu
 host_triplet = mipsel-unknown-linux-gnu
 sbin_PROGRAMS = dnscrypt-proxy$(EXEEXT)
-am__append_1 = \
-	-I../libsodium/src/libsodium/include
-
-am__append_2 = \
-	../libsodium/src/libsodium/libsodium.la
-
-am__append_3 = \
-	../libsodium/src/libsodium/libsodium.la
-
-#am__append_4 = \
+#am__append_1 = \
 #	$(LTDLINCL) \
 #	-I../include \
 #	-DPLUGINS_ROOT=\"$(pkglibdir)/\"
 
-#am__append_5 = $(LIBLTDL)
-#am__append_6 = $(LTDLDEPS)
-#am__append_7 = \
+#am__append_2 = $(LIBLTDL)
+#am__append_3 = $(LTDLDEPS)
+#am__append_4 = \
 #	plugin_options.c \
 #	plugin_options.h \
 #	plugin_support.c \
@@ -148,9 +139,9 @@ AUTOMAKE = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/libltdl/
 AWK = gawk
 CC = mipsel-uclibc-gcc -std=gnu99
 CCDEPMODE = depmode=gcc3
-CFLAGS =  -g -O2 -fPIC -fPIE -fwrapv -fno-strict-aliasing -fno-strict-overflow -Winit-self -Wwrite-strings -Wdiv-by-zero
+CFLAGS =  -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2 -ffunction-sections -fdata-sections -fPIC -fPIE -fwrapv -fno-strict-aliasing -fno-strict-overflow -Winit-self -Wwrite-strings -Wdiv-by-zero
 CPP = mipsel-uclibc-gcc -std=gnu99 -E
-CPPFLAGS =  -D_FORTIFY_SOURCE=2 -I/usr/local/include
+CPPFLAGS = -I/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include -D_FORTIFY_SOURCE=2 -I/usr/local/include
 CWFLAGS =  -Wall -Wextra -Wbad-function-cast -Wcast-align -Wcast-qual -Wchar-subscripts -Wcomment -Wfloat-equal -Wformat=2 -Wimplicit -Wmissing-declarations -Wmissing-prototypes -Wnormalized=id -Woverride-init -Wparentheses -Wpointer-arith -Wredundant-decls -Wstrict-prototypes -Wswitch-enum
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
@@ -172,9 +163,9 @@ INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-ISODATE = 2013-10-29
+ISODATE = 2013-12-07
 LD = mipsel-uclibc-ld
-LDFLAGS =  -pie -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -L/usr/local/lib
+LDFLAGS = -ffunction-sections -fdata-sections -Wl,--gc-sections -L/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/.libs -pie -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -L/usr/local/lib
 LDNS_LIBS = 
 LIBADD_DL = -ldl 
 LIBADD_DLD_LINK = 
@@ -182,7 +173,7 @@ LIBADD_DLOPEN = -ldl
 LIBADD_SHL_LOAD = 
 LIBLTDL = ${top_build_prefix}libltdl/libltdlc.la
 LIBOBJS = 
-LIBS = -ldl -ldl -lm 
+LIBS = -ldl -lsodium -ldl -lm 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBTOOL_DEPS = libltdl/config/ltmain.sh
 LIPO = 
@@ -207,10 +198,10 @@ OTOOL64 =
 PACKAGE = dnscrypt-proxy
 PACKAGE_BUGREPORT = http://dnscrypt.org
 PACKAGE_NAME = dnscrypt-proxy
-PACKAGE_STRING = dnscrypt-proxy 1.3.0
+PACKAGE_STRING = dnscrypt-proxy 1.3.3
 PACKAGE_TARNAME = dnscrypt-proxy
 PACKAGE_URL = 
-PACKAGE_VERSION = 1.3.0
+PACKAGE_VERSION = 1.3.3
 PATH_SEPARATOR = :
 PROBES_SOURCE = probes_no_dtrace.h
 RANLIB = mipsel-uclibc-ranlib
@@ -221,7 +212,7 @@ SET_MAKE =
 SHELL = /bin/sh
 SIXJACK = #
 STRIP = mipsel-uclibc-strip
-VERSION = 1.3.0
+VERSION = 1.3.3
 abs_builddir = /home/vicente/tomato/release/src-rt/router/dnscrypt/src/proxy
 abs_srcdir = /home/vicente/tomato/release/src-rt/router/dnscrypt/src/proxy
 abs_top_builddir = /home/vicente/tomato/release/src-rt/router/dnscrypt
@@ -271,7 +262,7 @@ psdir = ${docdir}
 sbindir = ${exec_prefix}/sbin
 sharedstatedir = ${prefix}/com
 srcdir = .
-subdirs =  src/libevent-modified src/libsodium libltdl
+subdirs =  src/libevent-modified libltdl
 sys_symbol_underscore = no
 sysconfdir = ${prefix}/etc
 target_alias = 
@@ -286,16 +277,13 @@ dnscrypt_proxy_SOURCES = app.c app.h cert.c cert.h cert_p.h dnscrypt.c \
 	sandboxes.c sandboxes.h stack_trace.c stack_trace.h \
 	tcp_request.c tcp_request.h tcp_request_p.h udp_request.c \
 	udp_request.h udp_request_p.h utils.c utils.h \
-	windows_service.c windows_service.h $(am__append_7)
+	windows_service.c windows_service.h $(am__append_4)
 AM_CFLAGS =  -Wall -Wextra -Wbad-function-cast -Wcast-align -Wcast-qual -Wchar-subscripts -Wcomment -Wfloat-equal -Wformat=2 -Wimplicit -Wmissing-declarations -Wmissing-prototypes -Wnormalized=id -Woverride-init -Wparentheses -Wpointer-arith -Wredundant-decls -Wstrict-prototypes -Wswitch-enum
-AM_CPPFLAGS = -I../ext -I../libevent-modified/include $(am__append_1) \
-	$(am__append_4)
+AM_CPPFLAGS = -I../ext -I../libevent-modified/include $(am__append_1)
 dnscrypt_proxy_LDADD = ../libevent-modified/libevent_extra.la \
-	../libevent-modified/libevent_core.la $(am__append_2) \
-	$(am__append_5)
+	../libevent-modified/libevent_core.la $(am__append_2)
 dnscrypt_proxy_DEPENDENCIES = ../libevent-modified/libevent_extra.la \
-	../libevent-modified/libevent_core.la $(am__append_3) \
-	$(am__append_6)
+	../libevent-modified/libevent_core.la $(am__append_3)
 BUILT_SOURCES = \
 	probes.h
 
@@ -413,22 +401,25 @@ include ./$(DEPDIR)/utils.Po
 include ./$(DEPDIR)/windows_service.Po
 
 .c.o:
-	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+	depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
+	$(COMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
+	$(am__mv) $$depbase.Tpo $$depbase.Po
 #	source='$<' object='$@' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(COMPILE) -c $<
+#	$(COMPILE) -c -o $@ $<
 
 .c.obj:
-	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+	depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.obj$$||'`;\
+	$(COMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ `$(CYGPATH_W) '$<'` &&\
+	$(am__mv) $$depbase.Tpo $$depbase.Po
 #	source='$<' object='$@' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(COMPILE) -c `$(CYGPATH_W) '$<'`
+#	$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
 
 .c.lo:
-	$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+	depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.lo$$||'`;\
+	$(LTCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
+	$(am__mv) $$depbase.Tpo $$depbase.Plo
 #	source='$<' object='$@' libtool=yes \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
 #	$(LTCOMPILE) -c -o $@ $<

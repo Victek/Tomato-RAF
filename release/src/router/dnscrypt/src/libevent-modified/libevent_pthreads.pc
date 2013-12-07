@@ -11,6 +11,6 @@ Version: 2.0.21-stable-dev
 Requires: libevent
 Conflicts:
 Libs: -L${libdir} -levent_pthreads
-Libs.private: -ldl -ldl -lm  
+Libs.private: -ldl -lsodium -ldl -lm  
 Cflags: -I${includedir} 
 

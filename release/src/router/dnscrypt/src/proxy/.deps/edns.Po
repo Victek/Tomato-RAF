@@ -27,7 +27,9 @@ edns.o edns.o: edns.c ../../config.h \
   /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/sys-include/bits/waitstatus.h \
   /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/sys-include/alloca.h \
   /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/sys-include/string.h \
-  dnscrypt_proxy.h ../libevent-modified/include/event2/event.h \
+  dnscrypt_proxy.h \
+  /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_clk_tck.h \
+  ../libevent-modified/include/event2/event.h \
   ../libevent-modified/include/event2/event-config.h \
   /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/sys-include/sys/time.h \
   /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/sys-include/stdio.h \
@@ -36,7 +38,6 @@ edns.o edns.o: edns.c ../../config.h \
   /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_mutex.h \
   /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/sys-include/pthread.h \
   /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/sys-include/sched.h \
-  /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_clk_tck.h \
   /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/sys-include/signal.h \
   /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/sys-include/bits/initspin.h \
   /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/sys-include/bits/sigthread.h \
@@ -71,61 +72,61 @@ edns.o edns.o: edns.c ../../config.h \
   /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/sys-include/bits/netdb.h \
   ../libevent-modified/include/event2/listener.h app.h cert.h \
   ../libevent-modified/include/event2/dns.h dnscrypt_client.h dnscrypt.h \
-  ../libsodium/src/libsodium/include/sodium.h \
-  ../libsodium/src/libsodium/include/sodium/core.h \
-  ../libsodium/src/libsodium/include/sodium/export.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_auth.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_auth_hmacsha512256.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_auth_hmacsha256.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_auth_hmacsha512256.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_box.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_box_curve25519xsalsa20poly1305.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_box_curve25519xsalsa20poly1305.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_core_hsalsa20.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_core_salsa20.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_core_salsa2012.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_core_salsa208.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_generichash.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_generichash_blake2b.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_generichash_blake2b.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_hash.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_hash_sha512.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_hash_sha256.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_hash_sha512.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_hashblocks_sha256.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_hashblocks_sha512.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_onetimeauth.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_onetimeauth_poly1305.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_onetimeauth_poly1305.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_scalarmult.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_scalarmult_curve25519.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_scalarmult_curve25519.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_secretbox.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_secretbox_xsalsa20poly1305.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_secretbox_xsalsa20poly1305.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_shorthash.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_shorthash_siphash24.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_shorthash_siphash24.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_sign.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_sign_ed25519.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_sign_ed25519.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_sign_edwards25519sha512batch.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_stream.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_stream_xsalsa20.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_stream_aes128ctr.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_stream_aes256estream.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_stream_salsa20.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_stream_salsa2012.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_stream_salsa208.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_stream_xsalsa20.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_verify_16.h \
-  ../libsodium/src/libsodium/include/sodium/crypto_verify_32.h \
-  ../libsodium/src/libsodium/include/sodium/randombytes.h \
-  ../libsodium/src/libsodium/include/sodium/randombytes_salsa20_random.h \
-  ../libsodium/src/libsodium/include/sodium/randombytes_sysrandom.h \
-  ../libsodium/src/libsodium/include/sodium/utils.h \
-  ../libsodium/src/libsodium/include/sodium/version.h ../ext/queue.h \
-  edns.h
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/core.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/export.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_auth.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_auth_hmacsha512256.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_auth_hmacsha256.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_auth_hmacsha512256.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_box.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_box_curve25519xsalsa20poly1305.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_box_curve25519xsalsa20poly1305.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_core_hsalsa20.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_core_salsa20.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_core_salsa2012.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_core_salsa208.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_generichash.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_generichash_blake2b.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_generichash_blake2b.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_hash.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_hash_sha512.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_hash_sha256.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_hash_sha512.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_hashblocks_sha256.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_hashblocks_sha512.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_onetimeauth.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_onetimeauth_poly1305.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_onetimeauth_poly1305.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_scalarmult.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_scalarmult_curve25519.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_scalarmult_curve25519.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_secretbox.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_secretbox_xsalsa20poly1305.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_secretbox_xsalsa20poly1305.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_shorthash.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_shorthash_siphash24.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_shorthash_siphash24.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_sign.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_sign_ed25519.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_sign_ed25519.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_sign_edwards25519sha512batch.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_stream.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_stream_xsalsa20.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_stream_aes128ctr.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_stream_aes256estream.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_stream_salsa20.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_stream_salsa2012.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_stream_salsa208.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_stream_xsalsa20.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_verify_16.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_verify_32.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/randombytes.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/randombytes_salsa20_random.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/randombytes_sysrandom.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/utils.h \
+  /home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/version.h \
+  ../ext/queue.h edns.h
 
 ../../config.h:
 
@@ -187,6 +188,8 @@ edns.o edns.o: edns.c ../../config.h \
 
 dnscrypt_proxy.h:
 
+/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_clk_tck.h:
+
 ../libevent-modified/include/event2/event.h:
 
 ../libevent-modified/include/event2/event-config.h:
@@ -204,8 +207,6 @@ dnscrypt_proxy.h:
 /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/sys-include/pthread.h:
 
 /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/sys-include/sched.h:
-
-/home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_clk_tck.h:
 
 /home/vicente/tomato/tools/brcm/K26/hndtools-mipsel-uclibc-4.2.4/bin/../lib/gcc/mipsel-linux-uclibc/4.2.4/../../../../mipsel-linux-uclibc/sys-include/signal.h:
 
@@ -283,113 +284,113 @@ dnscrypt_client.h:
 
 dnscrypt.h:
 
-../libsodium/src/libsodium/include/sodium.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium.h:
 
-../libsodium/src/libsodium/include/sodium/core.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/core.h:
 
-../libsodium/src/libsodium/include/sodium/export.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/export.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_auth.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_auth.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_auth_hmacsha512256.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_auth_hmacsha512256.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_auth_hmacsha256.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_auth_hmacsha256.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_auth_hmacsha512256.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_auth_hmacsha512256.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_box.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_box.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_box_curve25519xsalsa20poly1305.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_box_curve25519xsalsa20poly1305.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_box_curve25519xsalsa20poly1305.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_box_curve25519xsalsa20poly1305.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_core_hsalsa20.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_core_hsalsa20.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_core_salsa20.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_core_salsa20.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_core_salsa2012.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_core_salsa2012.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_core_salsa208.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_core_salsa208.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_generichash.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_generichash.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_generichash_blake2b.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_generichash_blake2b.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_generichash_blake2b.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_generichash_blake2b.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_hash.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_hash.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_hash_sha512.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_hash_sha512.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_hash_sha256.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_hash_sha256.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_hash_sha512.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_hash_sha512.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_hashblocks_sha256.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_hashblocks_sha256.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_hashblocks_sha512.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_hashblocks_sha512.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_onetimeauth.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_onetimeauth.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_onetimeauth_poly1305.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_onetimeauth_poly1305.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_onetimeauth_poly1305.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_onetimeauth_poly1305.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_scalarmult.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_scalarmult.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_scalarmult_curve25519.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_scalarmult_curve25519.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_scalarmult_curve25519.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_scalarmult_curve25519.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_secretbox.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_secretbox.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_secretbox_xsalsa20poly1305.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_secretbox_xsalsa20poly1305.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_secretbox_xsalsa20poly1305.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_secretbox_xsalsa20poly1305.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_shorthash.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_shorthash.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_shorthash_siphash24.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_shorthash_siphash24.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_shorthash_siphash24.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_shorthash_siphash24.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_sign.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_sign.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_sign_ed25519.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_sign_ed25519.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_sign_ed25519.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_sign_ed25519.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_sign_edwards25519sha512batch.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_sign_edwards25519sha512batch.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_stream.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_stream.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_stream_xsalsa20.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_stream_xsalsa20.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_stream_aes128ctr.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_stream_aes128ctr.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_stream_aes256estream.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_stream_aes256estream.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_stream_salsa20.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_stream_salsa20.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_stream_salsa2012.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_stream_salsa2012.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_stream_salsa208.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_stream_salsa208.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_stream_xsalsa20.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_stream_xsalsa20.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_verify_16.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_verify_16.h:
 
-../libsodium/src/libsodium/include/sodium/crypto_verify_32.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/crypto_verify_32.h:
 
-../libsodium/src/libsodium/include/sodium/randombytes.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/randombytes.h:
 
-../libsodium/src/libsodium/include/sodium/randombytes_salsa20_random.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/randombytes_salsa20_random.h:
 
-../libsodium/src/libsodium/include/sodium/randombytes_sysrandom.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/randombytes_sysrandom.h:
 
-../libsodium/src/libsodium/include/sodium/utils.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/utils.h:
 
-../libsodium/src/libsodium/include/sodium/version.h:
+/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include/sodium/version.h:
 
 ../ext/queue.h:
 

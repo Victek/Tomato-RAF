@@ -62,10 +62,11 @@ DIST_COMMON = $(am__nobase_include_HEADERS_DIST) \
 	$(am__noinst_HEADERS_DIST) $(srcdir)/Makefile.am \
 	$(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/m4/acx_pthread.m4 \
-	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
-	$(top_srcdir)/m4/ltsugar.m4 $(top_srcdir)/m4/ltversion.m4 \
-	$(top_srcdir)/m4/lt~obsolete.m4 $(top_srcdir)/configure.ac
+am__aclocal_m4_deps = $(top_srcdir)/m4/ac_backport_259_ssizet.m4 \
+	$(top_srcdir)/m4/acx_pthread.m4 $(top_srcdir)/m4/libtool.m4 \
+	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+	$(top_srcdir)/m4/ltversion.m4 $(top_srcdir)/m4/lt~obsolete.m4 \
+	$(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(install_sh) -d
@@ -137,11 +138,11 @@ AUTOCONF = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libe
 AUTOHEADER = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libevent-modified/missing --run autoheader
 AUTOMAKE = ${SHELL} /home/vicente/tomato/release/src-rt/router/dnscrypt/src/libevent-modified/missing --run automake-1.11
 AWK = gawk
-CC = mipsel-uclibc-gcc
+CC = mipsel-uclibc-gcc -std=gnu99
 CCDEPMODE = depmode=none
-CFLAGS =  -g -O2 -fPIC -fPIE -fwrapv -fno-strict-aliasing -fno-strict-overflow -Winit-self -Wwrite-strings -Wdiv-by-zero -Wall -fno-strict-aliasing
+CFLAGS =  -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2 -ffunction-sections -fdata-sections -fPIC -fPIE -fwrapv -fno-strict-aliasing -fno-strict-overflow -Winit-self -Wwrite-strings -Wdiv-by-zero -Wall -fno-strict-aliasing
 CPP = mipsel-uclibc-gcc -std=gnu99 -E
-CPPFLAGS =  -D_FORTIFY_SOURCE=2 -I/usr/local/include
+CPPFLAGS = -I/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/include -D_FORTIFY_SOURCE=2 -I/usr/local/include
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -163,10 +164,10 @@ INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 LD = mipsel-uclibc-ld
-LDFLAGS =  -pie -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -L/usr/local/lib
+LDFLAGS = -ffunction-sections -fdata-sections -Wl,--gc-sections -L/home/vicente/tomato/release/src-rt/router/libsodium/src/libsodium/.libs -pie -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -L/usr/local/lib
 LIBEVENT_GC_SECTIONS = 
 LIBOBJS = 
-LIBS = -ldl -ldl -lm 
+LIBS = -ldl -lsodium -ldl -lm 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBTOOL_DEPS = ./ltmain.sh
 LIPO = 

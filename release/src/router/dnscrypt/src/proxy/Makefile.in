@@ -52,23 +52,14 @@ POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
 sbin_PROGRAMS = dnscrypt-proxy$(EXEEXT)
-@USE_BUILTIN_LIBSODIUM_TRUE@am__append_1 = \
-@USE_BUILTIN_LIBSODIUM_TRUE@	-I../libsodium/src/libsodium/include
-
-@USE_BUILTIN_LIBSODIUM_TRUE@am__append_2 = \
-@USE_BUILTIN_LIBSODIUM_TRUE@	../libsodium/src/libsodium/libsodium.la
-
-@USE_BUILTIN_LIBSODIUM_TRUE@am__append_3 = \
-@USE_BUILTIN_LIBSODIUM_TRUE@	../libsodium/src/libsodium/libsodium.la
-
-@PLUGINS_TRUE@am__append_4 = \
+@PLUGINS_TRUE@am__append_1 = \
 @PLUGINS_TRUE@	$(LTDLINCL) \
 @PLUGINS_TRUE@	-I../include \
 @PLUGINS_TRUE@	-DPLUGINS_ROOT=\"$(pkglibdir)/\"
 
-@PLUGINS_TRUE@am__append_5 = $(LIBLTDL)
-@PLUGINS_TRUE@am__append_6 = $(LTDLDEPS)
-@PLUGINS_TRUE@am__append_7 = \
+@PLUGINS_TRUE@am__append_2 = $(LIBLTDL)
+@PLUGINS_TRUE@am__append_3 = $(LTDLDEPS)
+@PLUGINS_TRUE@am__append_4 = \
 @PLUGINS_TRUE@	plugin_options.c \
 @PLUGINS_TRUE@	plugin_options.h \
 @PLUGINS_TRUE@	plugin_support.c \
@@ -286,16 +277,13 @@ dnscrypt_proxy_SOURCES = app.c app.h cert.c cert.h cert_p.h dnscrypt.c \
 	sandboxes.c sandboxes.h stack_trace.c stack_trace.h \
 	tcp_request.c tcp_request.h tcp_request_p.h udp_request.c \
 	udp_request.h udp_request_p.h utils.c utils.h \
-	windows_service.c windows_service.h $(am__append_7)
+	windows_service.c windows_service.h $(am__append_4)
 AM_CFLAGS = @CWFLAGS@
-AM_CPPFLAGS = -I../ext -I../libevent-modified/include $(am__append_1) \
-	$(am__append_4)
+AM_CPPFLAGS = -I../ext -I../libevent-modified/include $(am__append_1)
 dnscrypt_proxy_LDADD = ../libevent-modified/libevent_extra.la \
-	../libevent-modified/libevent_core.la $(am__append_2) \
-	$(am__append_5)
+	../libevent-modified/libevent_core.la $(am__append_2)
 dnscrypt_proxy_DEPENDENCIES = ../libevent-modified/libevent_extra.la \
-	../libevent-modified/libevent_core.la $(am__append_3) \
-	$(am__append_6)
+	../libevent-modified/libevent_core.la $(am__append_3)
 BUILT_SOURCES = \
 	probes.h
 
@@ -413,22 +401,25 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/windows_service.Po@am__quote@
 
 .c.o:
-@am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+@am__fastdepCC_TRUE@	depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
+@am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
+@am__fastdepCC_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Po
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(COMPILE) -c $<
+@am__fastdepCC_FALSE@	$(COMPILE) -c -o $@ $<
 
 .c.obj:
-@am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+@am__fastdepCC_TRUE@	depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.obj$$||'`;\
+@am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ `$(CYGPATH_W) '$<'` &&\
+@am__fastdepCC_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Po
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(COMPILE) -c `$(CYGPATH_W) '$<'`
+@am__fastdepCC_FALSE@	$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
 
 .c.lo:
-@am__fastdepCC_TRUE@	$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+@am__fastdepCC_TRUE@	depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.lo$$||'`;\
+@am__fastdepCC_TRUE@	$(LTCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
+@am__fastdepCC_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Plo
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o $@ $<
