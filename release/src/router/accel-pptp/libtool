@@ -44,7 +44,7 @@ available_tags=" CXX"
 
 # ### BEGIN LIBTOOL CONFIG
 
-# Libtool was configured on host vicente-K53SJ:
+# Libtool was configured on host asus-K53SJ:
 
 # Shell to use when invoking shell scripts.
 SHELL="/bin/sh"
