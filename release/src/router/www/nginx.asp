@@ -183,7 +183,7 @@ createFieldTable('', [
 <br>
 <li><b> Status Button:</b> Quick Start-Stop Service. Enable Web Server must be checked to modify settings.<br>
 <li><b> Enable Server on Start:</b> To activate the Web Server tick and save this screen.<br>
-<li><b> Keep Config Files:</b> Did you modified the configuration file manually? Tick this box and changes will be maintained.<br> 
+<li><b> Keep Config Files:</b> Have you modified the configuration file manually? Tick this box and changes will be maintained.<br> 
 <li><b> Web Server Port:</b> The Port used by the Web Server to be accessed. Check conflict when the port is used by other services.<br>
 <li><b> Web Server Name:</b> Name that will appear on top of your Internet Browser.<br>
 <li><b> Document Root Path:</b> The path in your router where documents are stored.<br>
