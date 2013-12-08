@@ -397,7 +397,7 @@ endif
 	@mv $(TARGETDIR)/lib/modules/*/kernel/drivers/hid/* $(PLATFORMDIR)/extras/ || true
 	@rm -rf $(TARGETDIR)/lib/modules/*/kernel/drivers/hid || true
 	@cp -f $(TARGETDIR)/lib/modules/*/kernel/drivers/net/bcm57*.*o $(PLATFORMDIR)/extras/ || true
-	@mv $(TARGETDIR)/lib/modules/*/kernel/drivers/net/ctf*.*o $(PLATFORMDIR)/extras/ || true
+	$(if $(TCONFIG_CTF),@cp -f,@mv) $(TARGETDIR)/lib/modules/*/kernel/drivers/net/ctf*.*o $(PLATFORMDIR)/extras/ || true
 	$(if $(TCONFIG_PPTP),@cp -f,@mv) $(TARGETDIR)/lib/modules/*/kernel/drivers/net/pptp.*o $(PLATFORMDIR)/extras/ || true
 	$(if $(TCONFIG_L2TP),@cp -f,@mv) $(TARGETDIR)/lib/modules/*/kernel/drivers/net/pppol2tp.*o $(PLATFORMDIR)/extras/ || true
 	@mv $(TARGETDIR)/lib/modules/*/kernel/drivers/net/ppp_deflate.*o  $(PLATFORMDIR)/extras/ || true
@@ -650,7 +650,7 @@ openssl/stamp-h1:
 	shared $(OPENSSL_CIPHERS) \
 	no-sha0 no-smime no-camellia no-krb5 no-rmd160 no-ripemd \
 	no-seed no-capieng no-cms no-gms no-gmp no-rfc3779 \
-	no-ec no-ecdh no-ecdsa no-err no-hw no-jpake no-threads \
+	no-ec no-ecdh no-err no-hw no-jpake no-threads \
 	no-zlib no-engines no-sse2 \
 	no-dtls1 no-store no-psk no-md2 no-mdc2 no-ts
 
