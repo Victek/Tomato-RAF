@@ -132,6 +132,10 @@ config TCONFIG_ZLIB
 	bool "Compressor"
 	default n
 
+config TCONFIG_CTF
+	bool "CTF (Cut-Through Forwarding)"
+	default n
+
 config TCONFIG_SNMP
 	bool "SNMP"
 	default n

@@ -161,8 +161,9 @@ ifeq ($(TCONFIG_REMOVE_USBAPP),y)
 endif
 
 # Only include CTF option if CTF module exists
-##	test -d $(SRCBASE)/ctf/linux || 
+ifneq ($(TCONFIG_CTF),y)
 	sed -i $(INSTALLDIR)/www/advanced-misc.asp -e "/CTF-BEGIN/,/CTF-END/d"
+endif
 
 # Only include VLAN-GUI pages if VLAN-GUI is configured in.
 ifneq ($(TCONFIG_VLAN),y)

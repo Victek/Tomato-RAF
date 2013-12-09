@@ -491,6 +491,10 @@ define RouterOptions
 		echo "TCONFIG_SIPROXD=y" >>$(1); \
 		echo "TCONFIG_LIBOSIP2=y" >>$(1); \
 	fi; \
+	if [ "$(CTF)" = "y" ]; then \
+		sed -i "/TCONFIG_CTF/d" $(1); \
+		echo "TCONFIG_CTF=y" >>$(1); \
+	fi; \
 	if [ "$(OPENVPN)" = "y" ]; then \
 		sed -i "/TCONFIG_LZO/d" $(1); \
 		echo "TCONFIG_LZO=y" >>$(1); \
@@ -528,8 +532,8 @@ define RouterOptions
 	if [ "$(TCPDUMP)" = "y" ]; then \
 		sed -i "/TCONFIG_TCPDUMP/d" $(1); \
 		echo "TCONFIG_TCPDUMP=y" >>$(1); \
-		fi; \
-if [ "$(USBAP)" = "y" ]; then \
+	fi; \
+	if [ "$(USBAP)" = "y" ]; then \
 		sed -i "/TCONFIG_USBAP/d" $(1); \
 		echo "TCONFIG_USBAP=y" >>$(1); \
 		if [ "$(NO_USBAPP)" = "y" ]; then \
@@ -899,7 +903,7 @@ ncl:
 
 ## Make the "Full version".
 nf:
-	@$(MAKE) bin OPENVPN=y USERPPTP=y PPTPD=y NTFS=y BBEXTRAS=y USBEXTRAS=y EBTABLES=y NO_LIBOPT=y MEDIASRV=y IPV6SUPP=y DNSCRYPT=y SIPROXD=y NGINX=y B=NF USB="USB" SNMP=y VLAN=y NOCAT=y TCPDUMP="$(TCPDUMP)"
+	@$(MAKE) bin OPENVPN=y USERPPTP=y PPTPD=y NTFS=y BBEXTRAS=y USBEXTRAS=y EBTABLES=y NO_LIBOPT=y MEDIASRV=y IPV6SUPP=y DNSCRYPT=y SIPROXD=y NGINX=y CTF=n B=NF USB="USB" SNMP=y VLAN=y NOCAT=y TCPDUMP="$(TCPDUMP)"
 
 ## Make the "Media Version".
 nm:
