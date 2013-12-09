@@ -341,9 +341,12 @@ function save()
 		fom.siproxd_intcpt.value = fom.f_siproxd_intcpt.checked ? 1 : 0;
 		fom.siproxd_listen_port.value = fom.f_siproxd_listen_port.value;
 		fom.siproxd_default_expires.value = fom.f_siproxd_default_expires.value;
-		fom._service.value = 'siproxd-restart';
 	} else {
-		fom._service.value = 'siproxd-stop';
+		if (siproxdup) {
+			fom._service.value = 'siproxd-restart';
+		} else {
+			fom._service.value = 'siproxd-stop';
+		}
 	}
 
 	rtp = fom.f_siproxd_rtp_proxy.checked;
@@ -382,7 +385,6 @@ if (nvram.siproxd_reboot == '0') {
 		fom._reboot.value = 1;
 		form.submit(fom, 0);
 	}
-
 	changed = 0;
 }
 
@@ -455,14 +457,14 @@ W('<input type="button" value="' + (siproxdup ? 'Stop' : 'Start') + ' Now" oncli
  <div class='section' id='config-section'>
  <script type='text/javascript'>
    createFieldTable('', [
-   	{ title: 'Siproxd on Startup', name: 'f_siproxd_enable', type: 'checkbox', value: (nvram.siproxd_enable == '1'), suffix: ' <small> default: on</small>' },
+   	{ title: 'Siproxd on Startup', name: 'f_siproxd_enable', type: 'checkbox', value: (nvram.siproxd_enable == '1'), suffix: ' <small> default: off</small>' },
    	{ title: 'Inbound Interface', name: 'f_siproxd_if_inbound', type: 'select', options: [[nvram.wan_ifname,'WAN - '+nvram.wan_ifname],[nvram.lan_ifname,'LAN - '+nvram.lan_ifname],[nvram.wl_ifname,'WiFi - '+nvram.wl_ifname]], value: (nvram.siproxd_if_inbound), suffix: ' <small> default: WAN - '+nvram.wan_ifname+'</small>' },
    	{ title: 'Outbound Interface', name: 'f_siproxd_if_outbound', type: 'select', options: [[nvram.wan_ifname,'WAN - '+nvram.wan_ifname],[nvram.lan_ifname,'LAN - '+nvram.lan_ifname],[nvram.wl_ifname,'WiFi - '+nvram.wl_ifname]], value: (nvram.siproxd_if_outbound), suffix: ' <small> default: LAN - '+nvram.lan_ifname+'</small>' },
-   	{ title: 'Intercept outgoing SIP traffic to Siproxd', name: 'f_siproxd_intcpt', type: 'checkbox', value: (nvram.siproxd_intcpt =='1'), suffix:' <small> default: off,intercepted port is listen port tcp/udp</small>' },
+   	{ title: 'Intercept outgoing SIP traffic to Siproxd', name: 'f_siproxd_intcpt', type: 'checkbox', value: (nvram.siproxd_intcpt =='1'), suffix:' <small> default: off, intercepted port is listen port tcp/udp</small>' },
    	{ title: 'SIP Listen Port', name: 'f_siproxd_listen_port', type: 'text', maxlen: 5, size: 7, value: (fixPort(nvram.siproxd_listen_port)), suffix: ' <small> default: 5060</small>' },
    	{ title: 'Default Expires', name: 'f_siproxd_default_expires', type:'text', maxlen: 4, size: 6, value: (nvram.siproxd_default_expires), suffix: ' <small> default: 600</small>' },
    	null,
-   	{ title: 'RTP Proxy', name: 'f_siproxd_rtp_proxy', type: 'checkbox', value: (nvram.siproxd_rtp_proxy == '1') , suffix: ' <small> default:on</small>' },
+   	{ title: 'RTP Proxy', name: 'f_siproxd_rtp_proxy', type: 'checkbox', value: (nvram.siproxd_rtp_proxy == '1') , suffix: ' <small> default: on</small>' },
    	{ title: 'RTP Proxy Port Range', multi: [
    		{ name: 'f_siproxd_rtp_port_low', type: 'text', maxlen: 5, size: 7, value: (fixPort(nvram.siproxd_rtp_port_low)), suffix: ' - ' },
    		{ name: 'f_siproxd_rtp_port_high', type: 'text', maxlen: 5, size: 7, value: (fixPort(nvram.siproxd_rtp_port_high)) , suffix:' <small> default port range: 10000-10100</small>' },
@@ -481,7 +483,7 @@ W('<input type="button" value="' + (siproxdup ? 'Stop' : 'Start') + ' Now" oncli
    	{ title: 'Shortdial Entry #5', name: 'f_siproxd_pi_shortdial5', type: 'text', maxlen: 16, size: 18, value: (nvram.siproxd_pi_shortdial5), ignore: (nvram.shortdial == '1') },
    	null,
    	{ title: 'Log Verbosity', name: 'f_siproxd_silence_log', type: 'select',
-   		 options: [['4', 'absolutely nothing'],['3', 'only errors'],['2', 'warnings and errors'],['1', 'infos, warnings and errors'],['0', 'debugs, infos, warnings and errors']],
+   		 options: [['4', 'absolutely nothing'],['3', 'only errors'],['2', 'warnings and errors'],['1', 'info, warnings and errors'],['0', 'debugs, info, warnings and errors']],
    		value: (nvram.siproxd_silence_log), suffix: ' <small> default: only errors</small>' },
    	{ title: 'Debug Level', name: 'f_siproxd_debug_level', type: 'select', options: [[0,'<b>Disabled</b>'],[1,'Babble'],[2,'Network'],[3,'SIP Manipulations'],[4,'Client Registration'],[5,'Non Specific Class'],[6,'Proxy'],[7,'DNS Stuff'],
    	[8,'Network Traffic'],[9,'Configuration'],[10,'RTP Proxy'],[11,'Access List Evaluation'],[12,'Authentication']], value: (fixInt (nvram.siproxd_debug_level, 0)), suffix: ' <small> default: disabled</small>' },
@@ -549,9 +551,6 @@ W('<input type="button" value="' + (siproxdup ? 'Stop' : 'Start') + ' Now" oncli
 </td></tr>
 </table>
 </form>
-/* REMOVE-BEGIN
-	!!- added verifyFields
-REMOVE-END */
 <script type='text/javascript'>sgsetup();verifyFields(null, 1);</script>
 </body>
 </html>
