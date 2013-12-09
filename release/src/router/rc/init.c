@@ -418,6 +418,10 @@ static int init_vlan_ports(void)
 		dirty |= check_nv("vlan2ports", "0 1 2 3 5*");
 		dirty |= check_nv("vlan1ports", "4 5");
 		break;
+	case MODEL_RTN53A1:
+		dirty |= check_nv("vlan1ports", "4 5");
+		dirty |= check_nv("vlan2ports", "3 2 1 0 5*");
+		break;
 	case MODEL_WNR2000v2:
 		dirty |= check_nv("vlan1ports", "4 3 2 1 5*");
 		dirty |= check_nv("vlan2ports", "0 5");
@@ -436,6 +440,7 @@ static int init_vlan_ports(void)
 		dirty |= check_nv("vlan0ports", "1 2 3 4 5*");
 		dirty |= check_nv("vlan1ports", "0 5");
 		break;
+	case MODEL_RTN10P:
 	case MODEL_RTN12:
 	case MODEL_RTN12B1:
 		dirty |= check_nv("vlan0ports", "3 2 1 0 5*");
@@ -1030,14 +1035,15 @@ static int init_nvram(void)
 #ifdef TCONFIG_USBAP
 		nvram_set("lan_ifnames", "vlan1 eth1 eth2");
 		nvram_set("landevs", "vlan1 wl0 wl1");
-		nvram_set("wl_ifname", "eth1");
-		nvram_set("wl_ifname", "eth2");
+		nvram_set("wl0_ifname", "eth1");
+		nvram_set("wl1_ifname", "eth2");
 #else
 		nvram_set("lan_ifnames", "vlan1 eth1");
 		nvram_set("landevs", "vlan1 wl0");
 #endif
-		nvram_set("wl_ifnameX", "vlan2");
+		nvram_set("wan_ifnameX", "vlan2");
 		nvram_set("wl_ifname", "eth1");
+
 		}
 		break;
 	case MODEL_CW5358U:
@@ -1099,8 +1105,9 @@ static int init_nvram(void)
 		}
 		break;
 	case MODEL_RTN10:
+	case MODEL_RTN10P:
 		mfr = "Asus";
-		name = "RT-N10";
+		name = nvram_match("boardrev", "0x1153") ? "RT-N10P" : "RT-N10";
 		features = SUP_SES | SUP_80211N;
 		if (!nvram_match("t_fix1", (char *)name)) {
 			nvram_set("lan_ifnames", "vlan0 eth1");
@@ -1172,14 +1179,23 @@ static int init_nvram(void)
 		}
 		break;
 	case MODEL_RTN53:
+	case MODEL_RTN53A1:
 		mfr = "Asus";
-		name = "RT-N53";
+		name = nvram_match("boardrev", "0x1446") ? "RT-N53 A1" : "RT-N53";
 		features = SUP_SES | SUP_80211N;
 #if defined(LINUX26) && defined(TCONFIG_USBAP)
 		if (nvram_get_int("usb_storage") == 1) nvram_set("usb_storage", "-1");
 #endif
 		if (!nvram_match("t_fix1", (char *)name)) {
 #ifdef TCONFIG_USBAP
+			nvram_set("wl1_hwaddr", nvram_safe_get("0:macaddr"));
+			nvram_set("ehciirqt", "3");
+			nvram_set("qtdc_pid", "48407");
+			nvram_set("qtdc_vid", "2652");
+			nvram_set("qtdc0_ep", "4");
+			nvram_set("qtdc0_sz", "0");
+			nvram_set("qtdc1_ep", "18");
+			nvram_set("qtdc1_sz", "10");
 			nvram_set("lan_ifnames", "vlan2 eth1 eth2");
 			nvram_set("landevs", "vlan2 wl0 wl1");
 			nvram_set("wl1_ifname", "eth2");
@@ -1187,6 +1203,7 @@ static int init_nvram(void)
 			nvram_set("lan_ifnames", "vlan2 eth1");
 			nvram_set("landevs", "vlan2 wl0");
 #endif
+			nvram_set("lan_ifname", "br0");
 			nvram_set("wl_ifname", "eth1");
 			nvram_set("wl0_ifname", "eth1");
 			nvram_set("wan_ifnameX", "vlan1");
@@ -1383,7 +1400,7 @@ static int init_nvram(void)
 			nvram_set("pci/2/1/ledbh3", "11");
 			nvram_set("pci/2/1/ledbh10", "7");
 
-			//force USA country for eth2
+			//force EU country for eth2
 			nvram_set("pci/2/1/ccode", "EU");
 		}
 		break;
@@ -1537,6 +1554,14 @@ static int init_nvram(void)
 #endif
 		if (!nvram_match("t_fix1", (char *)name)) {
 #ifdef TCONFIG_USBAP
+			nvram_set("wl1_hwaddr", nvram_safe_get("0:macaddr"));
+			nvram_set("ehciirqt", "3");
+			nvram_set("qtdc_pid", "48407");
+			nvram_set("qtdc_vid", "2652");
+			nvram_set("qtdc0_ep", "4");
+			nvram_set("qtdc0_sz", "0");
+			nvram_set("qtdc1_ep", "18");
+			nvram_set("qtdc1_sz", "10");
 			nvram_set("lan_ifnames", "vlan1 eth1 eth2");
 			nvram_set("landevs", "vlan1 wl0 wl1");
 			nvram_set("wl0_ifname", "eth1");
@@ -1560,6 +1585,14 @@ static int init_nvram(void)
 #endif
 		if (!nvram_match("t_fix1", (char *)name)) {
 #ifdef TCONFIG_USBAP
+			nvram_set("wl1_hwaddr", nvram_safe_get("usb/0xBD17/macaddr"));
+			nvram_set("ehciirqt", "3");
+			nvram_set("qtdc_pid", "48407");
+			nvram_set("qtdc_vid", "2652");
+			nvram_set("qtdc0_ep", "4");
+			nvram_set("qtdc0_sz", "0");
+			nvram_set("qtdc1_ep", "18");
+			nvram_set("qtdc1_sz", "10");
 			nvram_set("lan_ifnames", "vlan1 eth1 eth2");
 			nvram_set("landevs", "vlan1 wl0 wl1");
 			nvram_set("wl0_ifname", "eth1");

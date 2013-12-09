@@ -147,6 +147,11 @@ int buttons_main(int argc, char *argv[])
 		ses_mask = 1 << 20;
 		ses_led = LED_AOSS;
 		break;
+	case MODEL_RTN10P:
+		reset_mask = 1 << 20;
+		ses_mask = 1 << 21;
+		ses_led = LED_AOSS;
+		break;
 	case MODEL_RTN12:
 		reset_mask = 1 << 1;
 		ses_mask = 1 << 0;
@@ -163,6 +168,10 @@ int buttons_main(int argc, char *argv[])
 	case MODEL_RTN53:
 		reset_mask = 1 << 3;
 		ses_mask = 1 << 7;
+		break;
+	case MODEL_RTN53A1:
+		reset_mask = 1 << 7;
+		ses_mask = 1 << 3;
 		break;
 	case MODEL_RTN66U:
 		reset_mask = 1 << 9;

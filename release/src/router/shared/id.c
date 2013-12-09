@@ -76,8 +76,11 @@ RT-N12				BCM4716               0x04cd       45        0x1201    0x????
 RT-N12B1			BCM5357               0x054d       45        0x1101    0x710
 RT-N10				BCM5356               0x04ec       45        0x1402    0x????
 RT-N10U				BCM5357               0x0550       45        0x1102    0x710
+RT-N10P				BCM53572              0x058e       45        0x1153    0x710
 RT-N53				BCM5357               0x0550       45        0x1442    0x710
+RT-N53A1			BCM5358U              0x0550       45        0x1446    0x710
 RT-N66U				BCM4706               0xf5b2       00        0x1100    0x0110
+RT-AC56U			BCM4708A0 (ARM)		
 
 WNR3500L			BCM4718               0x04cf       3500      0x1213|02 0x0710|0x1710
 WNR3500Lv2			BCM47186              0x052b       3500(L)   02        0x710|0x1000
@@ -181,6 +184,8 @@ int check_hw_type(void)
 	case 0xf53a:
 	case 0xf53b:
 	case 0x0550: //RT-N10U and RT-N53 and CW-5358U
+		if (nvram_match("boardrev", "0x1400")) return HW_BCM5358U; //L600N
+		if (nvram_match("boardrev", "0x1446")) return HW_BCM5358U; //DIR-620C1
 	case 0x054d:
 	case 0x053d:
 		return HW_BCM5357;
@@ -193,9 +198,7 @@ int check_hw_type(void)
 	case 0x058e:
 		if (nvram_match("boardrev", "0x1153")) return HW_BCM5357; //RG100E-CA
 		if (nvram_match("boardrev", "0x1155")) return HW_BCM53572; //E900
-	case 0x1015:
-		if (nvram_match("boardrev", "0x1400")) return HW_BCM5358U; //L600N
-		if (nvram_match("boardrev", "0x1400")) return HW_BCM5358U; //DIR620C1
+
 #endif
 	}
 
@@ -301,6 +304,7 @@ int get_model(void)
 					fread(&sig, sizeof(sig), 1, fp);
 					fclose(fp);
 				}
+#ifndef CONFIG_BCMWL6
 				switch (sig) {
 				case TRX_MAGIC_F7D3301:
 					return MODEL_F7D3301;
@@ -309,6 +313,7 @@ int get_model(void)
 				default:
 					return MODEL_F7D4302;
 				}
+#endif
 			}
 			break;
 		}
@@ -378,9 +383,13 @@ int get_model(void)
 			break;
 		case HW_BCM5357:
 			if (nvram_match("boardrev", "0x1102")) return MODEL_RTN10U;
+			if (nvram_match("boardrev", "0x1153")) return MODEL_RTN10P;
 			if (nvram_match("boardrev", "0x1101")) return MODEL_RTN12B1;
 			if (nvram_match("boardrev", "0x1204")) return MODEL_RTN15U;
 			if (nvram_match("boardrev", "0x1442")) return MODEL_RTN53;
+			break;
+		case HW_BCM5358U:
+			if (nvram_match("boardrev", "0x1446")) return MODEL_RTN53A1;
 			break;
 		case HW_BCM4716:
 			if (nvram_match("boardrev", "0x1201")) return MODEL_RTN12;
@@ -388,8 +397,6 @@ int get_model(void)
 		case HW_BCM4718:
 			if (nvram_match("boardrev", "0x1218")) return MODEL_RTN16;
 			break;
-		case HW_BCM5358U:
-			if (nvram_match("boardrev", "0x1400")) return MODEL_L600N;
 #endif
 		}
 		break;
@@ -398,6 +405,12 @@ int get_model(void)
 		switch (hw) {
 		case HW_BCM4717:
 			return MODEL_WRT320N;
+		}
+		break;
+	case 1015:
+		switch (hw) {
+		case HW_BCM5358U:
+			if (nvram_match("boardrev", "0x1400")) return MODEL_L600N;
 		}
 		break;
 	case 0015:

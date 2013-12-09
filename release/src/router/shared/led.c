@@ -206,8 +206,10 @@ int do_led(int which, int mode)
 	static int wrt610nv2[]	= { 255,   5,     3,    0,  255,  255,  255,   -7,    255};
 	static int e4200[]	= { 255,   5,    -3,  255,  255,  255,  255,  255,    255};
 	static int rtn10u[]	= { 255, 255,   255,  255,  255,   -7,  255,   -8,    255};
+	static int rtn10p[]	= { 255,  -6,   255,  255,  255,   -7,  255,  255,    255};
 	static int rtn12b1[]	= {  -5, 255,   255,  255,  255,  255,  255,  225,    255};
 	static int rtn15u[]	= {   1, 255,     3,  255,  255,  255,  255,   -9,    255};
+	static int rtn53[]	= {   0, -17,   255,  255,  255,  255,  255,  255,    255};
 	static int rtn66u[]	= { 255, -12,   255,  255,  255,  255,  255,   15,     13};
 	static int w1800r[]     = { 255, -13,   255,  255,  255,  255,  255,  -12,     -5};
 	static int l600n[]      = { 255, 255,   255,  255,  255,  -7,   255,  -8,      -5};
@@ -324,6 +326,10 @@ int do_led(int which, int mode)
 	case MODEL_RTN15U:
 		b = rtn15u[which];
 		break;
+	case MODEL_RTN53:
+	case MODEL_RTN53A1:
+		b = rtn53[which];
+		break;
 	case MODEL_RTN66U:
 		b = rtn66u[which];
 		break;
@@ -389,6 +395,9 @@ int do_led(int which, int mode)
 	case MODEL_RTN10U:
 		b = rtn10u[which];
 		break;
+	case MODEL_RTN10P:
+		b = rtn10p[which];
+		break;
 	case MODEL_RTN12B1:
 		b = rtn12b1[which];
 		break;
@@ -397,7 +406,6 @@ int do_led(int which, int mode)
 		break;
 	case MODEL_DIR620C1:
 		b = dir620c1[which];
-		break;
 #endif
 /*
 	case MODEL_RT390W:
