@@ -535,7 +535,7 @@ void dns_to_resolv(void)
 		// Check for VPN DNS entries
 		if (!write_pptpvpn_resolv(f) && !write_vpn_resolv(f)) {
 #ifdef TCONFIG_IPV6
-			if (write_ipv6_dns_servers(f, "nameserver ", nvram_safe_get("ipv6_dns"), "\n", 0) == 0)
+			if (write_ipv6_dns_servers(f, "nameserver ", nvram_safe_get("ipv6_dns"), "\n", 0) == 0 || nvram_get_int("dns_addget"))
 				write_ipv6_dns_servers(f, "nameserver ", nvram_safe_get("ipv6_get_dns"), "\n", 0);
 #endif
 			dns = get_dns();	// static buffer
