@@ -61,7 +61,7 @@ AUTOMAKE = ${SHELL} /home/vicente/tomato/release/src/router/siproxd/scripts/miss
 AWK = gawk
 CC = mipsel-uclibc-gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2 -DCONFIG_NVRAM_SIZE=60  -ffunction-sections -fdata-sections -pthread -D_POSIX_THREAD_SAFE_FUNCTIONS
+CFLAGS = -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2   -ffunction-sections -fdata-sections -pthread -D_POSIX_THREAD_SAFE_FUNCTIONS
 CPP = mipsel-uclibc-gcc -E
 CPPFLAGS = -I/home/vicente/tomato/release/src-rt/router/libosip2/include -I/home/vicente/tomato/release/src-rt/router/siproxd/libltdl
 CXX = mipsel-linux-g++

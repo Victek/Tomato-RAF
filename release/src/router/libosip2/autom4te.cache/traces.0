@@ -1,5 +1,5 @@
-m4trace:aclocal.m4:9578: -1- m4_include([scripts/aclocal-include.m4])
-m4trace:aclocal.m4:9579: -1- m4_include([scripts/acx_pthread.m4])
+m4trace:aclocal.m4:9568: -1- m4_include([scripts/aclocal-include.m4])
+m4trace:aclocal.m4:9569: -1- m4_include([scripts/acx_pthread.m4])
 m4trace:configure.in:4: -1- AC_INIT([include/osip2/osip.h])
 m4trace:configure.in:4: -1- m4_pattern_forbid([^_?A[CHUM]_])
 m4trace:configure.in:4: -1- m4_pattern_forbid([_AC_])
@@ -158,7 +158,7 @@ m4trace:configure.in:44: -1- AC_CONFIG_AUX_DIR([scripts])
 m4trace:configure.in:45: -1- AC_CONFIG_HEADERS([osip-config.h])
 m4trace:configure.in:46: -1- AM_INIT_AUTOMAKE([$PACKAGE], [$VERSION])
 m4trace:configure.in:46: -1- m4_pattern_allow([^AM_[A-Z]+FLAGS$])
-m4trace:configure.in:46: -1- AM_AUTOMAKE_VERSION([1.11.3])
+m4trace:configure.in:46: -1- AM_AUTOMAKE_VERSION([1.11.6])
 m4trace:configure.in:46: -1- AC_REQUIRE_AUX_FILE([install-sh])
 m4trace:configure.in:46: -1- AC_SUBST([INSTALL_PROGRAM])
 m4trace:configure.in:46: -1- AC_SUBST_TRACE([INSTALL_PROGRAM])
@@ -363,7 +363,7 @@ m4trace:configure.in:54: -1- AC_SUBST([CPP])
 m4trace:configure.in:54: -1- AC_SUBST_TRACE([CPP])
 m4trace:configure.in:54: -1- m4_pattern_allow([^CPP$])
 m4trace:configure.in:59: -1- _m4_warn([obsolete], [The macro `AC_LIBTOOL_WIN32_DLL' is obsolete.
-You should run autoupdate.], [aclocal.m4:8145: AC_LIBTOOL_WIN32_DLL is expanded from...
+You should run autoupdate.], [aclocal.m4:8135: AC_LIBTOOL_WIN32_DLL is expanded from...
 configure.in:59: the top level])
 m4trace:configure.in:59: -1- AC_SUBST([AS])
 m4trace:configure.in:59: -1- AC_SUBST_TRACE([AS])
@@ -375,10 +375,10 @@ m4trace:configure.in:59: -1- AC_SUBST([OBJDUMP])
 m4trace:configure.in:59: -1- AC_SUBST_TRACE([OBJDUMP])
 m4trace:configure.in:59: -1- m4_pattern_allow([^OBJDUMP$])
 m4trace:configure.in:59: -1- _m4_warn([obsolete], [AC_LIBTOOL_WIN32_DLL: Remove this warning and the call to _LT_SET_OPTION when you
-put the `win32-dll' option into LT_INIT's first parameter.], [aclocal.m4:8145: AC_LIBTOOL_WIN32_DLL is expanded from...
+put the `win32-dll' option into LT_INIT's first parameter.], [aclocal.m4:8135: AC_LIBTOOL_WIN32_DLL is expanded from...
 configure.in:59: the top level])
 m4trace:configure.in:60: -1- _m4_warn([obsolete], [The macro `LT_AC_PROG_SED' is obsolete.
-You should run autoupdate.], [aclocal.m4:7789: LT_AC_PROG_SED is expanded from...
+You should run autoupdate.], [aclocal.m4:7779: LT_AC_PROG_SED is expanded from...
 configure.in:60: the top level])
 m4trace:configure.in:60: -1- AC_SUBST([SED])
 m4trace:configure.in:60: -1- AC_SUBST_TRACE([SED])
