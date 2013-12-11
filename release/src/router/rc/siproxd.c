@@ -134,7 +134,7 @@ int build_siproxd_conf (void)
 void start_siproxd(void)
 {
 /*		if (!nvram_match("siproxd_enable", "1")){ /* if siproxd not enabled dont run */
-		syslog(LOG_INFO,"siproxd not enabled - config file generation skipped!\n");
+/*		syslog(LOG_INFO,"siproxd not enabled - config file generation skipped!\n");
 		return;
 		}
 		
