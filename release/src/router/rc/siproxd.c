@@ -133,10 +133,12 @@ int build_siproxd_conf (void)
 
 void start_siproxd(void)
 {
-		if (!nvram_match("siproxd_enable", "1")){ /* if siproxd not enabled dont run */
+/*		if (!nvram_match("siproxd_enable", "1")){ /* if siproxd not enabled dont run */
 		syslog(LOG_INFO,"siproxd not enabled - config file generation skipped!\n");
 		return;
 		}
+		
+do we still need this? -Roadkill*/
 /* kill and clean all PIDs before running */
 	stop_siproxd();
 	build_siproxd_conf();
