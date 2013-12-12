@@ -19,7 +19,6 @@
 <title>[<% ident(); %>] Siproxd</title>
 <link rel='stylesheet' type='text/css' href='tomato.css'>
 <link rel='stylesheet' type='text/css' href='color.css'>
-<% css(); %>
 <script type='text/javascript' src='tomato.js'></script>
 
 <!-- / / / -->
@@ -325,33 +324,28 @@ REMOVE-END */
 
 function save()
 {
-	var en,rtp,sdpi; /* en - siproxd enable, rtp - rtp proxy, sdpi - shortdial plugin */
+/*	var en,rtp,sdpi;  en - siproxd enable, rtp - rtp proxy, sdpi - shortdial plugin */
 	var fom = E('_fom');
 
-	if (!verifyFields(null, false)) {
+	if (!verifyFields(null, 0)) {
 		W('config failed');
 		return;
 	}
 
-	en = fom.f_siproxd_enable.checked;
-	fom.siproxd_enable.value = en ? 1 : 0;
-	if (en) {
+	fom.siproxd_enable.value = E('_f_siproxd_enable').checked ? 1 : 0;
+	if (fom.siproxd_enable.value) {
 		fom.siproxd_if_inbound.value = fom.f_siproxd_if_inbound.value;
 		fom.siproxd_if_outbound.value = fom.f_siproxd_if_outbound.value;
-		fom.siproxd_intcpt.value = fom.f_siproxd_intcpt.checked ? 1 : 0;
+		fom.siproxd_intcpt.value = E('_f_siproxd_intcpt').checked ? 1 : 0;
 		fom.siproxd_listen_port.value = fom.f_siproxd_listen_port.value;
 		fom.siproxd_default_expires.value = fom.f_siproxd_default_expires.value;
+		fom._service.value = 'siproxd-restart';
 	} else {
-		if (siproxdup) {
-			fom._service.value = 'siproxd-restart';
-		} else {
-			fom._service.value = 'siproxd-stop';
-		}
+		fom._service.value = 'siproxd-stop';
 	}
 
-	rtp = fom.f_siproxd_rtp_proxy.checked;
-	fom.siproxd_rtp_proxy.value = rtp ? 1 : 0;
-	if (rtp) {
+	fom.siproxd_rtp_proxy.value = E('_f_siproxd_rtp_proxy').checked ? 1 : 0;
+	if (fom.siproxd_rtp_proxy.value) {
 		fom.siproxd_rtp_port_low.value = fom.f_siproxd_rtp_port_low.value;
 		fom.siproxd_rtp_port_high.value = fom.f_siproxd_rtp_port_high.value;
 		fom.siproxd_rtp_timeout.value = fom.f_siproxd_rtp_timeout.value;
@@ -359,11 +353,10 @@ function save()
 		fom.siproxd_sip_dscp.value = fom.f_siproxd_sip_dscp.value;
 	}
 
-	fom.siproxd_logcall.value = fom.f_siproxd_logcall.checked ? 1 : 0;
+	fom.siproxd_logcall.value = E('_f_siproxd_logcall').checked ? 1 : 0;
 
-	sdpi = fom.f_siproxd_shortdial.checked;
-	fom.siproxd_shortdial.value = sdpi ? 1 : 0;
-	if (sdpi) {
+	fom.siproxd_shortdial.value = E('_f_siproxd_shortdial').checked ? 1 : 0;
+	if (fom.siproxd_shortdial.value) {
 		fom.siproxd_pi_shortdial_akey.value = fom.f_siproxd_pi_shortdial_akey.value;
 		fom.siproxd_pi_shortdial1.value = fom.f_siproxd_pi_shortdial1.value;
 		fom.siproxd_pi_shortdial2.value = fom.f_siproxd_pi_shortdial2.value;
@@ -457,7 +450,7 @@ W('<input type="button" value="' + (siproxdup ? 'Stop' : 'Start') + ' Now" oncli
  <div class='section' id='config-section'>
  <script type='text/javascript'>
    createFieldTable('', [
-   	{ title: 'Siproxd on Startup', name: 'f_siproxd_enable', type: 'checkbox', value: (nvram.siproxd_enable == '1'), suffix: ' <small> default: off</small>' },
+   	{ title: 'Siproxd on Startup', name: 'f_siproxd_enable', type: 'checkbox', value: (nvram.siproxd_enable == '1'), suffix: ' <small> default: on</small>' },
    	{ title: 'Inbound Interface', name: 'f_siproxd_if_inbound', type: 'select', options: [[nvram.wan_ifname,'WAN - '+nvram.wan_ifname],[nvram.lan_ifname,'LAN - '+nvram.lan_ifname],[nvram.wl_ifname,'WiFi - '+nvram.wl_ifname]], value: (nvram.siproxd_if_inbound), suffix: ' <small> default: WAN - '+nvram.wan_ifname+'</small>' },
    	{ title: 'Outbound Interface', name: 'f_siproxd_if_outbound', type: 'select', options: [[nvram.wan_ifname,'WAN - '+nvram.wan_ifname],[nvram.lan_ifname,'LAN - '+nvram.lan_ifname],[nvram.wl_ifname,'WiFi - '+nvram.wl_ifname]], value: (nvram.siproxd_if_outbound), suffix: ' <small> default: LAN - '+nvram.lan_ifname+'</small>' },
    	{ title: 'Intercept outgoing SIP traffic to Siproxd', name: 'f_siproxd_intcpt', type: 'checkbox', value: (nvram.siproxd_intcpt =='1'), suffix:' <small> default: off, intercepted port is listen port tcp/udp</small>' },
@@ -551,6 +544,6 @@ W('<input type="button" value="' + (siproxdup ? 'Stop' : 'Start') + ' Now" oncli
 </td></tr>
 </table>
 </form>
-<script type='text/javascript'>sgsetup();verifyFields(null, 1);</script>
+<script type='text/javascript'>sgsetup();</script>
 </body>
 </html>
