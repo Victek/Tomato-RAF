@@ -30,7 +30,7 @@
 	margin-bottom: 10px;
 }
 </style>
-<script type='text/javascript' defer>
+<script type='text/javascript'>
 
 //	<% nvram("nginx_enable,nginx_keepconf,nginx_port,nginx_fqdn,nginx_docroot,nginx_priority,nginx_custom"); %>
 
@@ -63,20 +63,13 @@ function verifyFields(focused, quiet)
 			_f_nginx_priority : 1,
 			_f_nginx_custom : 1,
 	}
-
 	if (!E('_f_nginx_enable').checked) {
-		for (i in vis) {
-			vis[i] = 2;
+			for (i in vis) {
+					vis[i] = 2;
+			}
+			vis._f_nginx_enable = 1;
 		}
-	}
-	
-	for (a in vis) {
-		b = E(a);
-		c = vis[a];
-		b.disabled = (c != 1);
-		PR(b).style.display = c ? '' : 'none';
-	}
-	
+
 	if (!v_port('_f_nginx_port', quiet))
 	{
 		ok = 0;
@@ -98,26 +91,21 @@ function save()
   	var fom = E('_fom');
 	if (!verifyFields(null, false)) return;
 
-	var en = fom.f_nginx_enable.checked;
-	fom.nginx_enable.value = en ? 1 : 0;
-	
-	if (en) {
+	fom.nginx_enable.value = E('_f_nginx_enable').checked ? 1 : 0;
+	if (fom.nginx_enable.value) {
 	fom.nginx_keepconf.value = fom.f_nginx_keepconf.checked ? 1 : 0;
 	fom.nginx_port.value = fom.f_nginx_port.value;
 	fom.nginx_fqdn.value = fom.f_nginx_fqdn.value;
 	fom.nginx_docroot.value = fom.f_nginx_docroot.value;
 	fom.nginx_priority.value = fom.f_nginx_priority.value;
 	fom.nginx_custom.value = fom.f_nginx_custom.value;
-	}
-
-	if (!en) {
-	fom._service.value = 'enginex-stop';
+	fom._service.value = 'nginx-restart';
 	} else {
-	fom._service.value = 'enginex-restart';
-	}
-	
-	form.submit(fom, 1);
+		fom._service.value = 'nginx-stop';
+		}
+		form.submit(fom, 1);
 }
+
 function init()
 {
 	verifyFields(null, 1);
