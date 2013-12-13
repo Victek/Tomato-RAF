@@ -44,6 +44,8 @@
 #include <sys/mount.h>
 #include <mntent.h>
 #include <dirent.h>
+#include <sys/stat.h>
+#include <sys/statfs.h>
 
 // Pop an alarm to recheck pids in 500 msec.
 static const struct itimerval pop_tv = { {0,0}, {0, 500 * 1000} };
@@ -58,6 +60,9 @@ static const char dmdhcp[] = "/etc/dnsmasq/dhcp";
 static const char dmresolv[] = "/etc/resolv.dnsmasq";
 
 static pid_t pid_dnsmasq = -1;
+#ifdef TCONFIG_ARIA2
+static pid_t pid_aria2 = -1;
+#endif
 
 static int is_wet(int idx, int unit, int subunit, void *param)
 {
@@ -498,6 +503,95 @@ void stop_dnsmasq(void)
 
 	TRACE_PT("end\n");
 }
+
+#ifdef TCONFIG_ARIA2
+void start_aria2()
+{
+	FILE *f;
+	struct statfs sf;
+	char session_file[255];
+
+	if (getpid() != 1) {
+		start_service("aria2");
+		return;
+	}
+	if (!nvram_match( "aria2_enable", "1" ) ){
+		pid_aria2 = -1;
+		return;
+	}
+	if (statfs(nvram_safe_get("aria2_dir"), &sf) != 0 || sf.f_type == 0x71736873 || sf.f_type == 0x73717368/* squashfs  (lzma and not)*/) {
+		pid_aria2 = -2; // not mounted or not exists. try restart.
+		return;
+	}
+	if (!nvram_match( "aria2_settings", "down_dir" ) && (statfs(nvram_safe_get("aria2_settings"), &sf) != 0 || sf.f_type == 0x71736873 || sf.f_type == 0x73717368/* squashfs  (lzma and not)*/) ){
+		pid_aria2 = -2; // not mounted or not exists. try restart.
+		return;
+	}
+	if (nvram_match( "aria2_ssl_rpc","1")){
+		//certificate
+		mkdir("/etc/aria2c", 0700);
+		unlink("/etc/aria2c/aria2c_host_key");
+		unlink("/etc/aria2c/aria2c_host_cert");
+		if (!nvram_get_file("aria2c_ssl_key", "/etc/aria2c/aria2c_host_key", 2048) 
+			|| !nvram_get_file("aria2c_ssl_cert", "/etc/aria2c/aria2c_host_cert", 2048)) {
+			unlink("/etc/aria2c/aria2c_host_key");
+			unlink("/etc/aria2c/aria2c_host_cert");
+			eval("openssl", "req -x509 -nodes -newkey rsa:2048 -keyout /etc/aria2c/aria2c_host_key -out /etc/aria2c/aria2c_host_cert -days 3650 -subj \'/CN=aria2/O=Aria2./C=US\'");
+			if (nvram_set_file("aria2c_ssl_key", "/etc/aria2c/aria2c_host_key", 2048) 
+				&& nvram_set_file("aria2c_ssl_cert", "/etc/aria2c/aria2c_host_cert", 2048)) {
+				nvram_commit_x();
+			}
+		}
+	}
+
+
+	if ((f = fopen("/etc/aria2c.conf", "w")) == NULL) return;
+	
+	fprintf(f,"enable-rpc\n");
+	fprintf(f,"rpc-listen-all=true\n");
+	fprintf(f,"rpc-allow-origin-all=true\n");
+	if (nvram_match( "aria2_ssl_rpc","1")){
+		fprintf(f,"rpc-private-key=/etc/aria2c/aria2c_host_key\n");
+		fprintf(f,"rpc-certificate=/etc/aria2c/aria2c_host_cert\n");
+		fprintf(f,"rpc-secure=true\n");
+	}
+	fprintf(f,"listen-port=%s\n", nvram_safe_get("aria2_port"));
+	fprintf(f,"rpc-listen-port=%s\n", nvram_safe_get("aria2_port_rpc"));
+	fprintf(f,"rpc-user=admin\n");
+	fprintf(f,"rpc-passwd=%s\n", nvram_safe_get("http_passwd"));
+	fprintf(f,"dir=%s\n", nvram_safe_get("aria2_dir"));
+	
+	if (nvram_match( "aria2_settings", "down_dir" ) ){
+		snprintf(session_file,sizeof(session_file),"%s/aria2c.session",nvram_safe_get("aria2_dir"));
+	} else {
+		snprintf(session_file,sizeof(session_file),"%s/aria2c.session",nvram_safe_get("aria2_settings"));
+	}
+	fprintf(f,"input-file=%s\n", session_file);
+	fprintf(f,"save-session=%s\n", session_file);
+	fprintf(f, "%s\n", nvram_safe_get("aria2_custom"));
+	fclose(f);
+	
+	syslog(LOG_DEBUG, "starting aria2\n");
+	eval("touch", session_file);
+	xstart("aria2c", "--conf-path=/etc/aria2c.conf");
+	syslog(LOG_DEBUG, "aria2 started\n");
+	if (!nvram_contains_word("debug_norestart", "aria2")) {
+		pid_dnsmasq = -2;
+	}
+}
+void stop_aria2(void)
+{
+	syslog(LOG_DEBUG, "stopping aria2\n");
+	if (getpid() != 1) {
+		stop_service("aria2");
+		return;
+	}
+	pid_aria2 = -1;
+	unlink("/etc/aria2c.conf");
+	killall_tk("aria2c");
+	syslog(LOG_DEBUG, "end\n");
+}
+#endif
 
 void clear_resolv(void)
 {
@@ -1399,7 +1493,40 @@ void stop_splashd(void)
 	start_wan(BOOT);
 }
 #endif
+// -----------------------------------------------------------------------------
+#ifdef TCONFIG_SIPROXD
 
+static pid_t pid_siproxd = -1;
+void start_siproxdengine(void)
+{
+	pid_siproxd =-1;
+	start_siproxd();
+	if (!nvram_contains_word("debug_norestart","siproxdengine")) { //TODO .. check debugnorestart .. copied from nginx deal.
+		pid_siproxd = -2;
+	}
+}
+
+void stop_siproxdengine(void)
+{
+	pid_siproxd = -1;
+	stop_siproxd();
+}
+
+void start_siproxd_fastpath(void)
+{
+	pid_siproxd =-1;
+	start_siproxdfp();
+	if (!nvram_contains_word("debug_norestart","siproxdengine")) { //TODO .. check this line also.
+		pid_siproxd = -2;
+	}
+}
+void stop_siproxd_fastpath(void)
+{
+	pid_siproxd = -1;
+	stop_siproxdfp();
+}
+
+#endif
 // -----------------------------------------------------------------------------
 #ifdef TCONFIG_NGINX
 
@@ -2191,6 +2318,9 @@ void check_services(void)
 	_check(pid_dnsmasq, "dnsmasq", start_dnsmasq);
 	_check(pid_crond, "crond", start_cron);
 	_check(pid_igmp, "igmpproxy", start_igmp_proxy);
+#ifdef TCONFIG_ARIA2
+	_check(pid_aria2, "aria2c", start_aria2);
+#endif
 }
 
 // -----------------------------------------------------------------------------
@@ -2235,7 +2365,7 @@ void start_services(void)
 #endif
 
 #ifdef TCONFIG_SIPROXD
-	start_siproxd();
+	start_siproxdengine();
 #endif
 
 #ifdef TCONFIG_NGINX
@@ -2251,11 +2381,17 @@ void start_services(void)
 	start_dnsmasq();
 #endif
 
+#ifdef TCONFIG_ARIA2
+	start_aria2();
+#endif
 }
 
 void stop_services(void)
 {
 	clear_resolv();
+#ifdef TCONFIG_ARIA2
+	stop_aria2();
+#endif
 
 #ifdef TCONFIG_NOCAT
 	stop_splashd();
@@ -2282,7 +2418,7 @@ void stop_services(void)
 	stop_enginex();
 #endif
 #ifdef TCONFIG_SIPROXD
-	stop_siproxd();
+	stop_siproxdengine();
 #endif
 	stop_cifs();
 	stop_dnsmasq();
@@ -2439,15 +2575,13 @@ TOP:
 
 #ifdef TCONFIG_SIPROXD
 	if (strcmp(service, "siproxd") == 0) {
-		if (action & A_STOP) stop_siproxd();
-		if (action & A_START) start_siproxd();
+		if (action & A_STOP) stop_siproxdengine();
+		if (action & A_START) start_siproxdengine();
 		goto CLEAR;
 	}
-#endif
-
-	if (strcmp(service, "httpd") == 0) {
-		if (action & A_STOP) stop_httpd();
-		if (action & A_START) start_httpd();
+	if (strcmp(service, "siproxdfp") == 0) {
+		if (action & A_STOP) stop_siproxd_fastpath();
+		if (action & A_START) start_siproxd_fastpath();
 		goto CLEAR;
 	}
 
@@ -2463,7 +2597,14 @@ TOP:
 		goto CLEAR;
 	}
 #endif
-	
+
+	if (strcmp(service, "httpd") == 0) {
+		if (action & A_STOP) stop_httpd();
+		if (action & A_START) start_httpd();
+		goto CLEAR;
+	}	
+#endif
+
 #ifdef TCONFIG_IPV6
 	if (strcmp(service, "ipv6") == 0) {
 		if (action & A_STOP) {
@@ -2563,7 +2704,7 @@ TOP:
 			stop_jffs2();
 //			stop_cifs();
 #ifdef TCONFIG_SIPROXD
-			stop_siproxd();
+			stop_siproxdengine();
 #endif
 #ifdef TCONFIG_NGINX
 			stop_enginex();
@@ -2865,6 +3006,13 @@ TOP:
  	}
 #endif
 
+#ifdef TCONFIG_ARIA2
+	if (strcmp(service, "aria2") == 0) {
+		if (action & A_STOP) stop_aria2();
+		if (action & A_START) start_aria2();
+		goto CLEAR;
+	}
+#endif
 CLEAR:
 	if (next) goto TOP;
 

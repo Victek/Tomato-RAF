@@ -520,6 +520,8 @@ extern void stop_nginxfp();
 #ifdef TCONFIG_SIPROXD
 extern void start_siproxd();
 extern void stop_siproxd();
+extern void start_siproxdfp();
+extern void stop_siproxdfp();
 #endif
 
 //ntpd.c

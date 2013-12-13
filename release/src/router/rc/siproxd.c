@@ -13,7 +13,7 @@ static const char siproxdregistrationfile[] =  "/tmp/var/run/siproxd_registratio
 static const char siproxdconf[] = "/tmp/etc/siproxd.conf";
 static const char siproxdplugindir[] = "/usr/lib/siproxd/";
 static const char siproxd_process[] = "siproxd";
-unsigned int fastpath=0;
+unsigned int siproxd_fastpath=0;
 
 int build_siproxd_conf (void)
 {
@@ -134,8 +134,8 @@ int build_siproxd_conf (void)
 
 void start_siproxd(void)
 {
-	if (fastpath != 1) {
-		if (!nvram_match("Siproxd_enable", "1")){ /* if siproxd not enabled dont run */
+	if (siproxd_fastpath != 1) {
+		if (!nvram_match("siproxd_enable", "1")){ /* if siproxd not enabled dont run */
 		syslog(LOG_INFO,"Siproxd not enabled - config file generation skipped!\n");
 		return;
 		}
@@ -144,7 +144,7 @@ void start_siproxd(void)
 	}
 		
 /* kill and clean all PIDs before running */
-        if (fastpath != 1) {
+        if (siproxd_fastpath != 1) {
                 stop_siproxd();
         }else{
                 stop_siproxdfp();
@@ -154,12 +154,12 @@ void start_siproxd(void)
 	syslog(LOG_INFO,"Siproxd - running daemon\n");
 	xstart(siproxd_process, "-c", siproxdconf ,"-p", siproxdpid);
 }
-
+// Start siproxd using siproxd_fastpath method no checks
 void start_siproxdfp(void)
 {
-fastpath = 1;
+siproxd_fastpath = 1;
 start_siproxd();
-fastpath = 0;
+siproxd_fastpath = 0;
 }
 
 void stop_siproxd(void)
@@ -175,10 +175,10 @@ void stop_siproxd(void)
 			}
 	}
 }
-
+// Stop siproxd using siproxd_fastpath method no checks
 void stop_siproxdfp(void)
 {
-fastpath = 1;
-stop_nginx();
-fastpath = 0;
+siproxd_fastpath = 1;
+stop_siproxd();
+siproxd_fastpath = 0;
 }
