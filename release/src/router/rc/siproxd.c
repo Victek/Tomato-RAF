@@ -13,6 +13,7 @@ static const char siproxdregistrationfile[] =  "/tmp/var/run/siproxd_registratio
 static const char siproxdconf[] = "/tmp/etc/siproxd.conf";
 static const char siproxdplugindir[] = "/usr/lib/siproxd/";
 static const char siproxd_process[] = "siproxd";
+unsigned int fastpath=0;
 
 int build_siproxd_conf (void)
 {
@@ -133,25 +134,40 @@ int build_siproxd_conf (void)
 
 void start_siproxd(void)
 {
-		if (!nvram_match("siproxd_enable", "1")){ /* if siproxd not enabled dont run */
-		syslog(LOG_INFO,"siproxd not enabled - config file generation skipped!\n");
+	if (fastpath != 1) {
+		if (!nvram_match("Siproxd_enable", "1")){ /* if siproxd not enabled dont run */
+		syslog(LOG_INFO,"Siproxd not enabled - config file generation skipped!\n");
 		return;
 		}
+	} else {
+		syslog(LOG_INFO,"Siproxd - fastpath forced generation of config file\n");
+	}
 		
 /* kill and clean all PIDs before running */
-	stop_siproxd();
+        if (fastpath != 1) {
+                stop_siproxd();
+        }else{
+                stop_siproxdfp();
+        }
+        
 	build_siproxd_conf();
-	syslog(LOG_INFO,"siproxd - running daemon\n");
+	syslog(LOG_INFO,"Siproxd - running daemon\n");
 	xstart(siproxd_process, "-c", siproxdconf ,"-p", siproxdpid);
 }
 
+void start_siproxdfp(void)
+{
+fastpath = 1;
+start_siproxd();
+fastpath = 0;
+}
 
 void stop_siproxd(void)
 {
 	unsigned int i;
 
 	i = 0;
-	syslog(LOG_INFO,"siproxd - killing daemon\n");
+	syslog(LOG_INFO,"Siproxd - killing daemon\n");
 	if ((i = pidof (siproxd_process)) > 3) {
 		killall_tk(siproxd_process);
 			if (f_exists(siproxdpid)) {
@@ -160,3 +176,9 @@ void stop_siproxd(void)
 	}
 }
 
+void stop_siproxdfp(void)
+{
+fastpath = 1;
+stop_nginx();
+fastpath = 0;
+}
