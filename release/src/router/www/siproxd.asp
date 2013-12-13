@@ -66,7 +66,7 @@ function toggle(service, isup)
 	E('_' + service + '_button').disabled = true;
 	form.submitHidden('/service.cgi', {
 		_redirect: 'siproxd.asp',
-		_sleep: ((service == 'siproxd') && (!isup)) ? '10' : '5',
+		_sleep: ((service == 'siproxdfp') && (!isup)) ? '10' : '5',
 		_service: service + (isup ? '-stop' : '-start')
 	});
 }
