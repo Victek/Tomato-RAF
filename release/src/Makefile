@@ -380,7 +380,7 @@ what:
 # JFFSv1 | NO_JFFS
 # NO_CIFS, NO_SSH, NO_ZEBRA, NO_SAMBA, NO_HTTPS, NO_XXTP, NO_LIBOPT, NO_FTP
 # SAMBA3, OPENVPN, IPV6SUPP, EBTABLES, NTFS, MEDIASRV, BBEXTRAS, USBEXTRAS, BCM57, SLIM
-# NOCAT, SNMP, USERPPTP, VLAN, USBAP, NO_USBAPP, NGINX, DNSCRYPT, SIPROXD
+# NOCAT, SNMP, USERPPTP, VLAN, USBAP, NO_USBAPP, NGINX, DNSCRYPT, SIPROXD, ARIA2, CTF
 
 define RouterOptions
 	@( \
@@ -456,6 +456,10 @@ define RouterOptions
 	if [ "$(NO_HTTPS)" = "y" ]; then \
 		sed -i "/TCONFIG_HTTPS/d" $(1); \
 		echo "# TCONFIG_HTTPS is not set" >>$(1); \
+	fi; \
+	if [ "$(ARIA2)" = "y" ]; then \
+		sed -i "/TCONFIG_ARIA2/d" $(1); \
+		echo "TCONFIG_ARIA2=y" >>$(1); \
 	fi; \
 	if [ "$(NO_XXTP)" = "y" ]; then \
 		sed -i "/TCONFIG_L2TP/d" $(1); \
@@ -699,7 +703,7 @@ define KernelConfig
 		echo "CONFIG_CPU_MIPS32_R2=y" >>$(1); \
 		sed -i "/CONFIG_CPU_MIPSR1/d" $(1); \
 		echo "CONFIG_CPU_MIPSR2=y" >>$(1); \
-if [ "$(NAND)" = "y" ]; then \
+	if [ "$(NAND)" = "y" ]; then \
 			sed -i "/CONFIG_MTD_NFLASH/d" $(1); \
 			echo "CONFIG_MTD_NFLASH=y" >>$(1); \
 			sed -i "/CONFIG_MTD_NAND/d" $(1); \
@@ -903,7 +907,7 @@ ncl:
 
 ## Make the "Full version".
 nf:
-	@$(MAKE) bin OPENVPN=y USERPPTP=y PPTPD=y NTFS=y BBEXTRAS=y USBEXTRAS=y EBTABLES=y NO_LIBOPT=y MEDIASRV=y IPV6SUPP=y DNSCRYPT=y SIPROXD=y NGINX=y CTF=n B=NF USB="USB" SNMP=y VLAN=y NOCAT=y TCPDUMP="$(TCPDUMP)"
+	@$(MAKE) bin OPENVPN=y USERPPTP=y PPTPD=y NTFS=y BBEXTRAS=y USBEXTRAS=y EBTABLES=y NO_LIBOPT=y MEDIASRV=y IPV6SUPP=y DNSCRYPT=y SIPROXD=y NGINX=y CTF=n B=NF USB="USB" SNMP=y VLAN=y NOCAT=y ARIA2=n TCPDUMP="$(TCPDUMP)"
 
 ## Make the "Media Version".
 nm:

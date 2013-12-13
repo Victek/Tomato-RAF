@@ -175,3 +175,7 @@ config TCONFIG_REMOVE_USBAPP
 config TCONFIG_TCPDUMP
 	bool "TCPDUMP and LIBPCAP utilities"
 	default n
+
+config TCONFIG_ARIA2
+	bool " Aria2 download"
+	default n

@@ -42,3 +42,4 @@ TCONFIG_SAMBASRV=y
 # TCONFIG_TCPDUMP is not set
 # TCONFIG_USBAP is not set
 # TCONFIG_REMOVE_USBAPP is not set
+# TCONFIG_ARIA2 is not set

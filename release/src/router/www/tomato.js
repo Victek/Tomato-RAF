@@ -2439,6 +2439,9 @@ REMOVE-END */
 /* MEDIA-SRV-BEGIN */
 			,['Media Server',	'media.asp']
 /* MEDIA-SRV-END */
+/* ARIA2-BEGIN */
+			,['Aria2 Client',	'aria2.asp']
+/* ARIA2-END */
 			] ],
 /* USB-END */
 /* VPN-BEGIN */

@@ -142,6 +142,12 @@ ifneq ($(TCONFIG_IPV6),y)
 	sed -i $(INSTALLDIR)/www/advanced-dhcpdns.asp -e "/IPV6-BEGIN/,/IPV6-END/d"
 endif
 
+ifneq ($(TCONFIG_ARIA2),y)
+	rm -f $(INSTALLDIR)/www/nas-aria2.asp
+	sed -i $(INSTALLDIR)/www/tomato.js -e "/ARIA2-BEGIN/,/ARIA2-END/d"
+	sed -i $(INSTALLDIR)/www/about.asp -e "/ARIA2-BEGIN/,/ARIA2-END/d"
+endif
+
 # Only include the USB and NAS pages if USB Support is configured in.
 ifneq ($(TCONFIG_USB),y)
 	rm -f $(INSTALLDIR)/www/nas-*.*

@@ -153,6 +153,11 @@ sub fixDyn
 	fixDynDep("pppd", "pppol2tp.so");
 	fixDynDep("pppd", "pptp.so");
 	fixDynDep("pppd", "rp-pppoe.so");
+#tomatoegg
+	fixDynDep("aria2c", "libstdc++.so.6.0.9");
+	fixDynDep("aria2c", "libexpat.so.1.6.0");
+	fixDynDep("aria2c", "libz.so.1.2.5");
+#
 
 	fixDynDep("libcrypto.so.1.0.0", "libssl.so.1.0.0");
 #shibby
