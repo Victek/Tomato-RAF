@@ -157,6 +157,8 @@ else
 endif
 
 obj-y += wanuptime
+obj-$(TCONFIG_ARIA2) += expat
+obj-$(TCONFIG_ARIA2) += aria2
 
 obj-$(TCONFIG_TCPDUMP) += lpcap tcpdump
 
@@ -313,6 +315,11 @@ endif
 	install $(LIBDIR)/libnsl.so.0 $(TARGETDIR)/lib/
 ifeq ($(TCONFIG_SSH),y)
 	install $(LIBDIR)/libutil.so.0 $(TARGETDIR)/lib/
+endif
+
+ifeq ($(TCONFIG_ARIA2),y)
+	install $(LIBDIR)/libstdc++.so.6.0.9 $(TARGETDIR)/lib/
+	install $(LIBDIR)/libstdc++.so.6 $(TARGETDIR)/lib/
 endif
 
 ifeq ($(TCONFIG_SIPROXD),y)
@@ -1837,6 +1844,46 @@ nginx-install: nginx
 	install -d $(INSTALLDIR)/nginx/usr/sbin
 	install -D nginx/objs/nginx $(INSTALLDIR)/nginx/usr/sbin/nginx && chmod 755 $(INSTALLDIR)/nginx/usr/sbin/nginx
 	$(STRIP) $(INSTALLDIR)/nginx/usr/sbin/nginx
+
+expat/stamp-h1:
+	cd expat && CC=$(CC) CFLAGS="-Os -Wall $(EXTRACFLAGS)" \
+		$(CONFIGURE) --prefix=/ --enable-shared --disable-static
+	touch $@
+expat: expat/stamp-h1
+	@$(SEP)
+	$(MAKE) -C expat $(PARALLEL_BUILD)
+expat-install:
+	install -d $(INSTALLDIR)/expat/usr/lib
+	install expat/.libs/libexpat.so.1.6.0 $(INSTALLDIR)/expat/usr/lib/libexpat.so.1.6.0
+	install expat/.libs/libexpat.so.1 $(INSTALLDIR)/expat/usr/lib/libexpat.so.1
+	$(STRIP)-s $(INSTALLDIR)/expat/usr/lib/libexpat.so.1.6.0
+aria2/stamp-h1: openssl zlib expat
+	cd aria2 && CC=$(CC) \
+	CFLAGS="-Os -Wall -mno-branch-likely -fno-caller-saves -fhonour-copts -fno-delete-null-pointer-checks -funit-at-a-time -mips32 -mtune=mips32 \
+			--param large-function-growth=800 --param max-inline-insns-single=3000 \
+			-ffunction-sections -fdata-sections $(EXTRACFLAGS) -I$(TOP)/expat/lib" \
+	CXXFLAGS="-Os -Wall -fno-delete-null-pointer-checks -funit-at-a-time \
+			--param large-function-growth=800 --param max-inline-insns-single=3000 \
+			-ffunction-sections -fdata-sections -I$(TOP)/expat/lib" \
+	LDFLAGS="-L$(TOP)/expat/.libs -ffunction-sections -fdata-sections -Wl,--gc-sections -fPIC" \
+	OPENSSL_CFLAGS=-I$(TOP)/openssl/include \
+	OPENSSL_LIBS="-L$(TOP)/openssl -lcrypto -lssl" \
+	ZLIB_CFLAGS=-I$(TOP)/zlib \
+	ZLIB_LIBS="-L$(TOP)/zlib -lz" \
+	$(CONFIGURE) --prefix=/usr --enable-target-optspace --disable-epoll --enable-largefile --disable-nls --disable-rpath --disable-shared --disable-static \
+		--without-libuv --without-appletls --without-gnutls --without-libnettle --without-libgcrypt \
+		--with-openssl --without-sqlite3 --without-libxml2 --with-libexpat --without-libcares \
+		--with-libz --without-included-gettext --without-libintl-prefix
+	touch $@
+aria2: aria2/stamp-h1
+	@$(SEP)
+	$(MAKE) -C aria2 $(PARALLEL_BUILD)
+aria2-clean:
+	$(MAKE) -C aria2 clean
+aria2-install: aria2
+	install -d $(INSTALLDIR)/aria2/usr/bin
+	install aria2/src/aria2c $(INSTALLDIR)/aria2/usr/bin
+	$(STRIP) -s $(INSTALLDIR)/aria2/usr/bin/aria2c
 
 #
 # Generic rules
