@@ -409,7 +409,7 @@ function init()
  <div class='section' id='status-section'>
    <script type='text/javascript'>
 W('Siproxd is currently '+(!siproxdup ? 'stopped' : 'running')+' ');
-W('<input type="button" value="' + (siproxdup ? 'Stop' : 'Start') + ' Now" onclick="toggle(\'siproxd\', siproxdup)" id="_siproxd_button">');
+W('<input type="button" value="' + (siproxdup ? 'Stop' : 'Start') + ' Now" onclick="toggle(\'siproxdfp\', siproxdup)" id="_siproxdfp_button">');
   </script>
   <br>
  </div>
