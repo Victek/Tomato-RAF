@@ -118,3 +118,6 @@
 #undef TCONFIG_TCPDUMP
   #define IF_TCONFIG_TCPDUMP(...)
   #define IF_NOT_TCONFIG_TCPDUMP(...) __VA_ARGS__
+#define TCONFIG_ARIA2 1
+  #define IF_TCONFIG_ARIA2(...) __VA_ARGS__
+  #define IF_NOT_TCONFIG_ARIA2(...)

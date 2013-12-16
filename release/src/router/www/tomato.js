@@ -2426,6 +2426,9 @@ REMOVE-END */
 /* SIPROXD-BEGIN */
 		['SIP VoIP Telephony',		'siproxd.asp'],
 /* SIPROXD-END */
+/* ARIA2-BEGIN */
+		['Aria2 Multidownloader',	'aria2.asp'],
+/* ARIA2-END */
 /* USB-BEGIN */
 // ---- !!TB - USB, FTP, Samba, Media Server
 		['USB and NAS',			'nas', 0, [
@@ -2439,9 +2442,6 @@ REMOVE-END */
 /* MEDIA-SRV-BEGIN */
 			,['Media Server',	'media.asp']
 /* MEDIA-SRV-END */
-/* ARIA2-BEGIN */
-			,['Aria2 Client',	'aria2.asp']
-/* ARIA2-END */
 			] ],
 /* USB-END */
 /* VPN-BEGIN */

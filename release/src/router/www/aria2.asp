@@ -80,7 +80,7 @@ function init()
 <div class='section-title'>Aria 2 - Configuration Settings</div>
 <div class='section' id='config-section'>
 <form id='_fom' method='post' action='tomato.cgi'>
-<input type='hidden' name='_nextpage' value='nas-aria2.asp'>
+<input type='hidden' name='_nextpage' value='aria2.asp'>
 <input type='hidden' name='_service' value='aria2-restart'>
 <input type='hidden' name='aria2_enable'>
 
@@ -111,6 +111,7 @@ createFieldTable('', [
 	<ul>
 		<li><b>Enable torrent client;</b> Caution!! - If your router have less than 32MB of free RAM, use swap.
 		<li><b>Listening port;</b> Port used for torrent client. Be sure this port is not in use.
+		<li><b>Download Directory;</b> Enter the path where you like to store Aria2 files and settings, (/mnt/sda1/...).
         	<li><b>Listening RPC port;</b> Port used for Aria2 RPC. Be sure this port is not in use.
 		<li><b>Use SSL to encrypt RPC traffic;</b> Use SSL to encrypt RPC traffic. A self signed certificate will automaticaly generated.
 		<li><b>Allow remote access;</b> To open the Aria2 RPC port from the WAN side and allow the RPC to be accessed from the internet. you have to goto <a href="/advanced-firewall.asp"> Firewall;</a> Settings to allow incoming traffic to RPC port of Aria2.
