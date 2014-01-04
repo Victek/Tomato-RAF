@@ -183,9 +183,11 @@ sub fixDyn
 #Tomato RAF - NocatSplash
 	fixDynDep("splashd","libglib-1.2.so.0.0.10");
 #Tomato RAF - php
+	fixDynDep("php-cli","libz.so.1");
+	fixDynDep("php-cgi","libz.so.1");
 	fixDynDep("php-cli","libz.so.1.2.5");
 	fixDynDep("php-cgi","libz.so.1.2.5");
-
+	
 #!!TB - Updated Broadcom WL driver
 	fixDynDep("libbcmcrypto.so", "libc.so.0");
 	fixDynDep("nas", "libbcmcrypto.so");

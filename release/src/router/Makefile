@@ -1761,7 +1761,10 @@ php/stamp-h1: pcre zlib-install
 #install zlib libs
 	install -D zlib/libz.so.1.2.5 $(INSTALLDIR)/zlib/usr/lib/libz.so.1.2.5
 	$(STRIP) $(INSTALLDIR)/zlib/usr/lib/libz.so.1.2.5
-	cd $(INSTALLDIR)/zlib/usr/lib && ln -sf libz.so.1.2.5 libz.so
+	install -D zlib/libz.so.1.2.5 $(INSTALLDIR)/zlib/usr/lib/libz.so.1
+	$(STRIP) $(INSTALLDIR)/zlib/usr/lib/libz.so.1
+	cd $(INSTALLDIR)/zlib/usr/lib && \
+	ln -sf libz.so.1.2.5 libz.so
 	install -D zlib/zlib.h $(INSTALLDIR)/zlib/usr/include/zlib.h
 	@cd php && autoreconf -v -f -i
 	cd php && CC=$(CC) CXX=mipsel-uclibc-g++ AR=$(AR) RANLIB=$(RANLIB) LD=$(LD) CFLAGS="-Os -Wall -I$(TOP)/zlib $(EXTRACFLAGS)" \
