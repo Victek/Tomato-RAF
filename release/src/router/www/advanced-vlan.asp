@@ -76,7 +76,8 @@ switch(nvram['boardtype']) {
   case '0xf52a':  // E3200v1
   case '0xf5b2':  // RT-N66
   case '0x052b':  // WNR3500L v2
-  case '0x05d8':  // Tenda W1800R	
+  case '0x05d8':  // Tenda W1800R
+  case '0x058e':  // E900, E800
     trunk_vlan_supported = 1;
     break;
   default:
@@ -175,7 +176,7 @@ switch(nvram['boardtype']) {
 		break;
 	case '0xc550':  // E1550
 	case '0xf550':  // E2500
-	case '0x058e':  // E900
+	case '0x058e':  // E900, E800
 	case '0xf52a':  // E3200
 	case '0xf52c':  // E4200v1
 	case '0x1202':  // HG320 - not sure, need test
