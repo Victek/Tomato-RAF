@@ -141,7 +141,7 @@ obj-$(TCONFIG_NGINX) += php
 obj-$(TCONFIG_NGINX) += nginx
 obj-$(TCONFIG_NOCAT) += nocat
 obj-$(TCONFIG_SIPROXD) += siproxd
-obj-$(TCONFIG_LIBOSIP2) += libosip2
+obj-$(TCONFIG_SIPROXD) += libosip2
 
 obj-$(CONFIG_LINUX26) += hotplug2
 obj-$(CONFIG_LINUX26) += udevtrigger
