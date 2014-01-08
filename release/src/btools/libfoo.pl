@@ -57,13 +57,9 @@ sub load
 
 	$base = basename($fname);
 	print LOG "\n\nreadelf $base:\n";
-
-	ifneq ($(TCONFIG_ARM),y)
+	
 	open($f, "mipsel-linux-readelf -WhsdD ${fname} 2>&1 |") || error("readelf - $!\n");
-	else
-	open($f, "arm-linux-readelf -WhsdD ${fname} 2>&1 |") || error("readelf - $!\n");
-	endif
-
+	
 	while (<$f>) {
 		print LOG;
 
@@ -386,12 +382,7 @@ sub genSO
 	print LOG "\n\n${base}\n";
 	
 #	$cmd = "mipsel-uclibc-ld -shared -s -z combreloc --warn-common --fatal-warnings ${opt} -soname ${name} -o ${so}";
-	ifneq ($(TCONFIG_ARM),y)
 	$cmd = "mipsel-uclibc-gcc -shared -nostdlib -Wl,-s,-z,combreloc -Wl,--warn-common -Wl,--fatal-warnings -Wl,--gc-sections ${opt} -Wl,-soname=${name} -o ${so}";
-	else
-	$cmd = "arm-uclibc-ld -shared -s -z combreloc --warn-common --fatal-warnings ${opt} -soname ${name} -o ${so}";
-	endif
-
 	foreach (@{$elf_lib{$name}}) {
 		if ((!$elf_dyn{$name}{$_}) && (/^lib(.+)\.so/)) {
 			$cmd .= " -l$1";
