@@ -33,24 +33,28 @@ For Tomato and development.
 sudo apt-get install autoconf autogen automake automake1.7 automake1.9 autoconf autopoint binutils bison bzip2 flex gawk
 gcc gcc-multilib gettext git-core git gitk git-gui gperf g++ g++-4.4-multilib ia32-libs kompare libc6 libncurses5
 libncurses5-dev libstdc++6-4.4-dev libtool libssl-dev libxml2-dev libelf1:i386 libc6-i386 lib32z1-dev meld mtd-utils m4
-patch putty pkg-config shtool sqlite subversion zlib1g-dev
+patch putty pkg-config shtool sqlite subversion zlib1g-dev re2c
 
-
+How to build your version:
 
 For MIPSR2 platform:
 + Ensure the tools in the release/tools directory are in your path. 
-+ cd release/src-rt (for n routers) o cd release/src-rt-6.x (for ac routers) 
++ cd tomato/release/src-rt (for n routers) o cd release/src-rt-6.x (for ac routers) 
 + sudo ln -s ~/tomato/tools/brcm /opt/brcm 
-+ export PATH=$PATH:/opt/brcm/hndtools-mipsel-linux/bin:/opt/brcm/hndtools-mipsel-uclibc/bin 
-+ type 'make help' to see the options to build for each model.
++ export PATH=$PATH:/opt/brcm/hndtools-mipsel-linux/bin:/opt/brcm/hndtools-mipsel-uclibc/bin
++ make distclean
++ type 'make help' to see the options to build for each model. (i.e: make V1=9013 V2=RAF r2nf build a rt-n16 version)
 
 This will create a parallel directory named 'image' into src-rt that contains the final firmware build.
 
 For ARM platform:
-+ cd release/src-rt-6.x.4708 
++ cd tomato/release/src-rt-6.x.4708 
 + ln -s ~/tomato/tools/brcm /opt/brcm 
 + ln -s ~/tomato/release/src-rt-6.x.4708/toolchains/hndtools-arm-linux-2.6.36-uclibc-4.5.3 /opt/brcm-arm 
-+ export PATH=$PATH:/opt/brcm/hndtools-mipsel-linux/bin:/opt/brcm/hndtools-mipsel-uclibc/bin:/opt/brcm-arm/bin 
-+ Type 'make help' to see the options to build for each model.
++ export PATH=$PATH:/opt/brcm/hndtools-mipsel-linux/bin:/opt/brcm/hndtools-mipsel-uclibc/bin:/opt/brcm-arm/bin
++ make distclean
++ 
++ Type 'make help' to see the options to build for each model. (i.e: make V1=9013 V2=RAF ac56u build a rt-ac56u version)
+
 
 This site contains all source files for Tomato-RAF-RT-N build 9013
