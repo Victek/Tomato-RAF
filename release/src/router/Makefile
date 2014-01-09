@@ -141,7 +141,7 @@ obj-$(TCONFIG_NGINX) += php
 obj-$(TCONFIG_NGINX) += nginx
 obj-$(TCONFIG_NOCAT) += nocat
 obj-$(TCONFIG_SIPROXD) += siproxd
-obj-$(TCONFIG_SIPROXD) += libosip2
+obj-$(TCONFIG_LIBOSIP2) += libosip2
 
 obj-$(CONFIG_LINUX26) += hotplug2
 obj-$(CONFIG_LINUX26) += udevtrigger
@@ -1761,11 +1761,10 @@ php/stamp-h1: pcre zlib-install
 #install zlib libs
 	install -D zlib/libz.so.1.2.5 $(INSTALLDIR)/zlib/usr/lib/libz.so.1.2.5
 	$(STRIP) $(INSTALLDIR)/zlib/usr/lib/libz.so.1.2.5
-	install -D zlib/libz.so.1.2.5 $(INSTALLDIR)/zlib/usr/lib/libz.so.1
-	$(STRIP) $(INSTALLDIR)/zlib/usr/lib/libz.so.1
-	cd $(INSTALLDIR)/zlib/usr/lib && \
-	ln -sf libz.so.1.2.5 libz.so
+	cd $(INSTALLDIR)/zlib/usr/lib && ln -sf libz.so.1.2.5 libz.so
 	install -D zlib/zlib.h $(INSTALLDIR)/zlib/usr/include/zlib.h
+#When updating php remember to run aclocal, libtoolize --force, autoheader, autoconf
+# and apply patches to configure.in mentioned in aclocal comments...
 	@cd php && autoreconf -v -f -i
 	cd php && CC=$(CC) CXX=mipsel-uclibc-g++ AR=$(AR) RANLIB=$(RANLIB) LD=$(LD) CFLAGS="-Os -Wall -I$(TOP)/zlib $(EXTRACFLAGS)" \
 	$(CONFIGURE) --prefix=/usr \
