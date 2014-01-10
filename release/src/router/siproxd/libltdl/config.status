@@ -889,7 +889,7 @@ ${ac_dA}HAVE_DLFCN_H${ac_dB}HAVE_DLFCN_H${ac_dC}1${ac_dD}
 ${ac_dA}HAVE_DIRENT_H${ac_dB}HAVE_DIRENT_H${ac_dC}1${ac_dD}
 ${ac_dA}LTDL_SHLIB_EXT${ac_dB}LTDL_SHLIB_EXT${ac_dC}".so"${ac_dD}
 ${ac_dA}LTDL_SHLIBPATH_VAR${ac_dB}LTDL_SHLIBPATH_VAR${ac_dC}"LD_LIBRARY_PATH"${ac_dD}
-${ac_dA}LTDL_SYSSEARCHPATH${ac_dB}LTDL_SYSSEARCHPATH${ac_dC}"/lib:/usr/lib:/lib/i386-linux-gnu:/usr/lib/i386-linux-gnu:/lib/i686-linux-gnu:/usr/lib/i686-linux-gnu:/usr/local/lib:/usr/lib/nvidia-settings:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu/mesa-egl:/usr/lib/x86_64-linux-gnu/mesa:/lib32:/usr/lib32:/libx32:/usr/libx32"${ac_dD}
+${ac_dA}LTDL_SYSSEARCHPATH${ac_dB}LTDL_SYSSEARCHPATH${ac_dC}"/lib:/usr/lib:/usr/lib/i386-linux-gnu/mesa:/lib/i386-linux-gnu:/usr/lib/i386-linux-gnu:/lib/i686-linux-gnu:/usr/lib/i686-linux-gnu:/usr/local/lib:/usr/lib/nvidia-settings-304:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu/mesa-egl:/usr/lib/x86_64-linux-gnu/mesa:/lib32:/usr/lib32:/libx32:/usr/libx32"${ac_dD}
 ${ac_dA}LTDL_OBJDIR${ac_dB}LTDL_OBJDIR${ac_dC}".libs/"${ac_dD}
 ${ac_dA}HAVE_PRELOADED_SYMBOLS${ac_dB}HAVE_PRELOADED_SYMBOLS${ac_dC}1${ac_dD}
 ${ac_dA}HAVE_LIBDL${ac_dB}HAVE_LIBDL${ac_dC}1${ac_dD}
@@ -952,7 +952,7 @@ ${ac_uA}HAVE_DLFCN_H${ac_uB}HAVE_DLFCN_H${ac_uC}1${ac_uD}
 ${ac_uA}HAVE_DIRENT_H${ac_uB}HAVE_DIRENT_H${ac_uC}1${ac_uD}
 ${ac_uA}LTDL_SHLIB_EXT${ac_uB}LTDL_SHLIB_EXT${ac_uC}".so"${ac_uD}
 ${ac_uA}LTDL_SHLIBPATH_VAR${ac_uB}LTDL_SHLIBPATH_VAR${ac_uC}"LD_LIBRARY_PATH"${ac_uD}
-${ac_uA}LTDL_SYSSEARCHPATH${ac_uB}LTDL_SYSSEARCHPATH${ac_uC}"/lib:/usr/lib:/lib/i386-linux-gnu:/usr/lib/i386-linux-gnu:/lib/i686-linux-gnu:/usr/lib/i686-linux-gnu:/usr/local/lib:/usr/lib/nvidia-settings:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu/mesa-egl:/usr/lib/x86_64-linux-gnu/mesa:/lib32:/usr/lib32:/libx32:/usr/libx32"${ac_uD}
+${ac_uA}LTDL_SYSSEARCHPATH${ac_uB}LTDL_SYSSEARCHPATH${ac_uC}"/lib:/usr/lib:/usr/lib/i386-linux-gnu/mesa:/lib/i386-linux-gnu:/usr/lib/i386-linux-gnu:/lib/i686-linux-gnu:/usr/lib/i686-linux-gnu:/usr/local/lib:/usr/lib/nvidia-settings-304:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu/mesa-egl:/usr/lib/x86_64-linux-gnu/mesa:/lib32:/usr/lib32:/libx32:/usr/libx32"${ac_uD}
 ${ac_uA}LTDL_OBJDIR${ac_uB}LTDL_OBJDIR${ac_uC}".libs/"${ac_uD}
 ${ac_uA}HAVE_PRELOADED_SYMBOLS${ac_uB}HAVE_PRELOADED_SYMBOLS${ac_uC}1${ac_uD}
 ${ac_uA}HAVE_LIBDL${ac_uB}HAVE_LIBDL${ac_uC}1${ac_uD}
