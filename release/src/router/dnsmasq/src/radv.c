@@ -1,4 +1,4 @@
-/* dnsmasq is Copyright (c) 2000-2013 Simon Kelley
+/* dnsmasq is Copyright (c) 2000-2014 Simon Kelley
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -272,28 +272,10 @@ static void send_ra(time_t now, int iface, char *iface_name, struct in6_addr *de
 	      /* zero net part of address */
 	      setaddr6part(&local, addr6part(&local) & ~((context->prefix == 64) ? (u64)-1LL : (1LLU << (128 - context->prefix)) - 1LLU));
 	     
-	      
 	      if ((context->flags & 
 		   (CONTEXT_RA_ONLY | CONTEXT_RA_NAME | CONTEXT_RA_STATELESS)))
-		{
-		  do_slaac = 1;
-		  if (context->flags & CONTEXT_DHCP)
-		    {
-		      parm.other = 1; 
-		      if (!(context->flags & CONTEXT_RA_STATELESS))
-			parm.managed = 1;
-		    }
-		}
-	      else
-		{
-		  /* don't do RA for non-ra-only unless --enable-ra is set */
-		  if (option_bool(OPT_RA))
-		    {
-		      parm.managed = 1;
-		      parm.other = 1;
-		    }
-		}
-
+		do_slaac = 1;
+	      
 	      if ((opt = expand(sizeof(struct prefix_opt))))
 		{
 		  opt->type = ICMP6_OPT_PREFIX;
