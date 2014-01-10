@@ -1586,20 +1586,21 @@ aria2/stamp-h1: openssl zlib expat
 			--param large-function-growth=800 --param max-inline-insns-single=3000 \
 			-ffunction-sections -fdata-sections -I$(TOP)/expat/lib" \
 	LDFLAGS="-L$(TOP)/expat/.libs -ffunction-sections -fdata-sections -Wl,--gc-sections -fPIC" \
-	OPENSSL_CFLAGS=-I$(TOP)/openssl/include \
+	OPENSSL_CFLAGS="-I$(TOP)/openssl/include" \
 	OPENSSL_LIBS="-L$(TOP)/openssl -lcrypto -lssl" \
-	ZLIB_CFLAGS=-I$(TOP)/zlib \
+	ZLIB_CFLAGS="-I$(TOP)/zlib" \
 	ZLIB_LIBS="-L$(TOP)/zlib -lz" \
 	$(CONFIGURE) --prefix=/usr --enable-target-optspace --disable-epoll --enable-largefile --disable-nls --disable-rpath --disable-shared --disable-static \
 		--without-libuv --without-appletls --without-gnutls --without-libnettle --without-libgcrypt \
 		--with-openssl --without-sqlite3 --without-libxml2 --with-libexpat --without-libcares \
 		--with-libz --without-included-gettext --without-libintl-prefix
-	touch $@
+	touch aria2/stamp-h1
 aria2: aria2/stamp-h1
 	@$(SEP)
 	$(MAKE) -C aria2 $(PARALLEL_BUILD)
 aria2-clean:
-	$(MAKE) -C aria2 clean
+	-@$(MAKE) -C aria2 clean
+	@rm -f aria2/stamp-h1 aria2/Makefile
 aria2-install: aria2
 	install -d $(INSTALLDIR)/aria2/usr/bin
 	install aria2/src/aria2c $(INSTALLDIR)/aria2/usr/bin
