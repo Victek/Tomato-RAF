@@ -28,7 +28,7 @@ Important: sudo dpkg-reconfigure dash (n)
 
 For Tomato and development.
 
-sudo apt-get install autoconf autogen make automake automake1.7 automake1.9 autopoint binutils bison bzip2 flex gawk xsltproc libxml-parser-perl gcc gcc-multilib gettext gperf g++ g++-4.4-multilib libc6 libncurses5 libncurses5-dev libstdc++6-4.4-dev libtool libssl-dev libxml2-dev libelf1:i386 libc6-i386 lib32z1-dev meld mtd-utils m4 mercurial bzr ecj cvs patch pkg-config shtool sqlite zlib1g-dev re2c
+sudo apt-get install autoconf autogen make automake automake1.7 automake1.9 automake1.11 autopoint binutils bison bzip2 flex gawk xsltproc libxml-parser-perl gcc gcc-multilib gettext gperf g++ g++-4.4-multilib libc6 libncurses5 libncurses5-dev libstdc++6-4.4-dev libtool libssl-dev libxml2-dev libelf1:i386 libc6-i386 lib32z1-dev meld mtd-utils m4 mercurial bzr ecj cvs patch pkg-config shtool sqlite zlib1g-dev re2c
 
 How to build your version:
 
