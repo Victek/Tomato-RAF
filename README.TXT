@@ -19,21 +19,16 @@ Others: Ovislink WL1600G, CW-5358U, Huawei FiberHome HG320, ChinaNet RG-200E, ZT
 There are multiple directories provided here. The release directory contains the router source package. The uClibc
 directory contains the source for uClibc and the binary tools required to build are provided as a convenience.
 
-To build the router firmware using Ubuntu 13.04 64bits version. 
+To build the router firmware using Ubuntu 13.10 64bits version. 
 
-Environment packages.
-sudo apt-get update && sudo apt-get upgrade && sudo apt-get install build-essential linux-headers-$(uname -r) && sudo
-apt-get install ubuntu-restricted-extras unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj
-cabextract file-roller build-essential quilt xsltproc libxml-parser-perl mercurial bzr ecj cvs
+Packages (example of my environment).
+sudo apt-get update && sudo apt-get upgrade && sudo apt-get install build-essential linux-headers-$(uname -r) && sudo apt-get install ubuntu-restricted-extras vlc vlc-plugin-pulse filezilla && sudo add-apt-repository ppa:libreoffice/ppa && sudo apt-get install libreoffice libreoffice-java-common libreoffice-math libreoffice-java-common libreoffice-pdfimport dia xsane unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller libxine1-ffmpeg gxine mencoder mpeg2dec vorbis-tools id3v2 mpg321 mpg123 libflac++6 ffmpeg totem-mozilla icedax tagtool easytag id3tool lame libmad0 libjpeg-progs flac faac faad sox ffmpeg2theora libmpeg2-4 uudeview flac libmpeg3-1 mpeg3-utils mpegdemux liba52-0.7.4-dev gstreamer0.10-ffmpeg gstreamer0.10-fluendo-mp3 gstreamer0.10-gnonlin gstreamer0.10-plugins-bad-multiverse gstreamer0.10-plugins-bad gstreamer0.10-plugins-ugly gstreamer-dbus-media-service gstreamer-tools subversion build-essential quilt git-core git git-gui gitk kompare meld subversion nfs-common putty
 
 Important: sudo dpkg-reconfigure dash (n)
 
 For Tomato and development.
 
-sudo apt-get install autoconf autogen automake automake1.7 automake1.9 autoconf autopoint binutils bison bzip2 flex gawk
-gcc gcc-multilib gettext git-core git gitk git-gui gperf g++ g++-4.4-multilib ia32-libs kompare libc6 libncurses5
-libncurses5-dev libstdc++6-4.4-dev libtool libssl-dev libxml2-dev libelf1:i386 libc6-i386 lib32z1-dev meld mtd-utils m4
-patch putty pkg-config shtool sqlite subversion zlib1g-dev re2c
+sudo apt-get install autoconf autogen make automake automake1.7 automake1.9 autopoint binutils bison bzip2 flex gawk xsltproc libxml-parser-perl gcc gcc-multilib gettext gperf g++ g++-4.4-multilib libc6 libncurses5 libncurses5-dev libstdc++6-4.4-dev libtool libssl-dev libxml2-dev libelf1:i386 libc6-i386 lib32z1-dev meld mtd-utils m4 mercurial bzr ecj cvs patch pkg-config shtool sqlite zlib1g-dev re2c
 
 How to build your version:
 
