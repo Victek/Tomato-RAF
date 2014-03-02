@@ -375,7 +375,8 @@ void start_dnsmasq()
 		"dhcp-lease-max=%d\n",
 		(n > 0) ? n : 255);
 	if (nvram_get_int("dhcpd_auth") >= 0) {
-		fprintf(f, "dhcp-authoritative\n");
+		fprintf(f, "dhcp-option=lan,252,\"\\n\"\n"
+			   "dhcp-authoritative\n");
 	}
 
 /*
@@ -2401,9 +2402,6 @@ void stop_services(void)
 	stop_snmp();
 #endif
 
-#ifdef TCONFIG_NFS
-	stop_nfs();
-#endif
 	restart_nas_services(1, 0);	// stop Samba, FTP and Media Server
 #ifdef TCONFIG_PPTPD
 	stop_pptpd();
