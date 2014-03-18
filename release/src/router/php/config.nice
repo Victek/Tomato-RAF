@@ -2,12 +2,12 @@
 #
 # Created by configure
 
-CFLAGS='-Os -Wall -I/home/vicente/tomato/release/src-rt/router/zlib -DLINUX26 -DCONFIG_BCMWL5 -pipe -DBCMWPA2 -funit-at-a-time -Wno-pointer-sign -mtune=mips32r2 -mips32r2  ' \
-CC='mipsel-uclibc-gcc' \
-CXX='mipsel-uclibc-g++' \
+CFLAGS='-Os -Wall -I /home/ofer/tomato_arm/release/src-rt-6.x.4708/router/zlib -I /home/ofer/tomato_arm/release/src-rt-6.x.4708/router/pcre -L /home/ofer/tomato_arm/release/src-rt-6.x.4708/router/pcre/.libs/libpcre.so.1.2.0 -L /home/ofer/tomato_arm/release/src-rt-6.x.4708/router/pcre/.libs/libpcreposix.so.0.0.1 -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm  -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644' \
+CC='arm-brcm-linux-uclibcgnueabi-gcc' \
+CXX='arm-g++' \
 './configure' \
-'--host=mipsel-linux' \
-'--build=x86_64-linux-gnu' \
+'--host=arm-linux' \
+'--build=i686-linux-gnu' \
 '--prefix=/usr' \
 '--enable-shared' \
 '--disable-static' \
@@ -17,9 +17,8 @@ CXX='mipsel-uclibc-g++' \
 '--with-config-file-path=/etc' \
 '--with-config-file-scan-dir=/etc/php5' \
 '--disable-short-tags' \
-'--with-zlib=/home/vicente/tomato/release/src-rt/router/mipsel-uclibc/install/zlib/usr' \
-'--with-zlib-dir=/home/vicente/tomato/release/src-rt/router/mipsel-uclibc/install/zlib/usr' \
-'--with-pcre-regex=/home/vicente/tomato/release/src-rt/router/pcre-nginx/usr' \
+'--with-zlib=/home/ofer/tomato_arm/release/src-rt-6.x.4708/router/arm-uclibc/install/zlib/usr' \
+'--with-zlib-dir=/home/ofer/tomato_arm/release/src-rt-6.x.4708/router/arm-uclibc/install/zlib/usr' \
 '--disable-phar' \
 '--enable-cli' \
 '--enable-cgi' \

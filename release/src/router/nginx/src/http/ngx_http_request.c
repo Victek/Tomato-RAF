@@ -423,20 +423,6 @@ ngx_http_wait_request_handler(ngx_event_t *rev)
 
     if (n == NGX_AGAIN) {
 
-#if (NGX_HAVE_DEFERRED_ACCEPT && defined TCP_DEFER_ACCEPT)
-        if (c->listening->deferred_accept
-#if (NGX_HTTP_SSL)
-            && c->ssl == NULL
-#endif
-            )
-        {
-            ngx_log_error(NGX_LOG_INFO, c->log, NGX_ETIMEDOUT,
-                          "client timed out in deferred accept");
-            ngx_http_close_connection(c);
-            return;
-        }
-#endif
-
         if (!rev->timer_set) {
             ngx_add_timer(rev, c->listening->post_accept_timeout);
             ngx_reusable_connection(c, 1);
@@ -571,6 +557,7 @@ ngx_http_create_request(ngx_connection_t *c)
     r->start_msec = tp->msec;
 
     r->method = NGX_HTTP_UNKNOWN;
+    r->http_version = NGX_HTTP_VERSION_10;
 
     r->headers_in.content_length_n = -1;
     r->headers_in.keep_alive_n = -1;
@@ -634,15 +621,6 @@ ngx_http_ssl_handshake(ngx_event_t *rev)
 
     if (n == -1) {
         if (err == NGX_EAGAIN) {
-
-#if (NGX_HAVE_DEFERRED_ACCEPT && defined TCP_DEFER_ACCEPT)
-            if (c->listening->deferred_accept) {
-                ngx_log_error(NGX_LOG_INFO, c->log, NGX_ETIMEDOUT,
-                              "client timed out in deferred accept");
-                ngx_http_close_connection(c);
-                return;
-            }
-#endif
 
             if (!rev->timer_set) {
                 ngx_add_timer(rev, c->listening->post_accept_timeout);
@@ -727,13 +705,26 @@ ngx_http_ssl_handshake_handler(ngx_connection_t *c)
 
         c->ssl->no_wait_shutdown = 1;
 
-#if (NGX_HTTP_SPDY && defined TLSEXT_TYPE_next_proto_neg)
+#if (NGX_HTTP_SPDY                                                            \
+     && (defined TLSEXT_TYPE_application_layer_protocol_negotiation           \
+         || defined TLSEXT_TYPE_next_proto_neg))
         {
         unsigned int             len;
         const unsigned char     *data;
         static const ngx_str_t   spdy = ngx_string(NGX_SPDY_NPN_NEGOTIATED);
 
+#ifdef TLSEXT_TYPE_application_layer_protocol_negotiation
+        SSL_get0_alpn_selected(c->ssl->connection, &data, &len);
+
+#ifdef TLSEXT_TYPE_next_proto_neg
+        if (len == 0) {
+            SSL_get0_next_proto_negotiated(c->ssl->connection, &data, &len);
+        }
+#endif
+
+#else /* TLSEXT_TYPE_next_proto_neg */
         SSL_get0_next_proto_negotiated(c->ssl->connection, &data, &len);
+#endif
 
         if (len == spdy.len && ngx_strncmp(data, spdy.data, spdy.len) == 0) {
             ngx_http_spdy_init(c->read);
@@ -1953,6 +1944,10 @@ ngx_http_set_virtual_server(ngx_http_request_t *r, ngx_str_t *host)
     ngx_http_core_loc_conf_t  *clcf;
     ngx_http_core_srv_conf_t  *cscf;
 
+#if (NGX_SUPPRESS_WARN)
+    cscf = NULL;
+#endif
+
     hc = r->http_connection;
 
 #if (NGX_HTTP_SSL && defined SSL_CTRL_SET_TLSEXT_HOSTNAME)
@@ -2693,6 +2688,33 @@ ngx_http_test_reading(ngx_http_request_t *r)
 
 #endif
 
+#if (NGX_HAVE_EPOLLRDHUP)
+
+    if ((ngx_event_flags & NGX_USE_EPOLL_EVENT) && rev->pending_eof) {
+        socklen_t  len;
+
+        rev->eof = 1;
+        c->error = 1;
+
+        err = 0;
+        len = sizeof(ngx_err_t);
+
+        /*
+         * BSDs and Linux return 0 and set a pending error in err
+         * Solaris returns -1 and sets errno
+         */
+
+        if (getsockopt(c->fd, SOL_SOCKET, SO_ERROR, (void *) &err, &len)
+            == -1)
+        {
+            err = ngx_socket_errno;
+        }
+
+        goto closed;
+    }
+
+#endif
+
     n = recv(c->fd, buf, 1, MSG_PEEK);
 
     if (n == 0) {
@@ -2733,7 +2755,7 @@ closed:
     ngx_log_error(NGX_LOG_INFO, c->log, err,
                   "client prematurely closed connection");
 
-    ngx_http_finalize_request(r, 0);
+    ngx_http_finalize_request(r, NGX_HTTP_CLIENT_CLOSED_REQUEST);
 }
 
 
@@ -3166,8 +3188,8 @@ ngx_http_lingering_close_handler(ngx_event_t *rev)
         return;
     }
 
-    timer = (ngx_msec_t) (r->lingering_time - ngx_time());
-    if (timer <= 0) {
+    timer = (ngx_msec_t) r->lingering_time - (ngx_msec_t) ngx_time();
+    if ((ngx_msec_int_t) timer <= 0) {
         ngx_http_close_request(r, 0);
         return;
     }
@@ -3342,10 +3364,15 @@ ngx_http_free_request(ngx_http_request_t *r, ngx_int_t rc)
         return;
     }
 
-    for (cln = r->cleanup; cln; cln = cln->next) {
+    cln = r->cleanup;
+    r->cleanup = NULL;
+
+    while (cln) {
         if (cln->handler) {
             cln->handler(cln->data);
         }
+
+        cln = cln->next;
     }
 
 #if (NGX_STAT_STUB)

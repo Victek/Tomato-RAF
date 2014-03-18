@@ -43,7 +43,7 @@ ngx_http_read_client_request_body(ngx_http_request_t *r,
     r->main->count++;
 
 #if (NGX_HTTP_SPDY)
-    if (r->spdy_stream) {
+    if (r->spdy_stream && r == r->main) {
         rc = ngx_http_spdy_read_request_body(r, post_handler);
         goto done;
     }
@@ -150,20 +150,27 @@ ngx_http_read_client_request_body(ngx_http_request_t *r,
                 goto done;
             }
 
-            cl = ngx_chain_get_free_buf(r->pool, &rb->free);
-            if (cl == NULL) {
-                return NGX_HTTP_INTERNAL_SERVER_ERROR;
+            if (rb->temp_file->file.offset != 0) {
+
+                cl = ngx_chain_get_free_buf(r->pool, &rb->free);
+                if (cl == NULL) {
+                    rc = NGX_HTTP_INTERNAL_SERVER_ERROR;
+                    goto done;
+                }
+
+                b = cl->buf;
+
+                ngx_memzero(b, sizeof(ngx_buf_t));
+
+                b->in_file = 1;
+                b->file_last = rb->temp_file->file.offset;
+                b->file = &rb->temp_file->file;
+
+                rb->bufs = cl;
+
+            } else {
+                rb->bufs = NULL;
             }
-
-            b = cl->buf;
-
-            ngx_memzero(b, sizeof(ngx_buf_t));
-
-            b->in_file = 1;
-            b->file_last = rb->temp_file->file.offset;
-            b->file = &rb->temp_file->file;
-
-            rb->bufs = cl;
         }
 
         post_handler(r);
@@ -374,20 +381,26 @@ ngx_http_do_read_client_request_body(ngx_http_request_t *r)
             return NGX_HTTP_INTERNAL_SERVER_ERROR;
         }
 
-        cl = ngx_chain_get_free_buf(r->pool, &rb->free);
-        if (cl == NULL) {
-            return NGX_HTTP_INTERNAL_SERVER_ERROR;
+        if (rb->temp_file->file.offset != 0) {
+
+            cl = ngx_chain_get_free_buf(r->pool, &rb->free);
+            if (cl == NULL) {
+                return NGX_HTTP_INTERNAL_SERVER_ERROR;
+            }
+
+            b = cl->buf;
+
+            ngx_memzero(b, sizeof(ngx_buf_t));
+
+            b->in_file = 1;
+            b->file_last = rb->temp_file->file.offset;
+            b->file = &rb->temp_file->file;
+
+            rb->bufs = cl;
+
+        } else {
+            rb->bufs = NULL;
         }
-
-        b = cl->buf;
-
-        ngx_memzero(b, sizeof(ngx_buf_t));
-
-        b->in_file = 1;
-        b->file_last = rb->temp_file->file.offset;
-        b->file = &rb->temp_file->file;
-
-        rb->bufs = cl;
     }
 
     r->read_event_handler = ngx_http_block_reading;
@@ -569,9 +582,9 @@ ngx_http_discarded_request_body_handler(ngx_http_request_t *r)
     }
 
     if (r->lingering_time) {
-        timer = (ngx_msec_t) (r->lingering_time - ngx_time());
+        timer = (ngx_msec_t) r->lingering_time - (ngx_msec_t) ngx_time();
 
-        if (timer <= 0) {
+        if ((ngx_msec_int_t) timer <= 0) {
             r->discard_body = 0;
             r->lingering_close = 0;
             ngx_http_finalize_request(r, NGX_ERROR);
@@ -713,7 +726,7 @@ ngx_http_discard_request_body_filter(ngx_http_request_t *r, ngx_buf_t *b)
                 size = b->last - b->pos;
 
                 if ((off_t) size > rb->chunked->size) {
-                    b->pos += rb->chunked->size;
+                    b->pos += (size_t) rb->chunked->size;
                     rb->chunked->size = 0;
 
                 } else {
@@ -752,7 +765,7 @@ ngx_http_discard_request_body_filter(ngx_http_request_t *r, ngx_buf_t *b)
         size = b->last - b->pos;
 
         if ((off_t) size > r->headers_in.content_length_n) {
-            b->pos += r->headers_in.content_length_n;
+            b->pos += (size_t) r->headers_in.content_length_n;
             r->headers_in.content_length_n = 0;
 
         } else {
@@ -842,6 +855,10 @@ ngx_http_request_body_length_filter(ngx_http_request_t *r, ngx_chain_t *in)
 
     for (cl = in; cl; cl = cl->next) {
 
+        if (rb->rest == 0) {
+            break;
+        }
+
         tl = ngx_chain_get_free_buf(r->pool, &rb->free);
         if (tl == NULL) {
             return NGX_HTTP_INTERNAL_SERVER_ERROR;
@@ -865,7 +882,7 @@ ngx_http_request_body_length_filter(ngx_http_request_t *r, ngx_chain_t *in)
             rb->rest -= size;
 
         } else {
-            cl->buf->pos += rb->rest;
+            cl->buf->pos += (size_t) rb->rest;
             rb->rest = 0;
             b->last = cl->buf->pos;
             b->last_buf = 1;
@@ -936,13 +953,13 @@ ngx_http_request_body_chunked_filter(ngx_http_request_t *r, ngx_chain_t *in)
 
                 if (clcf->client_max_body_size
                     && clcf->client_max_body_size
-                       < r->headers_in.content_length_n + rb->chunked->size)
+                       - r->headers_in.content_length_n < rb->chunked->size)
                 {
                     ngx_log_error(NGX_LOG_ERR, r->connection->log, 0,
                                   "client intended to send too large chunked "
-                                  "body: %O bytes",
-                                  r->headers_in.content_length_n
-                                  + rb->chunked->size);
+                                  "body: %O+%O bytes",
+                                  r->headers_in.content_length_n,
+                                  rb->chunked->size);
 
                     r->lingering_close = 1;
 
@@ -971,7 +988,7 @@ ngx_http_request_body_chunked_filter(ngx_http_request_t *r, ngx_chain_t *in)
                 size = cl->buf->last - cl->buf->pos;
 
                 if ((off_t) size > rb->chunked->size) {
-                    cl->buf->pos += rb->chunked->size;
+                    cl->buf->pos += (size_t) rb->chunked->size;
                     r->headers_in.content_length_n += rb->chunked->size;
                     rb->chunked->size = 0;
 

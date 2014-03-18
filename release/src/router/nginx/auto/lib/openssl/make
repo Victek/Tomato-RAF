@@ -55,11 +55,8 @@ END
 
 $OPENSSL/.openssl/include/openssl/ssl.h:	$NGX_MAKEFILE
 	cd $OPENSSL \\
-	&& \$(MAKE) clean \\
-	&& ./Configure linux-mipsel --cross-compile-prefix=' ' --prefix=$ngx_prefix no-sha0 \\
-	-no-smime no-camellia no-krb5 no-rmd160 no-ripemd no-seed no-capieng no-cms no-gms no-gmp no-rfc3779 \\
-	-no-ec no-ecdh no-ecdsa no-err no-hw no-jpake no-threads no-zlib no-sse2 no-perlasm no-dtls1 \\
-	-no-store no-psk no-md2 no-mdc2 no-ts \$(OPENSSL_CIPHERS) $OPENSSL_OPT \\
+	&& if [ -f Makefile ]; then \$(MAKE) clean; fi \\
+	&& ./config --prefix=$ngx_prefix no-shared $OPENSSL_OPT \\
 	&& \$(MAKE) \\
 	&& \$(MAKE) install LIBDIR=lib
 
