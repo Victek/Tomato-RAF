@@ -21,7 +21,7 @@ int main() {
 
 END
 
-ngx_test="$CC $CC_TEST_FLAGS $CC_AUX_FLAGS \
+ngx_test="$CC $NGX_CC_OPT $CC_TEST_FLAGS $CC_AUX_FLAGS \
           -o $NGX_AUTOTEST $NGX_AUTOTEST.c $NGX_LD_OPT $ngx_feature_libs"
 
 eval "$ngx_test >> $NGX_AUTOCONF_ERR 2>&1"
@@ -34,10 +34,10 @@ if [ -x $NGX_AUTOTEST ]; then
         echo " big endian"
     fi
 
-    rm $NGX_AUTOTEST*
+    rm -rf $NGX_AUTOTEST*
 
 else
-    rm $NGX_AUTOTEST*
+    rm -rf $NGX_AUTOTEST*
 
     echo
     echo "$0: error: cannot detect system byte ordering"

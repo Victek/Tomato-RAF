@@ -212,14 +212,17 @@ ngx_http_parse_request_line(ngx_http_request_t *r, ngx_buf_t *b)
                 case 5:
                     if (ngx_str5cmp(m, 'M', 'K', 'C', 'O', 'L')) {
                         r->method = NGX_HTTP_MKCOL;
+                        break;
                     }
 
                     if (ngx_str5cmp(m, 'P', 'A', 'T', 'C', 'H')) {
                         r->method = NGX_HTTP_PATCH;
+                        break;
                     }
 
                     if (ngx_str5cmp(m, 'T', 'R', 'A', 'C', 'E')) {
                         r->method = NGX_HTTP_TRACE;
+                        break;
                     }
 
                     break;
@@ -1258,8 +1261,8 @@ ngx_http_parse_complex_uri(ngx_http_request_t *r, ngx_uint_t merge_slashes)
          * the line feed
          */
 
-        ngx_log_debug4(NGX_LOG_DEBUG_HTTP, r->connection->log, 0,
-                       "s:%d in:'%Xd:%c', out:'%c'", state, ch, ch, *u);
+        ngx_log_debug3(NGX_LOG_DEBUG_HTTP, r->connection->log, 0,
+                       "s:%d in:'%Xd:%c'", state, ch, ch);
 
         switch (state) {
 
@@ -1777,23 +1780,32 @@ ngx_int_t
 ngx_http_parse_unsafe_uri(ngx_http_request_t *r, ngx_str_t *uri,
     ngx_str_t *args, ngx_uint_t *flags)
 {
-    u_char  ch, *p;
-    size_t  len;
+    u_char      ch, *p, *src, *dst;
+    size_t      len;
+    ngx_uint_t  quoted;
 
     len = uri->len;
     p = uri->data;
+    quoted = 0;
 
     if (len == 0 || p[0] == '?') {
         goto unsafe;
     }
 
-    if (p[0] == '.' && len == 3 && p[1] == '.' && (ngx_path_separator(p[2]))) {
+    if (p[0] == '.' && len > 1 && p[1] == '.'
+        && (len == 2 || ngx_path_separator(p[2])))
+    {
         goto unsafe;
     }
 
     for ( /* void */ ; len; len--) {
 
         ch = *p++;
+
+        if (ch == '%') {
+            quoted = 1;
+            continue;
+        }
 
         if (usual[ch >> 5] & (1 << (ch & 0x1f))) {
             continue;
@@ -1804,7 +1816,7 @@ ngx_http_parse_unsafe_uri(ngx_http_request_t *r, ngx_str_t *uri,
             args->data = p;
             uri->len -= len;
 
-            return NGX_OK;
+            break;
         }
 
         if (ch == '\0') {
@@ -1813,10 +1825,62 @@ ngx_http_parse_unsafe_uri(ngx_http_request_t *r, ngx_str_t *uri,
 
         if (ngx_path_separator(ch) && len > 2) {
 
-            /* detect "/../" */
+            /* detect "/../" and "/.." */
 
-            if (p[0] == '.' && p[1] == '.' && ngx_path_separator(p[2])) {
+            if (p[0] == '.' && p[1] == '.'
+                && (len == 3 || ngx_path_separator(p[2])))
+            {
                 goto unsafe;
+            }
+        }
+    }
+
+    if (quoted) {
+        ngx_log_debug1(NGX_LOG_DEBUG_HTTP, r->connection->log, 0,
+                       "escaped URI: \"%V\"", uri);
+
+        src = uri->data;
+
+        dst = ngx_pnalloc(r->pool, uri->len);
+        if (dst == NULL) {
+            return NGX_ERROR;
+        }
+
+        uri->data = dst;
+
+        ngx_unescape_uri(&dst, &src, uri->len, 0);
+
+        uri->len = dst - uri->data;
+
+        ngx_log_debug1(NGX_LOG_DEBUG_HTTP, r->connection->log, 0,
+                       "unescaped URI: \"%V\"", uri);
+
+        len = uri->len;
+        p = uri->data;
+
+        if (p[0] == '.' && len > 1 && p[1] == '.'
+            && (len == 2 || ngx_path_separator(p[2])))
+        {
+            goto unsafe;
+        }
+
+        for ( /* void */ ; len; len--) {
+
+            ch = *p++;
+
+            if (ch == '\0') {
+                goto unsafe;
+            }
+
+            if (ngx_path_separator(ch) && len > 2) {
+
+                /* detect "/../" and "/.." */
+
+                if (p[0] == '.' && p[1] == '.'
+                    && (len == 3 || ngx_path_separator(p[2])))
+                {
+                    goto unsafe;
+                }
             }
         }
     }
@@ -2182,8 +2246,9 @@ data:
         ctx->length = 3 /* "0" LF LF */;
         break;
     case sw_chunk_size:
-        ctx->length = 2 /* LF LF */
-                      + (ctx->size ? ctx->size + 4 /* LF "0" LF LF */ : 0);
+        ctx->length = 1 /* LF */
+                      + (ctx->size ? ctx->size + 4 /* LF "0" LF LF */
+                                   : 1 /* LF */);
         break;
     case sw_chunk_extension:
     case sw_chunk_extension_almost_done:
