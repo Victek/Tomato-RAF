@@ -1768,130 +1768,130 @@ pcre-clean:
 	fi )
 #Tomato RAF
 php/stamp-h1: pcre zlib-install
-        @$(SEP)
+	@$(SEP)
 #install zlib libs
-        install -D zlib/libz.so.1.2.5 $(INSTALLDIR)/zlib/usr/lib/libz.so.1.2.5
-        $(STRIP) $(INSTALLDIR)/zlib/usr/lib/libz.so.1.2.5
-        cd $(INSTALLDIR)/zlib/usr/lib && ln -sf libz.so.1.2.5 libz.so
-        install -D zlib/zlib.h $(INSTALLDIR)/zlib/usr/include/zlib.h
+	install -D zlib/libz.so.1.2.5 $(INSTALLDIR)/zlib/usr/lib/libz.so.1.2.5
+	$(STRIP) $(INSTALLDIR)/zlib/usr/lib/libz.so.1.2.5
+	cd $(INSTALLDIR)/zlib/usr/lib && ln -sf libz.so.1.2.5 libz.so
+	install -D zlib/zlib.h $(INSTALLDIR)/zlib/usr/include/zlib.h
 #When updating php remember to run aclocal, libtoolize --force, autoheader, autoconf
 # and apply patches to configure.in mentioned in aclocal comments...
 #       @cd php && autoreconf -v -f -i
-        cd php && CC=$(CC) CXX=$(ARCH)-g++ AR=$(AR) RANLIB=$(RANLIB) LD=$(LD) CFLAGS="-Os -Wall -I $(TOP)/zlib -I $(TOP)/pcre -L $(TOP)/pcre/.libs/libpc                                                                                     re.so.1.2.0 -L $(TOP)/pcre/.libs/libpcreposix.so.0.0.1 $(EXTRACFLAGS)" \
-        $(CONFIGURE) --prefix=/usr \
-        --enable-shared \
-        --disable-static \
-        --disable-rpath \
-        --disable-debug \
-        --without-pear \
-        --with-config-file-path=/etc \
-        --with-config-file-scan-dir=/etc/php5 \
-        --disable-short-tags \
-        --with-zlib="$(INSTALLDIR)/zlib/usr" \
-        --with-zlib-dir="$(INSTALLDIR)/zlib/usr" \
-        --disable-phar \
-        --enable-cli \
-        --enable-cgi \
-        --disable-calendar \
-        --disable-ctype \
-        --without-curl \
-        --disable-fileinfo \
-        --without-gettext \
-        --disable-dom \
-        --disable-exif \
-        --disable-ftp \
-        --without-gd \
-        --without-gmp \
-        --disable-hash \
-        --without-iconv \
-        --disable-json \
-        --without-ldap \
-        --disable-mbstring \
-        --without-mcrypt \
-        --without-mysqli \
-        --without-openssl \
-        --disable-pcntl \
-        --without-pdo-mysql \
-        --without-pdo-pgsql \
-        --without-pdo-sqlite \
-        --disable-pdo \
-        --without-pgsql \
-        --disable-session \
-        --disable-shmop \
-        --disable-simplexml \
-        --disable-soap \
-        --disable-sockets \
-        --without-sqlite \
-        --without-sqlite3 \
-        --disable-sysvmsg \
-        --disable-sysvsem \
-        --disable-sysvshm \
-        --disable-tokenizer \
-        --disable-xml \
-        --disable-xmlreader \
-        --disable-xmlwriter \
-        --disable-zip \
-        --disable-filter \
-        --disable-libxml \
-        --without-system-tzdata \
-        ac_cv_c_bigendian_php="no" \
-        php_cv_cc_rpath="no" \
-        iconv_impl_name="gnu_libiconv"
-        @touch php/stamp-h1
-        @$(MAKE) -C php
+	cd php && CC=$(CC) CXX=$(ARCH)-g++ AR=$(AR) RANLIB=$(RANLIB) LD=$(LD) CFLAGS="-Os -Wall -I $(TOP)/zlib -I $(TOP)/pcre -L $(TOP)/pcre/.libs/libpc                                                                                     re.so.1.2.0 -L $(TOP)/pcre/.libs/libpcreposix.so.0.0.1 $(EXTRACFLAGS)" \
+	$(CONFIGURE) --prefix=/usr \
+	--enable-shared \
+	--disable-static \
+	--disable-rpath \
+	--disable-debug \
+	--without-pear \
+	--with-config-file-path=/etc \
+	--with-config-file-scan-dir=/etc/php5 \
+	--disable-short-tags \
+	--with-zlib="$(INSTALLDIR)/zlib/usr" \
+	--with-zlib-dir="$(INSTALLDIR)/zlib/usr" \
+	--disable-phar \
+	--enable-cli \
+	--enable-cgi \
+	--disable-calendar \
+	--disable-ctype \
+	--without-curl \
+	--disable-fileinfo \
+	--without-gettext \
+	--disable-dom \
+	--disable-exif \
+	--disable-ftp \
+	--without-gd \
+	--without-gmp \
+	--disable-hash \
+	--without-iconv \
+	--disable-json \
+	--without-ldap \
+	--disable-mbstring \
+	--without-mcrypt \
+	--without-mysqli \
+	--without-openssl \
+	--disable-pcntl \
+	--without-pdo-mysql \
+	--without-pdo-pgsql \
+	--without-pdo-sqlite \
+	--disable-pdo \
+	--without-pgsql \
+	--disable-session \
+	--disable-shmop \
+	--disable-simplexml \
+	--disable-soap \
+	--disable-sockets \
+	--without-sqlite \
+	--without-sqlite3 \
+	--disable-sysvmsg \
+	--disable-sysvsem \
+	--disable-sysvshm \
+	--disable-tokenizer \
+	--disable-xml \
+	--disable-xmlreader \
+	--disable-xmlwriter \
+	--disable-zip \
+	--disable-filter \
+	--disable-libxml \
+	--without-system-tzdata \
+	ac_cv_c_bigendian_php="no" \
+	php_cv_cc_rpath="no" \
+	iconv_impl_name="gnu_libiconv"
+	@touch php/stamp-h1
+	@$(MAKE) -C php
 
 php: php/stamp-h1
 
 php-clean:
-        -@$(MAKE) -C php clean
-        -@rm php/stamp-h1
+	-@$(MAKE) -C php clean
+	-@rm php/stamp-h1
 
 php-install: php
-        @$(SEP)
-        install -d $(INSTALLDIR)/php/usr/sbin
-        install -D php/sapi/cli/php $(INSTALLDIR)/php/usr/sbin/php-cli && chmod 0755 $(INSTALLDIR)/php/usr/sbin/php-cli
-        $(STRIP) $(INSTALLDIR)/php/usr/sbin/php-cli
-        install -D php/sapi/cgi/php-cgi $(INSTALLDIR)/php/usr/sbin/php-cgi && chmod 0755 $(INSTALLDIR)/php/usr/sbin/php-cgi
-        cd $(INSTALLDIR)/php/usr/sbin && ln -sf php-cgi php-fcgi
-        $(STRIP) $(INSTALLDIR)/php/usr/sbin/php-cgi
+	@$(SEP)
+	install -d $(INSTALLDIR)/php/usr/sbin
+	install -D php/sapi/cli/php $(INSTALLDIR)/php/usr/sbin/php-cli && chmod 0755 $(INSTALLDIR)/php/usr/sbin/php-cli
+	$(STRIP) $(INSTALLDIR)/php/usr/sbin/php-cli
+	install -D php/sapi/cgi/php-cgi $(INSTALLDIR)/php/usr/sbin/php-cgi && chmod 0755 $(INSTALLDIR)/php/usr/sbin/php-cgi
+	cd $(INSTALLDIR)/php/usr/sbin && ln -sf php-cgi php-fcgi
+	$(STRIP) $(INSTALLDIR)/php/usr/sbin/php-cgi
 
 
 #Tomato RAF
 nginx/stamp-h1: openssl zlib pcre
-        @$(SEP)
-        cd $(TOP)/nginx && ./configure --crossbuild=Linux::$(ARCH) \
-                                --prefix=/usr \
-                                --sbin-path=/usr/sbin \
-                                --conf-path=/etc/nginx/nginx.conf \
-                                --error-log-path=/tmp/var/log/nginx/error.log \
-                                --http-log-path=/tmp/var/log/nginx/access.log \
-                                --pid-path=/tmp/var/run/nginx.pid \
-                                --lock-path=/tmp/var/run/nginx.lock.accept \
-                                --http-client-body-temp-path=/tmp/var/lib/nginx/client \
-                                --http-fastcgi-temp-path=/tmp/var/lib/nginx/fastcgi \
-                                --with-http_flv_module \
-                                --with-http_ssl_module \
-                                --with-http_gzip_static_module \
-                                --http-uwsgi-temp-path=/tmp/var/lib/nginx/uwsgi \
-                                --http-scgi-temp-path=/tmp/var/lib/nginx/scgi \
-                                --http-proxy-temp-path=/tmp/var/lib/nginx/proxy \
-                                --with-cc="$(CC)" \
-                                --with-ld-opt="$(LDFLAGS) -L $(TOP)/pcre/.libs -L $(TOP)/zlib -L $(TOP)/openssl" \
-                                --with-cc-opt="$(EXTRACFLAGS) $(CPPFLAGS) $(CFLAGS) -I $(TOP)/openssl/include -I $(TOP)/openssl/include/openssl -I $(TOP)/pcre -I $(TOP)/zlib" \
-                                $(ADDITIONAL_MODULES)
+	@$(SEP)
+	cd $(TOP)/nginx && ./configure --crossbuild=Linux::$(ARCH) \
+		--prefix=/usr \
+		--sbin-path=/usr/sbin \
+		--conf-path=/etc/nginx/nginx.conf \
+		--error-log-path=/tmp/var/log/nginx/error.log \
+		--http-log-path=/tmp/var/log/nginx/access.log \
+		--pid-path=/tmp/var/run/nginx.pid \
+		--lock-path=/tmp/var/run/nginx.lock.accept \
+		--http-client-body-temp-path=/tmp/var/lib/nginx/client \
+		--http-fastcgi-temp-path=/tmp/var/lib/nginx/fastcgi \
+		--with-http_flv_module \
+		--with-http_ssl_module \
+		--with-http_gzip_static_module \
+		--http-uwsgi-temp-path=/tmp/var/lib/nginx/uwsgi \
+		--http-scgi-temp-path=/tmp/var/lib/nginx/scgi \
+		--http-proxy-temp-path=/tmp/var/lib/nginx/proxy \
+		--with-cc="$(CC)" \
+		--with-ld-opt="$(LDFLAGS) -L $(TOP)/pcre/.libs -L $(TOP)/zlib -L $(TOP)/openssl" \
+		--with-cc-opt="$(EXTRACFLAGS) $(CPPFLAGS) $(CFLAGS) -I $(TOP)/openssl/include -I $(TOP)/openssl/include/openssl -I $(TOP)/pcre -I $(TOP)/zlib" \
+		$(ADDITIONAL_MODULES)
 
 nginx: nginx/stamp-h1
-        @$(SEP)
-        @$(MAKE) -C nginx
+	@$(SEP)
+	@$(MAKE) -C nginx
 
 nginx-clean:
-        -@$(MAKE) -C nginx clean
-        -@rm -f nginx/stamp-h1
+	-@$(MAKE) -C nginx clean
+	-@rm -f nginx/stamp-h1
 
 nginx-install: nginx
-        install -d $(INSTALLDIR)/nginx/usr/sbin
-        install -D nginx/objs/nginx $(INSTALLDIR)/nginx/usr/sbin/nginx && chmod 755 $(INSTALLDIR)/nginx/usr/sbin/nginx
-        $(STRIP) $(INSTALLDIR)/nginx/usr/sbin/nginx
+	install -d $(INSTALLDIR)/nginx/usr/sbin
+	install -D nginx/objs/nginx $(INSTALLDIR)/nginx/usr/sbin/nginx && chmod 755 $(INSTALLDIR)/nginx/usr/sbin/nginx
+	$(STRIP) $(INSTALLDIR)/nginx/usr/sbin/nginx
 
 expat/stamp-h1:
 	cd expat && CC=$(CC) CFLAGS="-Os -Wall $(EXTRACFLAGS)" \
