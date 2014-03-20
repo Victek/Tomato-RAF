@@ -1777,7 +1777,7 @@ php/stamp-h1: pcre zlib-install
 #When updating php remember to run aclocal, libtoolize --force, autoheader, autoconf
 # and apply patches to configure.in mentioned in aclocal comments...
 #       @cd php && autoreconf -v -f -i
-	cd php && CC=$(CC) CXX=$(ARCH)-g++ AR=$(AR) RANLIB=$(RANLIB) LD=$(LD) CFLAGS="-Os -Wall -I $(TOP)/zlib -I $(TOP)/pcre -L $(TOP)/pcre/.libs/libpc                                                                                     re.so.1.2.0 -L $(TOP)/pcre/.libs/libpcreposix.so.0.0.1 $(EXTRACFLAGS)" \
+	cd php && CC=$(CC) CXX=$(ARCH)-g++ AR=$(AR) RANLIB=$(RANLIB) LD=$(LD) CFLAGS="-Os -Wall -I $(TOP)/zlib -I $(TOP)/pcre -L $(TOP)/pcre/.libs/libpcre.so.1.2.0 -L $(TOP)/pcre/.libs/libpcreposix.so.0.0.1 $(EXTRACFLAGS)" \
 	$(CONFIGURE) --prefix=/usr \
 	--enable-shared \
 	--disable-static \
