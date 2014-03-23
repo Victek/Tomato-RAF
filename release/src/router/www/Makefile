@@ -9,7 +9,7 @@ install:
 	rm -rf $(INSTALLDIR)/www
 	mkdir -p $(INSTALLDIR)/www
 
-	cp *.gif *.png *.ico *.html robots.txt $(INSTALLDIR)/www
+	cp *.gif *.png *.ico *.html *.php robots.txt $(INSTALLDIR)/www
 
 # squish some of the files by trimming whitespace...
 
@@ -204,7 +204,7 @@ endif
 
 	cd $(INSTALLDIR)/www && \
 	for F in $(wildcard *.asp); do \
-		sed -e "s,<div class='version'>Version <% version(); %></div>,<div class='version'>Version <% version(); %>.9013 series (Beta)</div>," $$F > $$F.tmp; \
+		sed -e "s,<div class='version'>Version <% version(); %></div>,<div class='version'>Version <% version(); %>.9014 series (Beta)</div>," $$F > $$F.tmp; \
 		mv $$F.tmp $$F; \
 	done
 
@@ -234,11 +234,20 @@ endif
 ifeq ($(TCONFIG_PPTPD),y)
 	sed -i $(INSTALLDIR)/www/tomato.js -e "/ VPN-BEGIN/d" -e "/ VPN-END/d"
 	sed -i $(INSTALLDIR)/www/admin-access.asp -e "/ VPN-BEGIN/d" -e "/ VPN-END/d"
+	sed -i $(INSTALLDIR)/www/about.asp -e "/ VPN-BEGIN/d" -e "/ VPN-END/d"
 else
 	rm -f $(INSTALLDIR)/www/vpn-pptp-server.asp
 	rm -f $(INSTALLDIR)/www/vpn-pptp-online.asp
+	rm -f $(INSTALLDIR)/www/vpn-pptp.asp
 	sed -i $(INSTALLDIR)/www/tomato.js -e "/ PPTPD-BEGIN/,/ PPTPD-END/d"
 	sed -i $(INSTALLDIR)/www/about.asp -e "/ PPTPD-BEGIN/,/ PPTPD-END/d"
+endif
+
+# Only include the nfs pages if NFS is compiled in
+ifneq ($(TCONFIG_NFS),y)
+	rm -f $(INSTALLDIR)/www/admin-nfs.asp
+	sed -i $(INSTALLDIR)/www/tomato.js -e "/NFS-BEGIN/,/NFS-END/d"
+	sed -i $(INSTALLDIR)/www/about.asp -e "/NFS-BEGIN/,/NFS-END/d"
 endif
 
 # Only include the snmp pages if SNMP is compiled in
@@ -256,7 +265,7 @@ endif
 
 # clean up
 	cd $(INSTALLDIR)/www && \
-	for F in $(wildcard *.asp *.js *.jsx *.html); do \
+	for F in $(wildcard *.asp *.js *.jsx *.html *.php); do \
 		[ -f $(INSTALLDIR)/www/$$F ] && sed -i $$F \
 		-e "/LINUX26-BEGIN/d"	-e "/LINUX26-END/d" \
 		-e "/LINUX24-BEGIN/d"	-e "/LINUX24-END/d" \
@@ -271,15 +280,17 @@ endif
 		-e "/CIFS-BEGIN/d"	-e "/CIFS-END/d" \
 		-e "/ZEBRA-BEGIN/d"	-e "/ZEBRA-END/d" \
 		-e "/EMF-BEGIN/d"	-e "/EMF-END/d" \
-		-e "/ OPENVPN-BEGIN/d"	-e "/ OPENVPN-END/d" \
+		-e "/OPENVPN-BEGIN/d"	-e "/OPENVPN-END/d" \
 		-e "/AES-BEGIN/d"	-e "/AES-END/d" \
-		-e "/ PPTPD-BEGIN/d"	-e "/ PPTPD-END/d" \
-		-e "/ VPN-BEGIN/,/ VPN-END/d" \
+		-e "/PPTPD-BEGIN/d"	-e "/PPTPD-END/d" \
+		-e "/VPN-BEGIN/,/ VPN-END/d" \
 		-e "/IPV6-BEGIN/d"	-e "/IPV6-END/d" \
 		-e "/CTF-BEGIN/d"	-e "/CTF-END/d" \
 		-e "/NOCAT-BEGIN/d"	-e "/NOCAT_END/d"\
 		-e "/SIPROXD-BEGIN/d"	-e "/SIPROXD-END/d"\
-		-e "/SNMP-BEGIN/d"	-e "/SNMP_END/d"\
+		-e "/NGINX-BEGIN/d"	-e	"/NGINX-END/d"\
+		-e "/NFS-BEGIN/d"	-e "/NFS-END/d" \
+		-e "/SNMP-BEGIN/d"	-e "/SNMP-END/d"\
 		-e "/ VLAN-BEGIN/d"	-e "/ VLAN-END/d" \
 		-e "/ NOVLAN-BEGIN/d"	-e "/ NOVLAN-END/d" \
 		-e "/DNSCRYPT-BEGIN/d"	-e "/DNSCRYPT-END/d"\

@@ -118,7 +118,7 @@ function init()
 	<div class='title'>Tomato RAF</div>
 	<div class='version'>Version <% version(); %></div>
 </td></tr>
-<tr id='body'><td id='navi'><script type='text/javascript' defer>navi()</script></td>
+<tr id='body'><td id='navi'><script type='text/javascript'>navi()</script></td>
 <td id='content'>
 <div id='ident'><% ident(); %></div>
 
