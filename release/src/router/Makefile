@@ -141,7 +141,7 @@ ifeq (obj-$(TCONFIG_NGINX),y)
 ifndef ($(ADDITIONAL_MODULES))
 ADDITIONAL_MODULES:=
 else
-ifeq ($(TCONFIG_IPV6),y)
+ifeq ($(TCONFIG_IPV6SUPP),y)
 ADDITIONAL_MODULES += --with-ipv6
 endif
 endif
@@ -797,7 +797,10 @@ rp-pppoe-install: rp-pppoe
 upnp: nvram shared iptables
 
 libnfnetlink/stamp-h1:
-	cd $(TOP)/libnfnetlink && CC=$(CC) STRIP='mipsel-uclibc-strip' \
+# tomatoraf.com, Victek
+# last sources is dated March 22,2014 from netfilter.org git
+# ./genconfig.sh and make with automake 1.13
+	cd $(TOP)/libnfnetlink && CC=$(CC) STRIP=$(STRIP) \
 		CFLAGS="-Os -Wall $(EXTRACFLAGS) -ffunction-sections -fdata-sections" \
 		LDFLAGS="-ffunction-sections -fdata-sections -Wl,--gc-sections" \
 		$(CONFIGURE) --prefix=/usr --enable-shared --enable-static
@@ -815,11 +818,7 @@ libnfnetlink-install:
 		ln -sf libnfnetlink.so.0.2.0 libnfnetlink.so
 
 miniupnpd-config:
-#ifeq ($(TCONFIG_IPV6),y)
-#	@cd miniupnpd && ./genconfig.sh --leasefile --ipv6
-#else
 	@cd miniupnpd && ./genconfig.sh --leasefile
-#endif
 
 miniupnpd: iptables miniupnpd-config libnfnetlink
 	@$(SEP)
@@ -1332,12 +1331,12 @@ endif
 
 zlib/stamp-h1:
 	cd zlib && \
-	CC=$(CC) AR="ar rc" RANLIB=$(RANLIB) LD=$(LD) CFLAGS="-Os -Wall $(EXTRACFLAGS)" \
-	./configure --shared --prefix='/usr'
+	AR="$(AR)" RANLIB=$(RANLIB) LD=$(LD) CFLAGS="-Os -Wall $(EXTRACFLAGS)" \
+	CC=$(CC) ./configure
 	@touch zlib/stamp-h1
 
 zlib: zlib/stamp-h1
-	@$(MAKE) -C zlib CC=$(CC) AR="ar rc" RANLIB=$(RANLIB) LD=$(LD) all $(PARALLEL_BUILD)
+	@$(MAKE) -C zlib CC=$(CC) AR="$(AR)" RANLIB=$(RANLIB) LD=$(LD) all $(PARALLEL_BUILD)
 
 zlib-clean:
 	-@$(MAKE) -C zlib clean
@@ -1770,9 +1769,9 @@ pcre-clean:
 php/stamp-h1: pcre zlib-install
 	@$(SEP)
 #install zlib libs
-	install -D zlib/libz.so.1.2.5 $(INSTALLDIR)/zlib/usr/lib/libz.so.1.2.5
-	$(STRIP) $(INSTALLDIR)/zlib/usr/lib/libz.so.1.2.5
-	cd $(INSTALLDIR)/zlib/usr/lib && ln -sf libz.so.1.2.5 libz.so
+	install -D zlib/libz.so.1.2.8 $(INSTALLDIR)/zlib/usr/lib/libz.so.1.2.8
+	$(STRIP) $(INSTALLDIR)/zlib/usr/lib/libz.so.1.2.8
+	cd $(INSTALLDIR)/zlib/usr/lib && ln -sf libz.so.1.2.8 libz.so
 	install -D zlib/zlib.h $(INSTALLDIR)/zlib/usr/include/zlib.h
 #When updating php remember to run aclocal, libtoolize --force, autoheader, autoconf
 # and apply patches to configure.in mentioned in aclocal comments...
@@ -1843,7 +1842,7 @@ php/stamp-h1: pcre zlib-install
 php: php/stamp-h1
 
 php-clean:
-	-@$(MAKE) -C php clean
+	@$(MAKE) -C php clean
 	-@rm php/stamp-h1
 
 php-install: php
@@ -1882,7 +1881,7 @@ nginx/stamp-h1: openssl zlib pcre
 
 nginx: nginx/stamp-h1
 	@$(SEP)
-	@$(MAKE) -C nginx
+	$(MAKE) -C nginx
 
 nginx-clean:
 	-@$(MAKE) -C nginx clean
