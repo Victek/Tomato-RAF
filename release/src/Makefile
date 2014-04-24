@@ -1127,6 +1127,11 @@ e1200v1f:
 	@$(MAKE) r2f NVRAM_SIZE=64 LINKSYS_E1200v1=y
 
 
+#Build for Asus RT-N66u with 64k NVRAM support
+
+rtn66:
+	@$(MAKE) nf MIPS32=r2 NVRAM_64K=y
+
 #Builds for WNR3500L v2
 
 v2e:
@@ -1275,6 +1280,7 @@ ifeq ($(CONFIG_LINUX26),y)
 	@echo "v2e          Netgear WNR3500Lv2 build"
 	@echo "       Routers with wl_high module"
 	@echo "rtn53	Asus RT-N53 with wl_high module (dualband support)"
+	@echo "rtn66	Asus RT-N66 build with full features"
 	@echo "e2500	Linksys E2500 with wl_high module (dualband support)"
 	@echo "e3200    Linksys E3200 with wl_high module (dualband support)"
 	@echo "l600n    Rosewill L600N Build with wl_high module (dualband support)"
