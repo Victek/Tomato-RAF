@@ -1771,6 +1771,8 @@ php/stamp-h1: pcre zlib-install
 #install zlib libs
 	install -D zlib/libz.so.1.2.8 $(INSTALLDIR)/zlib/usr/lib/libz.so.1.2.8
 	$(STRIP) $(INSTALLDIR)/zlib/usr/lib/libz.so.1.2.8
+	install -D zlib/libz.so.1 $(INSTALLDIR)/zlib/usr/lib/libz.so.1
+	$(STRIP) $(INSTALLDIR)/zlib/usr/lib/libz.so.1
 	cd $(INSTALLDIR)/zlib/usr/lib && ln -sf libz.so.1.2.8 libz.so
 	install -D zlib/zlib.h $(INSTALLDIR)/zlib/usr/include/zlib.h
 #When updating php remember to run aclocal, libtoolize --force, autoheader, autoconf
