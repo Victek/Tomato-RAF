@@ -9,7 +9,7 @@ install:
 	rm -rf $(INSTALLDIR)/www
 	mkdir -p $(INSTALLDIR)/www
 
-	cp *.gif *.png *.ico *.html robots.txt $(INSTALLDIR)/www
+	cp *.gif *.png *.ico *.html *.php robots.txt $(INSTALLDIR)/www
 
 # squish some of the files by trimming whitespace...
 
@@ -119,7 +119,7 @@ ifneq ($(TCONFIG_SIPROXD),y)
 	sed -i $(INSTALLDIR)/www/about.asp -e "/SIPROXD-BEGIN/,/SIPROXD-END/d"
 endif
 # Clean up NGinX files if not needed
-ifneq ($(TCONFIG_NGINX),y)	
+ifneq ($(TCONFIG_NGINX),y)
 	rm -f $(INSTALLDIR)/www/nginx.asp
 	rm -f $(INSTALLDIR)/www/index.html
 	rm -f $(INSTALLDIR)/www/index.php
@@ -286,7 +286,7 @@ endif
 		-e "/VPN-BEGIN/,/ VPN-END/d" \
 		-e "/IPV6-BEGIN/d"	-e "/IPV6-END/d" \
 		-e "/CTF-BEGIN/d"	-e "/CTF-END/d" \
-		-e "/NOCAT-BEGIN/d"	-e "/NOCAT_END/d"\
+		-e "/NOCAT-BEGIN/d"	-e "/NOCAT-END/d"\
 		-e "/SIPROXD-BEGIN/d"	-e "/SIPROXD-END/d"\
 		-e "/NGINX-BEGIN/d"	-e	"/NGINX-END/d"\
 		-e "/NFS-BEGIN/d"	-e "/NFS-END/d" \
