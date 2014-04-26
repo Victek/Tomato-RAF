@@ -183,9 +183,11 @@ sub fixDyn
 #Tomato RAF - NocatSplash
 	fixDynDep("splashd","libglib-1.2.so.0.0.10");
 #Tomato RAF - php
+	fixDynDep("php-cli","libpcreposix.so.0");
 	fixDynDep("php-cli","libz.so.1.2.8");
-	fixDynDep("php-cgi","libz.so.1.2.8");
 	fixDynDep("php-cli","libz.so.1");
+	fixDynDep("php-cgi","libpcreposix.so.0");
+	fixDynDep("php-cgi","libz.so.1.2.8");
 	fixDynDep("php-cgi","libz.so.1");
 #Tomato RAF - nginx
 	fixDynDep("nginx","libz.so.1.2.8");
@@ -492,7 +494,7 @@ genSO("${root}/usr/lib/liblzo2.so.2", "${router}/lzo/src/.libs/liblzo2.a");
 #Tomato RAF - Siproxd
 genSO("${root}/usr/lib/libbcmcrypto.so", "${router}/libbcmcrypto/libbcmcrypto.a");
 genSO("${root}/usr/lib/libosipparser2.so.10.0.0", "${router}/libosip2/src/osipparser2/.libs/libosipparser2.a");
-
+#Shibby
 genSO("${root}/usr/lib/libnfnetlink.so.0.2.0", "${router}/libnfnetlink/src/.libs/libnfnetlink.a");
 genSO("${root}/usr/lib/libsodium.so.4.5.0", "${router}/libsodium/src/libsodium/.libs/libsodium.a");
 

@@ -1757,8 +1757,8 @@ pcre-install: pcre
 	@$(SEP)
 	install -D pcre/.libs/libpcre.so.1 $(INSTALLDIR)/pcre/usr/lib/libpcre.so.1
 	$(STRIP) -s $(INSTALLDIR)/pcre/usr/lib/libpcre.so.1
-	install -D pcre/.libs/libpcreposix.so.0.0.1 $(INSTALLDIR)/pcre/usr/lib/libpcreposix.so.0.0.1
-	$(STRIP) -s $(INSTALLDIR)/pcre/usr/lib/libpcreposix.so.0.0.1
+	install -D pcre/.libs/libpcreposix.so.0.0.2 $(INSTALLDIR)/pcre/usr/lib/libpcreposix.so.0.0.2
+	$(STRIP) -s $(INSTALLDIR)/pcre/usr/lib/libpcreposix.so.0.0.2
 
 pcre-clean:
 	( if [ -f pcre/Makefile ]; then \
@@ -1768,17 +1768,19 @@ pcre-clean:
 #Tomato RAF
 php/stamp-h1: pcre zlib-install
 	@$(SEP)
-#install zlib libs
+#install zlib libs && pcre libs
 	install -D zlib/libz.so.1.2.8 $(INSTALLDIR)/zlib/usr/lib/libz.so.1.2.8
 	$(STRIP) $(INSTALLDIR)/zlib/usr/lib/libz.so.1.2.8
 	install -D zlib/libz.so.1 $(INSTALLDIR)/zlib/usr/lib/libz.so.1
 	$(STRIP) $(INSTALLDIR)/zlib/usr/lib/libz.so.1
 	cd $(INSTALLDIR)/zlib/usr/lib && ln -sf libz.so.1.2.8 libz.so
+	install -D pcre/.libs/libpcreposix.so.0 $(INSTALLDIR)/pcre/usr/lib/libpcreposix.so.0
+	$(STRIP) $(INSTALLDIR)/pcre/usr/lib/libpcreposix.so.0
 	install -D zlib/zlib.h $(INSTALLDIR)/zlib/usr/include/zlib.h
 #When updating php remember to run aclocal, libtoolize --force, autoheader, autoconf
 # and apply patches to configure.in mentioned in aclocal comments...
 #       @cd php && autoreconf -v -f -i
-	cd php && CC=$(CC) CXX=$(ARCH)-g++ AR=$(AR) RANLIB=$(RANLIB) LD=$(LD) CFLAGS="-Os -Wall -I $(TOP)/zlib -I $(TOP)/pcre -L $(TOP)/pcre/.libs/libpcre.so.1.2.0 -L $(TOP)/pcre/.libs/libpcreposix.so.0.0.1 $(EXTRACFLAGS)" \
+	cd php && CC=$(CC) CXX=$(ARCH)-g++ AR=$(AR) RANLIB=$(RANLIB) LD=$(LD) CFLAGS="-Os -Wall -I $(TOP)/zlib -I $(TOP)/pcre -L $(TOP)/pcre/.libs/libpcre.so.1.2.3 -L $(TOP)/pcre/.libs/libpcreposix.so.0.0.2 $(EXTRACFLAGS)" \
 	$(CONFIGURE) --prefix=/usr \
 	--enable-shared \
 	--disable-static \
@@ -1793,6 +1795,7 @@ php/stamp-h1: pcre zlib-install
 	--disable-phar \
 	--enable-cli \
 	--enable-cgi \
+	--enable-fastcgi \
 	--disable-calendar \
 	--disable-ctype \
 	--without-curl \
@@ -1853,7 +1856,6 @@ php-install: php
 	install -D php/sapi/cli/php $(INSTALLDIR)/php/usr/sbin/php-cli && chmod 0755 $(INSTALLDIR)/php/usr/sbin/php-cli
 	$(STRIP) $(INSTALLDIR)/php/usr/sbin/php-cli
 	install -D php/sapi/cgi/php-cgi $(INSTALLDIR)/php/usr/sbin/php-cgi && chmod 0755 $(INSTALLDIR)/php/usr/sbin/php-cgi
-	cd $(INSTALLDIR)/php/usr/sbin && ln -sf php-cgi php-fcgi
 	$(STRIP) $(INSTALLDIR)/php/usr/sbin/php-cgi
 
 
