@@ -797,13 +797,10 @@ rp-pppoe-install: rp-pppoe
 upnp: nvram shared iptables
 
 libnfnetlink/stamp-h1:
-# tomatoraf.com, Victek
-# last sources is dated March 22,2014 from netfilter.org git
-# ./genconfig.sh and make with automake 1.13
-	cd $(TOP)/libnfnetlink && CC=$(CC) STRIP=$(STRIP) \
-		CFLAGS="-Os -Wall $(EXTRACFLAGS) -ffunction-sections -fdata-sections" \
-		LDFLAGS="-ffunction-sections -fdata-sections -Wl,--gc-sections" \
-		$(CONFIGURE) --prefix=/usr --enable-shared --enable-static
+	cd $(TOP)/libnfnetlink && CC=$(CC) \
+	CFLAGS="-Os -Wall $(EXTRACFLAGS) -ffunction-sections -fdata-sections" \
+	LDFLAGS="-ffunction-sections -fdata-sections -Wl,--gc-sections" \
+	$(CONFIGURE) --prefix=/usr --enable-shared --enable-static
 	touch libnfnetlink/stamp-h1
 
 libnfnetlink: libnfnetlink/stamp-h1
