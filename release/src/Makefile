@@ -257,7 +257,7 @@ ifeq ($(LINKSYS_E_64k),y)
 		-l E800,image/tomato-E800$(current_BUILD_USB)$(if $(filter $(NVRAM_SIZE),0),,-NVRAM$(NVRAM_SIZE)K)-$(current_TOMATO_VER).$(V1)$(mips_rev)$(beta)$(V2)-$(current_BUILD_DESC).bin \
 		-l E900,image/tomato-E900$(current_BUILD_USB)$(if $(filter $(NVRAM_SIZE),0),,-NVRAM$(NVRAM_SIZE)K)-$(current_TOMATO_VER).$(V1)$(mips_rev)$(beta)$(V2)-$(current_BUILD_DESC).bin \
 		-l E122,image/tomato-E1200v2$(current_BUILD_USB)$(if $(filter $(NVRAM_SIZE),0),,-NVRAM$(NVRAM_SIZE)K)-$(current_TOMATO_VER).$(V1)$(mips_rev)$(beta)$(V2)-$(current_BUILD_DESC).bin \
-		-l E150,image/tomato-E1500$(current_BUILD_USB)$(if $(filter $(NVRAM_SIZE),0),,-NVRAM$(NVRAM_SIZE)K)-$(current_TOMATO_VER).$(V1)$(mips_rev)$(beta)$(V2)-$(current_BUILD_DESC).bin \
+		-l E1500,image/tomato-E1500$(current_BUILD_USB)$(if $(filter $(NVRAM_SIZE),0),,-NVRAM$(NVRAM_SIZE)K)-$(current_TOMATO_VER).$(V1)$(mips_rev)$(beta)$(V2)-$(current_BUILD_DESC).bin \
 		| tee -a fpkg.log
 endif
 ifeq ($(LINKSYS_E1000v2),y)
@@ -901,13 +901,13 @@ endif
 nc:
 	@$(MAKE) bin OPENVPN=y USERPPTP=y PPTPD=y NTFS=y BBEXTRAS=y USBEXTRAS=y EBTABLES=y NO_LIBOPT=y MEDIASRV=n IPV6SUPP=y DNSCRYPT=y SIPROXD=y NGINX=y B=NC USB="USB" SNMP=y VLAN=y NOCAT=y TCPDUMP="$(TCPDUMP)"
 
-## Make the "Communicator version for 8MB Routers.
+## Make the "Communicator version for 8MB Routers. E3000
 ncl:
-	@$(MAKE) bin OPENVPN=y USERPPTP=y PPTPD=y NTFS=y BBEXTRAS=y USBEXTRAS=y EBTABLES=y NO_LIBOPT=y MEDIASRV=n IPV6SUPP=y DNSCRYPT=y SIPROXD=y NGINX=n B=NC USB="USB" SNMP=y VLAN=y NOCAT=y TCPDUMP="$(TCPDUMP)"
+	@$(MAKE) bin OPENVPN=y USERPPTP=y PPTPD=y NTFS=y BBEXTRAS=y USBEXTRAS=n EBTABLES=y NO_LIBOPT=y MEDIASRV=n IPV6SUPP=y DNSCRYPT=y SIPROXD=n NGINX=n B=NC USB=n SNMP=n VLAN=y NOCAT=n TCPDUMP="$(TCPDUMP)"
 
 ## Make the "Full version".
 nf:
-	@$(MAKE) bin OPENVPN=y USERPPTP=y PPTPD=y NTFS=y BBEXTRAS=y USBEXTRAS=y EBTABLES=y NO_LIBOPT=y MEDIASRV=y IPV6SUPP=y DNSCRYPT=y SIPROXD=y NGINX=y CTF=n B=NF USB="USB" SNMP=y VLAN=y NOCAT=y ARIA2=n TCPDUMP="$(TCPDUMP)"
+	@$(MAKE) bin OPENVPN=y USERPPTP=y PPTPD=y NTFS=y BBEXTRAS=y USBEXTRAS=y EBTABLES=y NO_LIBOPT=y MEDIASRV=y IPV6SUPP=y DNSCRYPT=y SIPROXD=y NGINX=y BIRD=n CTF=n B=NF USB="USB" SNMP=y VLAN=y NOCAT=y ARIA2=n TCPDUMP="$(TCPDUMP)"
 
 ## Make the "Media Version".
 nm:
@@ -1114,17 +1114,14 @@ n64v:
 
 #Linksys E-Series with 4MB Flash
 
-e1000v2i:
-	@$(MAKE) r2i NVRAM_SIZE=32 LINKSYS_E1000v2=y
+eseries:
+	@$(MAKE) r2ncl NVRAM_SIZE=64 LINKSYS_E_64k=y
 
-e1000v2f:
-	@$(MAKE) r2f NVRAM_SIZE=32 LINKSYS_E1000v2=y
+e1000v2:
+	@$(MAKE) r2ncl NVRAM_SIZE=32 LINKSYS_E1000v2=y
 
-e1200v1i:
-	@$(MAKE) r2i NVRAM_SIZE=64 LINKSYS_E1200v1=y
-
-e1200v1f:
-	@$(MAKE) r2f NVRAM_SIZE=64 LINKSYS_E1200v1=y
+e1200:
+	@$(MAKE) r2ncl NVRAM_SIZE=64 LINKSYS_E1200v1=y
 
 
 #Build for Asus RT-N66u with 64k NVRAM support
@@ -1146,6 +1143,12 @@ e2500:
 e3200:
 	@$(MAKE) nf MIPS32=r2 USBAP=y NVRAM_SIZE=60 LINKSYS_E3200=y
 
+tn6:
+	@$(MAKE) bin MIPS32=r2 OPENVPN=y USERPPTP=y NTFS=y BBEXTRAS=y NO_LIBOPT=y EBTABLES=y IPV6SUPP=y BUILD_DESC="TendaN6" USB="USB" SNMP=y DNSCRYPT=y PPTPD=y VLAN=y NOCAT=y USBAP=y NO_USBAPP=y
+
+tn60:
+	@$(MAKE) nf MIPS32=r2 USBAP=y BUILD_DESC="TendaN60"
+
 ac66e:
 	@$(MAKE) nf MIPS32=r2 NVRAM_64K=y NAND=y AC66U=1 NO_JFFS=y
 
@@ -1154,6 +1157,10 @@ w1800rz:
 
 l600n:
 	@$(MAKE) bin MIPS32=r2 OPENVPN=y USERPPTP=y PPTPD=y NTFS=y BBEXTRAS=y USBEXTRAS=y EBTABLES=y NO_LIBOPT=y MEDIASRV=n IPV6SUPP=y  BUILD_DESC="$(VPN)" USB="USB" VLAN=y SNMP=y NOCAT=y USBAP=y B=NC BUILD_DESC+="-$(NC)" BUILD_DESC+="$(L600N)"
+
+belkin: 
+#F7D3301\F7D3302\F7D4302\F5D8235v3
+	@$(MAKE) r2ncl BELKIN=y
 	
 setprofile:
 	echo '#ifndef TOMATO_PROFILE' > router/shared/tomato_profile.h
@@ -1283,6 +1290,8 @@ ifeq ($(CONFIG_LINUX26),y)
 	@echo "rtn66	Asus RT-N66 build with full features"
 	@echo "e2500	Linksys E2500 with wl_high module (dualband support)"
 	@echo "e3200    Linksys E3200 with wl_high module (dualband support)"
+	@echo "tn6	Tenda N6 with wl_high module (dualband support)"
+	@echo "tn60	Tenda N60 with wl_high module (dualband support)"
 	@echo "l600n    Rosewill L600N Build with wl_high module (dualband support)"
 	@echo "       Routers with AC WIRELESS"	
 	@echo "ac66e	ASUS RT-AC66"
