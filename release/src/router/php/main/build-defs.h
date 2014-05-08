@@ -18,7 +18,7 @@
 
 /* $Id$ */
 
-#define CONFIGURE_COMMAND " './configure'  '--host=mipsel-linux' '--build=x86_64-linux-gnu' '--prefix=/usr' '--enable-shared' '--disable-static' '--disable-rpath' '--disable-debug' '--without-pear' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/etc/php5' '--disable-short-tags' '--with-zlib=/home/vicente/tomato/release/src-rt/router/mipsel-uclibc/install/zlib/usr' '--with-zlib-dir=/home/vicente/tomato/release/src-rt/router/mipsel-uclibc/install/zlib/usr' '--with-pcre-regex=/home/vicente/tomato/release/src-rt/router/pcre-nginx/usr' '--disable-phar' '--enable-cli' '--enable-cgi' '--disable-calendar' '--disable-ctype' '--without-curl' '--disable-fileinfo' '--without-gettext' '--disable-dom' '--disable-exif' '--disable-ftp' '--without-gd' '--without-gmp' '--disable-hash' '--without-iconv' '--disable-json' '--without-ldap' '--disable-mbstring' '--without-mcrypt' '--without-mysqli' '--without-openssl' '--disable-pcntl' '--without-pdo-mysql' '--without-pdo-pgsql' '--without-pdo-sqlite' '--disable-pdo' '--without-pgsql' '--disable-session' '--disable-shmop' '--disable-simplexml' '--disable-soap' '--disable-sockets' '--without-sqlite' '--without-sqlite3' '--disable-sysvmsg' '--disable-sysvsem' '--disable-sysvshm' '--disable-tokenizer' '--disable-xml' '--disable-xmlreader' '--disable-xmlwriter' '--disable-zip' '--disable-filter' '--disable-libxml' '--without-system-tzdata'"
+#define CONFIGURE_COMMAND " './configure'  '--host=mipsel-linux' '--build=x86_64-linux-gnu' '--prefix=/usr' '--enable-shared' '--disable-static' '--disable-rpath' '--disable-debug' '--without-pear' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/etc/php5' '--disable-short-tags' '--with-zlib=/home/vicente/tomato/release/src-rt/router/mipsel-uclibc/install/zlib/usr' '--with-zlib-dir=/home/vicente/tomato/release/src-rt/router/mipsel-uclibc/install/zlib/usr' '--disable-phar' '--enable-cli' '--enable-cgi' '--enable-fastcgi' '--disable-calendar' '--disable-ctype' '--without-curl' '--disable-fileinfo' '--without-gettext' '--disable-dom' '--disable-exif' '--disable-ftp' '--without-gd' '--without-gmp' '--disable-hash' '--without-iconv' '--disable-json' '--without-ldap' '--disable-mbstring' '--without-mcrypt' '--without-mysqli' '--without-openssl' '--disable-pcntl' '--without-pdo-mysql' '--without-pdo-pgsql' '--without-pdo-sqlite' '--disable-pdo' '--without-pgsql' '--disable-session' '--disable-shmop' '--disable-simplexml' '--disable-soap' '--disable-sockets' '--without-sqlite' '--without-sqlite3' '--disable-sysvmsg' '--disable-sysvsem' '--disable-sysvshm' '--disable-tokenizer' '--disable-xml' '--disable-xmlreader' '--disable-xmlwriter' '--disable-zip' '--disable-filter' '--disable-libxml' '--without-system-tzdata'"
 #define PHP_ADA_INCLUDE		""
 #define PHP_ADA_LFLAGS		""
 #define PHP_ADA_LIBS		""
@@ -77,7 +77,7 @@
 #define PHP_BIRDSTEP_LIBS        ""
 #define PEAR_INSTALLDIR         ""
 #define PHP_INCLUDE_PATH	".:"
-#define PHP_EXTENSION_DIR       "/usr/lib/php/extensions/no-debug-non-zts-20100525"
+#define PHP_EXTENSION_DIR       "/usr/lib/php/extensions/no-debug-non-zts-20121212"
 #define PHP_PREFIX              "/usr"
 #define PHP_BINDIR              "/usr/bin"
 #define PHP_SBINDIR             "/usr/sbin"

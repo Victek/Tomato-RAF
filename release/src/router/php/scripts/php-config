@@ -4,20 +4,20 @@ SED="/bin/sed"
 prefix="/usr"
 datarootdir="/usr/php"
 exec_prefix="${prefix}"
-version="5.4.14"
-vernum="50414"
+version="5.5.10"
+vernum="50510"
 include_dir="${prefix}/include/php"
 includes="-I$include_dir -I$include_dir/main -I$include_dir/TSRM -I$include_dir/Zend -I$include_dir/ext -I$include_dir/ext/date/lib"
-ldflags=" -L/home/vicente/tomato/release/src-rt/router/pcre-nginx/usr/lib -L/home/vicente/tomato/release/src-rt/router/mipsel-uclibc/install/zlib/usr/lib"
-libs="-lcrypt   -lcrypt -lz -lpcre -lm -ldl  -lcrypt -lcrypt "
-extension_dir='/usr/lib/php/extensions/no-debug-non-zts-20100525'
+ldflags=" -L/home/vicente/tomato/release/src-rt/router/mipsel-uclibc/install/zlib/usr/lib"
+libs="-lcrypt   -lcrypt -lz -lm  -lcrypt -lcrypt "
+extension_dir='/usr/lib/php/extensions/no-debug-non-zts-20121212'
 man_dir=`eval echo ${datarootdir}/man`
 program_prefix=""
 program_suffix=""
 exe_extension=""
 php_cli_binary=NONE
 php_cgi_binary=NONE
-configure_options=" '--host=mipsel-linux' '--build=x86_64-linux-gnu' '--prefix=/usr' '--enable-shared' '--disable-static' '--disable-rpath' '--disable-debug' '--without-pear' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/etc/php5' '--disable-short-tags' '--with-zlib=/home/vicente/tomato/release/src-rt/router/mipsel-uclibc/install/zlib/usr' '--with-zlib-dir=/home/vicente/tomato/release/src-rt/router/mipsel-uclibc/install/zlib/usr' '--with-pcre-regex=/home/vicente/tomato/release/src-rt/router/pcre-nginx/usr' '--disable-phar' '--enable-cli' '--enable-cgi' '--disable-calendar' '--disable-ctype' '--without-curl' '--disable-fileinfo' '--without-gettext' '--disable-dom' '--disable-exif' '--disable-ftp' '--without-gd' '--without-gmp' '--disable-hash' '--without-iconv' '--disable-json' '--without-ldap' '--disable-mbstring' '--without-mcrypt' '--without-mysqli' '--without-openssl' '--disable-pcntl' '--without-pdo-mysql' '--without-pdo-pgsql' '--without-pdo-sqlite' '--disable-pdo' '--without-pgsql' '--disable-session' '--disable-shmop' '--disable-simplexml' '--disable-soap' '--disable-sockets' '--without-sqlite' '--without-sqlite3' '--disable-sysvmsg' '--disable-sysvsem' '--disable-sysvshm' '--disable-tokenizer' '--disable-xml' '--disable-xmlreader' '--disable-xmlwriter' '--disable-zip' '--disable-filter' '--disable-libxml' '--without-system-tzdata'"
+configure_options=" '--host=mipsel-linux' '--build=x86_64-linux-gnu' '--prefix=/usr' '--enable-shared' '--disable-static' '--disable-rpath' '--disable-debug' '--without-pear' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/etc/php5' '--disable-short-tags' '--with-zlib=/home/vicente/tomato/release/src-rt/router/mipsel-uclibc/install/zlib/usr' '--with-zlib-dir=/home/vicente/tomato/release/src-rt/router/mipsel-uclibc/install/zlib/usr' '--disable-phar' '--enable-cli' '--enable-cgi' '--enable-fastcgi' '--disable-calendar' '--disable-ctype' '--without-curl' '--disable-fileinfo' '--without-gettext' '--disable-dom' '--disable-exif' '--disable-ftp' '--without-gd' '--without-gmp' '--disable-hash' '--without-iconv' '--disable-json' '--without-ldap' '--disable-mbstring' '--without-mcrypt' '--without-mysqli' '--without-openssl' '--disable-pcntl' '--without-pdo-mysql' '--without-pdo-pgsql' '--without-pdo-sqlite' '--disable-pdo' '--without-pgsql' '--disable-session' '--disable-shmop' '--disable-simplexml' '--disable-soap' '--disable-sockets' '--without-sqlite' '--without-sqlite3' '--disable-sysvmsg' '--disable-sysvsem' '--disable-sysvshm' '--disable-tokenizer' '--disable-xml' '--disable-xmlreader' '--disable-xmlwriter' '--disable-zip' '--disable-filter' '--disable-libxml' '--without-system-tzdata'"
 php_sapis=" cli cgi"
 
 # Set php_cli_binary and php_cgi_binary if available
