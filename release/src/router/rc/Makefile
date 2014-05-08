@@ -14,8 +14,7 @@ OBJS := rc.o init.o interface.o network.o wan.o services.o dhcp.o
 OBJS += firewall.o ppp.o telssh.o wnas.o
 OBJS += listen.o redial.o led.o qos.o forward.o misc.o mtd.o
 OBJS += buttons.o restrict.o gpio.o sched.o
-OBJS += arpbind.o
-OBJS += new_qoslimit.o
+OBJS += new_qoslimit.o arpbind.o
 
 ifdef CONFIG_BCMWL6
 OBJS += blink_5g.o
@@ -40,6 +39,9 @@ OBJS += nocat.o
 endif
 ifeq ($(TCONFIG_PPTPD),y)
 OBJS += pptpd.o
+endif
+ifeq ($(TCONFIG_NOCAT),y)
+OBJS += nocat.o
 endif
 ifeq ($(TCONFIG_NGINX),y)
 OBJS += nginx.o

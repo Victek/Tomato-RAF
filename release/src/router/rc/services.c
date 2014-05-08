@@ -464,19 +464,18 @@ void start_dnsmasq()
 #ifdef TCONFIG_DNSCRYPT
 	//start dnscrypt-proxy
 	if (nvram_match("dnscrypt_proxy", "1")) {
-		
 		char dnscrypt_local[30];
 		sprintf(dnscrypt_local, "127.0.0.1:%s", nvram_safe_get("dnscrypt_port") );
-		
-		eval("ntp2ip");		
+
+		eval("ntp2ip");
 		eval("dnscrypt-proxy", "-d", "-a", dnscrypt_local, nvram_safe_get("dnscrypt_cmd") );
 
 #ifdef TCONFIG_IPV6
 		char dnscrypt_local_ipv6[30];
 		sprintf(dnscrypt_local_ipv6, "::1:%s", nvram_safe_get("dnscrypt_port") );
-		
+
 		if (get_ipv6_service() != NULL) //if ipv6 enabled
-		eval("dnscrypt-proxy", "-d", "-a", dnscrypt_local_ipv6, nvram_safe_get("dnscrypt_cmd") );
+			eval("dnscrypt-proxy", "-d", "-a", dnscrypt_local_ipv6, nvram_safe_get("dnscrypt_cmd") );
 #endif
 	}
 #endif
@@ -1494,9 +1493,9 @@ void stop_splashd(void)
 	start_wan(BOOT);
 }
 #endif
+
 // -----------------------------------------------------------------------------
 #ifdef TCONFIG_SIPROXD
-
 static pid_t pid_siproxd = -1;
 void start_siproxdengine(void)
 {
@@ -1560,9 +1559,10 @@ void stop_nginxfastpath(void)
 	pid_nginx = -1;
 	stop_nginxfp();
 }
-
 #endif
+
 // -----------------------------------------------------------------------------
+
 void set_tz(void)
 {
 	f_write_string("/etc/TZ", nvram_safe_get("tm_tz"), FW_CREATE|FW_NEWLINE, 0644);
@@ -2177,6 +2177,8 @@ static void start_media_server(void)
 					"inotify=yes\n"
 					"notify_interval=600\n"
 					"album_art_names=Cover.jpg/cover.jpg/AlbumArtSmall.jpg/albumartsmall.jpg/AlbumArt.jpg/albumart.jpg/Album.jpg/album.jpg/Folder.jpg/folder.jpg/Thumb.jpg/thumb.jpg\n"
+					"log_dir=/var/log\n"
+					"log_level=general,artwork,database,inotify,scanner,metadata,http,ssdp,tivo=warn\n"
 					"\n",
 					nvram_safe_get("lan_ifname"),
 					(port < 0) || (port >= 0xffff) ? 0 : port,
@@ -2571,38 +2573,12 @@ TOP:
 		goto CLEAR;
 	}
 
-#ifdef TCONFIG_SIPROXD
-	if (strcmp(service, "siproxd") == 0) {
-		if (action & A_STOP) stop_siproxdengine();
-		if (action & A_START) start_siproxdengine();
-		goto CLEAR;
-	}
-	if (strcmp(service, "siproxdfp") == 0) {
-		if (action & A_STOP) stop_siproxd_fastpath();
-		if (action & A_START) start_siproxd_fastpath();
-		goto CLEAR;
-	}
-
-#ifdef TCONFIG_NGINX
-	if (strcmp(service, "enginex") == 0) {
-		if (action & A_STOP) stop_enginex();
-		if (action & A_START) start_enginex();
-		goto CLEAR;
-	}
-	if (strcmp(service, "nginxfp") == 0) {
-		if (action & A_STOP) stop_nginxfastpath();
-		if (action & A_START) start_nginxfastpath();
-		goto CLEAR;
-	}
-#endif
-
 	if (strcmp(service, "httpd") == 0) {
 		if (action & A_STOP) stop_httpd();
 		if (action & A_START) start_httpd();
 		goto CLEAR;
-	}	
-#endif
-
+	}
+	
 #ifdef TCONFIG_IPV6
 	if (strcmp(service, "ipv6") == 0) {
 		if (action & A_STOP) {
@@ -2976,6 +2952,32 @@ TOP:
 	if (strcmp(service, "splashd") == 0) {
 		if (action & A_STOP) stop_splashd();
 		if (action & A_START) start_splashd();
+		goto CLEAR;
+	}
+#endif
+
+#ifdef TCONFIG_NGINX
+	if (strcmp(service, "enginex") == 0) {
+		if (action & A_STOP) stop_enginex();
+		if (action & A_START) start_enginex();
+		goto CLEAR;
+	}
+	if (strcmp(service, "nginxfp") == 0) {
+		if (action & A_STOP) stop_nginxfastpath();
+		if (action & A_START) start_nginxfastpath();
+		goto CLEAR;
+	}
+#endif
+
+#ifdef TCONFIG_SIPROXD
+	if (strcmp(service, "siproxd") == 0) {
+		if (action & A_STOP) stop_siproxdengine();
+		if (action & A_START) start_siproxdengine();
+		goto CLEAR;
+	}
+	if (strcmp(service, "siproxdfp") == 0) {
+		if (action & A_STOP) stop_siproxd_fastpath();
+		if (action & A_START) start_siproxd_fastpath();
 		goto CLEAR;
 	}
 #endif
