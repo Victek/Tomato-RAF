@@ -188,6 +188,7 @@ int check_hw_type(void)
 	case 0x052b:
 		if (nvram_match("boardrev", "0x1204")) return HW_BCM5357; //rt-n15u
 		if (nvram_match("boardrev", "02")) return HW_BCM47186; //WNR3500Lv2
+		if (nvram_match("boardrev", "0x1400")) return HW_BCM47186; //Tenda N60
 	case 0xf53a:
 	case 0xf53b:
 	case 0x0550: //RT-N10U and RT-N53 and CW-5358U
