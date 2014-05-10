@@ -246,8 +246,9 @@ ifeq ($(LINKSYS_E2500),y)
 		| tee -a fpkg.log
 endif
 ifeq ($(LINKSYS_E3200),y)
-	# Linksys E3200(60k Nvram) image
+	# Linksys E3200/E2500v3 (60k Nvram) image
 	@btools/fpkg -i lzma-loader/loader.gz -i $(LINUXDIR)/arch/mips/brcm-boards/bcm947xx/compressed/vmlinuz -a 1024 -i router/mipsel-uclibc/target.image \
+		-l 25v3,image/tomato-E2500v3$(current_BUILD_USB)$(if $(filter $(NVRAM_SIZE),0),,-NVRAM$(NVRAM_SIZE)K)-$(current_TOMATO_VER).$(V1)$(mips_rev)$(beta)$(V2)-$(current_BUILD_DESC).bin \
 		-l 3200,image/tomato-E3200$(current_BUILD_USB)$(if $(filter $(NVRAM_SIZE),0),,-NVRAM$(NVRAM_SIZE)K)-$(current_TOMATO_VER).$(V1)$(mips_rev)$(beta)$(V2)-$(current_BUILD_DESC).bin \
 		| tee -a fpkg.log
 endif
@@ -494,6 +495,26 @@ define RouterOptions
 		sed -i "/TCONFIG_LIBOSIP2/d" $(1); \
 		echo "TCONFIG_SIPROXD=y" >>$(1); \
 		echo "TCONFIG_LIBOSIP2=y" >>$(1); \
+	fi; \
+	if [ "$(BIRD)" = "y" ]; then \
+		sed -i "/TCONFIG_BIRD/d" $(1); \
+		sed -i "/TCONFIG_READLINE/d" $(1); \
+		sed -i "/TCONFIG_NCURSES/d" $(1); \
+		sed -i "/TCONFIG_LIBICONV/d" $(1); \
+		echo "TCONFIG_BIRD=y" >>$(1); \
+		echo "TCONFIG_READLINE=y" >>$(1); \
+		echo "TCONFIG_NCURSES=y" >>$(1); \
+		echo "TCONFIG_LIBICONV=y" >>$(1); \
+	fi; \
+	if [ "$(SOFTVPN)" = "y" ]; then \
+		sed -i "/TCONFIG_SOFTVPN/d" $(1); \
+		sed -i "/TCONFIG_READLINE/d" $(1); \
+		sed -i "/TCONFIG_NCURSES/d" $(1); \
+		sed -i "/TCONFIG_LIBICONV/d" $(1); \
+		echo "TCONFIG_SOFTVPN=y" >>$(1); \
+		echo "TCONFIG_READLINE=y" >>$(1); \
+		echo "TCONFIG_NCURSES=y" >>$(1); \
+		echo "TCONFIG_LIBICONV=y" >>$(1); \
 	fi; \
 	if [ "$(CTF)" = "y" ]; then \
 		sed -i "/TCONFIG_CTF/d" $(1); \
@@ -1289,7 +1310,7 @@ ifeq ($(CONFIG_LINUX26),y)
 	@echo "rtn53	Asus RT-N53 with wl_high module (dualband support)"
 	@echo "rtn66	Asus RT-N66 build with full features"
 	@echo "e2500	Linksys E2500 with wl_high module (dualband support)"
-	@echo "e3200    Linksys E3200 with wl_high module (dualband support)"
+	@echo "E3200/E2500v3    Linksys E3200/E2500v3 with wl_high module (dualband support)"
 	@echo "tn6	Tenda N6 with wl_high module (dualband support)"
 	@echo "tn60	Tenda N60 with wl_high module (dualband support)"
 	@echo "l600n    Rosewill L600N Build with wl_high module (dualband support)"
