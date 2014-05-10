@@ -496,26 +496,6 @@ define RouterOptions
 		echo "TCONFIG_SIPROXD=y" >>$(1); \
 		echo "TCONFIG_LIBOSIP2=y" >>$(1); \
 	fi; \
-	if [ "$(BIRD)" = "y" ]; then \
-		sed -i "/TCONFIG_BIRD/d" $(1); \
-		sed -i "/TCONFIG_READLINE/d" $(1); \
-		sed -i "/TCONFIG_NCURSES/d" $(1); \
-		sed -i "/TCONFIG_LIBICONV/d" $(1); \
-		echo "TCONFIG_BIRD=y" >>$(1); \
-		echo "TCONFIG_READLINE=y" >>$(1); \
-		echo "TCONFIG_NCURSES=y" >>$(1); \
-		echo "TCONFIG_LIBICONV=y" >>$(1); \
-	fi; \
-	if [ "$(SOFTVPN)" = "y" ]; then \
-		sed -i "/TCONFIG_SOFTVPN/d" $(1); \
-		sed -i "/TCONFIG_READLINE/d" $(1); \
-		sed -i "/TCONFIG_NCURSES/d" $(1); \
-		sed -i "/TCONFIG_LIBICONV/d" $(1); \
-		echo "TCONFIG_SOFTVPN=y" >>$(1); \
-		echo "TCONFIG_READLINE=y" >>$(1); \
-		echo "TCONFIG_NCURSES=y" >>$(1); \
-		echo "TCONFIG_LIBICONV=y" >>$(1); \
-	fi; \
 	if [ "$(CTF)" = "y" ]; then \
 		sed -i "/TCONFIG_CTF/d" $(1); \
 		echo "TCONFIG_CTF=y" >>$(1); \
