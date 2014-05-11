@@ -162,7 +162,7 @@ switch(nvram['boardtype']) {
 	case '0x04ef':  // WRT320N/E2000
 	case '0x04cf':  // WRT610Nv2/E3000, RT-N16, WNR3500L
 	case '0xf5b2':  // RT-N66
-	case '0x052b':  // WNR3500Lv2, Tenda N60, Asus RT-N15
+	case '0x052b':  // WNR3500Lv2, Tenda N60, Asus RT-N15 
 	COL_P0N = '4';
 	COL_P1N = '3';
 	COL_P2N = '2';
