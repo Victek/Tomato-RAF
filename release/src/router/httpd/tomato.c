@@ -571,6 +571,10 @@ static const nvset_t nvset_list[] = {
 	{ "pppoe_lei",			V_RANGE(0, 60)	},
 	{ "pppoe_lef",			V_RANGE(0, 10)	},
 
+#ifdef TCONFIG_DNSSEC
+	{ "dnssec_enable",		V_01			},
+#endif
+
 #ifdef TCONFIG_DNSCRYPT
 	{ "dnscrypt_proxy",		V_01				},
 	{ "dnscrypt_port",		V_PORT				},
