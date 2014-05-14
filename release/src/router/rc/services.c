@@ -379,6 +379,14 @@ void start_dnsmasq()
 			   "dhcp-authoritative\n");
 	}
 
+#ifdef TCONFIG_DNSSEC
+	if (nvram_match("dnssec_enable", "1")) {
+		fprintf(f, "conf-file=/etc/trust-anchors.conf\n"
+			   "dnssec\n"
+			   "dnssec-no-timecheck\n");
+	}
+#endif
+
 /*
 #ifdef TCONFIG_DNSCRYPT
 	if (nvram_match("dnscrypt_proxy", "1")) {
@@ -477,6 +485,12 @@ void start_dnsmasq()
 		if (get_ipv6_service() != NULL) //if ipv6 enabled
 			eval("dnscrypt-proxy", "-d", "-a", dnscrypt_local_ipv6, nvram_safe_get("dnscrypt_cmd") );
 #endif
+	}
+#endif
+
+#ifdef TCONFIG_DNSSEC
+	if ((time(0) > Y2K) && nvram_match("dnssec_enable", "1")){
+		killall("dnsmasq", SIGHUP);
 	}
 #endif
 

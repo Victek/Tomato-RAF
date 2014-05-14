@@ -52,6 +52,7 @@ VLAN ?= "n"
 USERPPTP ?= "n"
 PPTPD ?= "n"
 TCPDUMP ?= "n"
+DNSSEC ?= "n"
 DNSCRYPT ?= "n"
 SIPROXD ?= "n"
 NGINX ?= "n"
@@ -537,6 +538,10 @@ define RouterOptions
 	if [ "$(TCPDUMP)" = "y" ]; then \
 		sed -i "/TCONFIG_TCPDUMP/d" $(1); \
 		echo "TCONFIG_TCPDUMP=y" >>$(1); \
+	fi; \
+	if [ "$(DNSSEC)" = "y" ]; then \
+		sed -i "/TCONFIG_DNSSEC/d" $(1); \
+		echo "TCONFIG_DNSSEC=y" >>$(1); \
 	fi; \
 	if [ "$(USBAP)" = "y" ]; then \
 		sed -i "/TCONFIG_USBAP/d" $(1); \
