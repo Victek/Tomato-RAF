@@ -387,13 +387,15 @@ void start_dnsmasq()
 	}
 #endif
 
-/*
 #ifdef TCONFIG_DNSCRYPT
 	if (nvram_match("dnscrypt_proxy", "1")) {
-		fprintf(f, "strict-order\n");
+		if (nvram_match("dnsmasq_strict_order", "1"))
+			fprintf(f, "strict-order\n");
+		else
+			fprintf(f, "no-resolv\n");
 	}
 #endif
-*/
+
 	//
 
 #ifdef TCONFIG_OPENVPN
