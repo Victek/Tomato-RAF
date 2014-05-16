@@ -92,7 +92,7 @@ void start_dnsmasq()
 	int do_dhcpd_hosts;
 
 #ifdef TCONFIG_IPV6
-	char *prefix, *ipv6, *mtu;
+	char *prefix, *mtu;
 	int do_6to4, do_6rd;
 	int service;
 #endif
@@ -388,15 +388,9 @@ void start_dnsmasq()
 #endif
 
 #ifdef TCONFIG_DNSCRYPT
-	if (nvram_match("dnscrypt_proxy", "1")) {
-		if (nvram_match("dnscrypt_priority", "1")){
-			fprintf(f, "strict-order\n");
-		}
-
-		if (nvram_match("dnscrypt_priority", "2")){
-			fprintf(f, "no-resolv\n");
-		}
-	}
+static const char *dnscrypt_priority_text[] = {"","strict-order","no-resolv",NULL};
+unsigned int i, pri;
+if (((i = nvram_get_int("dnscrypt_proxy")) != 0) && ((pri = nvram_get_int("dnscrypt_priority")) != NULL)) { fprintf(f, "%s\n", dnscrypt_priority_text[pri]; }
 #endif
 
 	//
@@ -487,7 +481,7 @@ void start_dnsmasq()
 		char dnscrypt_local_ipv6[30];
 		sprintf(dnscrypt_local_ipv6, "::1:%s", nvram_safe_get("dnscrypt_port") );
 
-		if (get_ipv6_service() != NULL) //if ipv6 enabled
+		if (get_ipv6_service() != *("NULL")) // when ipv6 enabled
 			eval("dnscrypt-proxy", "-d", "-a", dnscrypt_local_ipv6, nvram_safe_get("dnscrypt_cmd") );
 #endif
 	}
