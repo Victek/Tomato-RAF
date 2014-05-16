@@ -388,9 +388,11 @@ void start_dnsmasq()
 #endif
 
 #ifdef TCONFIG_DNSCRYPT
-static const char *dnscrypt_priority_text[] = {"","strict-order","no-resolv",NULL};
-unsigned int i, pri;
-if (((i = nvram_get_int("dnscrypt_proxy")) != 0) && ((pri = nvram_get_int("dnscrypt_priority")) != NULL)) { fprintf(f, "%s\n", dnscrypt_priority_text[pri]; }
+	static const char *dnscrypt_priority_text[] = {"","strict-order","no-resolv",NULL};
+	unsigned int i, pri;
+	if (((i = nvram_get_int("dnscrypt_proxy")) != 0) && ((pri = nvram_get_int("dnscrypt_priority")) != NULL)) {
+		fprintf(f, "%s\n", dnscrypt_priority_text[pri]);
+	}
 #endif
 
 	//
