@@ -577,6 +577,7 @@ static const nvset_t nvset_list[] = {
 
 #ifdef TCONFIG_DNSCRYPT
 	{ "dnscrypt_proxy",		V_01				},
+	{ "dnscrypt_priority",		V_RANGE(0, 2)			}, // 0=none, 1=preferred, 2=exclusive
 	{ "dnscrypt_port",		V_PORT				},
 	{ "dnscrypt_cmd",		V_LENGTH(0, 256)	},
 #endif
@@ -745,7 +746,6 @@ static const nvset_t nvset_list[] = {
 	{ "dnsmasq_custom",		V_TEXT(0, 2048)		},
 	{ "dnsmasq_q",			V_RANGE(0, 7)		}, // 0= quiet-dhcp, 1=dhcp6 2=ra
 	{ "dhcpd_static_only",		V_01			},
-	{ "dnsmasq_strict_order",	V_01			}, // read etc/resolv.conf in the given order. If null --no-resolv
 	
 // advanced-firewall
 	{ "block_wan",			V_01			},
