@@ -382,7 +382,7 @@ what:
 # JFFSv1 | NO_JFFS
 # NO_CIFS, NO_SSH, NO_ZEBRA, NO_SAMBA, NO_HTTPS, NO_XXTP, NO_LIBOPT, NO_FTP
 # SAMBA3, OPENVPN, IPV6SUPP, EBTABLES, NTFS, MEDIASRV, BBEXTRAS, USBEXTRAS, BCM57, SLIM
-# NOCAT, SNMP, USERPPTP, VLAN, USBAP, NO_USBAPP, NGINX, DNSCRYPT, SIPROXD, ARIA2, CTF
+# NOCAT, SNMP, USERPPTP, VLAN, USBAP, NO_USBAPP, NGINX, DNSCRYPT, SIPROXD, ARIA2, CTF, DNSSEC
 
 define RouterOptions
 	@( \
@@ -913,7 +913,7 @@ ncl:
 
 ## Make the "Full version".
 nf:
-	@$(MAKE) bin OPENVPN=y USERPPTP=y PPTPD=y NTFS=y BBEXTRAS=y USBEXTRAS=y EBTABLES=y NO_LIBOPT=y MEDIASRV=y IPV6SUPP=y DNSCRYPT=y SIPROXD=y NGINX=y BIRD=n CTF=n B=NF USB="USB" SNMP=y VLAN=y NOCAT=y ARIA2=n TCPDUMP="$(TCPDUMP)"
+	@$(MAKE) bin OPENVPN=y USERPPTP=y PPTPD=y NTFS=y BBEXTRAS=y USBEXTRAS=y EBTABLES=y NO_LIBOPT=y MEDIASRV=y IPV6SUPP=y DNSCRYPT=y SIPROXD=y DNSSEC=y NGINX=y BIRD=n CTF=n B=NF USB="USB" SNMP=y VLAN=y NOCAT=y ARIA2=n TCPDUMP="$(TCPDUMP)"
 
 ## Make the "Media Version".
 nm:
@@ -1295,7 +1295,7 @@ ifeq ($(CONFIG_LINUX26),y)
 	@echo "rtn53	Asus RT-N53 with wl_high module (dualband support)"
 	@echo "rtn66	Asus RT-N66 build with full features"
 	@echo "e2500	Linksys E2500 with wl_high module (dualband support)"
-	@echo "E3200/E2500v3    Linksys E3200/E2500v3 with wl_high module (dualband support)"
+	@echo "e3200/e2500v3    Linksys E3200/E2500v3 with wl_high module (dualband support)"
 	@echo "tn6	Tenda N6 with wl_high module (dualband support)"
 	@echo "tn60	Tenda N60 with wl_high module (dualband support)"
 	@echo "l600n    Rosewill L600N Build with wl_high module (dualband support)"

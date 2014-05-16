@@ -118,6 +118,9 @@
 #undef TCONFIG_TCPDUMP
   #define IF_TCONFIG_TCPDUMP(...)
   #define IF_NOT_TCONFIG_TCPDUMP(...) __VA_ARGS__
-#define TCONFIG_ARIA2 1
-  #define IF_TCONFIG_ARIA2(...) __VA_ARGS__
-  #define IF_NOT_TCONFIG_ARIA2(...)
+#define TCONFIG_DNSSEC 1
+  #define IF_TCONFIG_DNSSEC(...) __VA_ARGS__
+  #define IF_NOT_TCONFIG_DNSSEC(...)
+#undef TCONFIG_ARIA2
+  #define IF_TCONFIG_ARIA2(...)
+  #define IF_NOT_TCONFIG_ARIA2(...) __VA_ARGS__
