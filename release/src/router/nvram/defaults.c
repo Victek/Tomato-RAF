@@ -94,6 +94,7 @@ const defaults_t defaults[] = {
 #endif
 #ifdef TCONFIG_DNSCRYPT
 	{ "dnscrypt_proxy",		""				},
+	{ "dnscrypt_priority",		"1"			}, // 0=none, 1=preferred, 2=exclusive
 	{ "dnscrypt_port",		"40"			}, // local port
 	{ "dnscrypt_cmd",		"-m 99"			}, // optional arguments
 #endif
@@ -442,7 +443,6 @@ const defaults_t defaults[] = {
 	{ "dnsmasq_custom",		""				},
 	{ "dnsmasq_static_only",	"0"			},
 	{ "dnsmasq_q",			"0"				},      // 0= quiet-dhcp 1=dhcp6 2=ra
-	{ "dnsmasq_strict_order",	"1"				}, // read etc/resolv.conf in the given order. If null --no-resolv
 	
 // advanced-firewall
 //	{ "block_loopback",		"0"				},	// nat loopback
