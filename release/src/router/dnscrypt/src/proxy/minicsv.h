@@ -1,8 +1,7 @@
 
-dnscrypt-proxy is covered by the following license :
-
 /*
- * Copyright (c) 2011-2014 Frank Denis <j at pureftpd dot org>
+ * Copyright (c) 2014
+ * Frank Denis <j at pureftpd dot org>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -17,16 +16,17 @@ dnscrypt-proxy is covered by the following license :
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-====
+#ifndef __MINICSV_H__
+#define __MINICSV_H__
 
-This license applies to all parts of dnscrypt-proxy that are not externally
-maintained libraries.
+#include <stddef.h>
 
-The externally maintained libraries used by dnscrypt-proxy are:
+#define MINICSV_DELIM ','
+#define MINICSV_QUOTE '"'
 
-  - libsodium (https://github.com/jedisct1/libsodium). 2-clause BSD
-    license. Based on NaCl (http://nacl.cr.yp.to), public domain. See
-    src/libsodium/{COPYING,AUTHORS}.
+char * minicsv_parse_line(char * const buf, char ** const cols,
+                          size_t * const cols_count_p, const size_t cols_max);
 
-  - libevent (http://libevent.org/). 3-clause BSD license.
-    See src/libevent/LICENSE.
+void minicsv_trim_cols(char ** const cols, const size_t cols_count);
+
+#endif
