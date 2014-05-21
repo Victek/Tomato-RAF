@@ -168,6 +168,9 @@ Copyright (C) 2013 Kevin Darbyshire-Bryant<br>
 <!-- DNSSEC-BEGIN -->
 - DNSSEC integration and GUI<br>
 <!-- DNSSEC-END -->
+<!-- DNSCRYPT-BEGIN -->
+- DNSCrypt-Proxy selectable/manual resolver<br>
+<!-- DNSCRYPT-END -->
 - Comcast DSCP Fix GUI<br>
 Copyright (C) 2014 Lance Fredrickson<br>
 <a href='mailto:lancethepants@gmail.com'>lancethepants@gmail.com</a><br>
