@@ -576,10 +576,15 @@ static const nvset_t nvset_list[] = {
 #endif
 
 #ifdef TCONFIG_DNSCRYPT
-	{ "dnscrypt_proxy",		V_01				},
-	{ "dnscrypt_priority",	V_RANGE(0, 2)		}, // 0=none, 1=preferred, 2=exclusive
-	{ "dnscrypt_port",		V_PORT				},
-	{ "dnscrypt_cmd",		V_LENGTH(0, 256)	},
+	{ "dnscrypt_proxy",		V_01			},
+	{ "dnscrypt_priority",		V_RANGE(0, 2)		}, // 0=none, 1=strict-order, 2=no-resolv
+	{ "dnscrypt_port",		V_PORT			},
+	{ "dnscrypt_resolver",		V_LENGTH(0, 40)		},
+	{ "dnscrypt_log",		V_RANGE(0, 99)		},
+	{ "dnscrypt_manual",		V_01			},
+	{ "dnscrypt_provider_name",	V_LENGTH(0, 60)		},
+	{ "dnscrypt_provider_key",	V_LENGTH(0, 80)		},
+	{ "dnscrypt_resolver_address",	V_LENGTH(0, 50)		},
 #endif
 
 	// LAN

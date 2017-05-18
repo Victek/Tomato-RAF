@@ -1,5 +1,13 @@
 
+#include <sys/types.h>
+#ifndef _WIN32
+# include <sys/socket.h>
+# include <netinet/in.h>
+# include <arpa/inet.h>
+#endif
+
 #include <assert.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -45,7 +53,58 @@ dcplugin_long_description(DCPlugin * const dcplugin)
         "Usage:\n"
         "\n"
         "# dnscrypt-proxy --plugin \\\n"
-        "  libdcplugin_example_ldns_opendns_set_client_ip.la,7f000001";
+        "  libdcplugin_example_ldns_opendns_set_client_ip.la,192.30.252.130";
+}
+
+static int
+_inet_pton(const int af, const char * const src, void * const dst)
+{
+    unsigned char  *dstc;
+    unsigned int    a, b, c, d;
+    char            more;
+
+    if (af != AF_INET) {
+        errno = EAFNOSUPPORT;
+        return -1;
+    }
+    if (sscanf(src, "%u.%u.%u.%u%c", &a, &b, &c, &d, &more) != 4) {
+        return 0;
+    }
+    if (a > 0xff || b > 0xff || c > 0xff || d > 0xff) {
+        return 0;
+    }
+    dstc = (unsigned char *) dst;
+    assert(sizeof(struct in_addr) >= 4U);
+    dstc[0] = (unsigned char) a;
+    dstc[1] = (unsigned char) b;
+    dstc[2] = (unsigned char) c;
+    dstc[3] = (unsigned char) d;
+
+    return 1;
+}
+
+static int
+parse_client_ip(const char *ip_s, char * const edns_hex)
+{
+    char            ip_hex[8U + 1U];
+    struct in_addr  ip_in_addr;
+    unsigned char  *sa;
+    const size_t    ip_s_len = strlen(ip_s);
+
+    if (ip_s_len <= INET_ADDRSTRLEN && strchr(ip_s, '.') != NULL &&
+        _inet_pton(AF_INET, ip_s, &ip_in_addr) > 0) {
+        sa = (unsigned char *) &ip_in_addr.s_addr;
+        snprintf(ip_hex, sizeof ip_hex, "%02X%02X%02X%02X",
+                 sa[0], sa[1], sa[2], sa[3]);
+        memcpy(edns_hex + EDNS_CLIENT_IP_OFFSET,
+               ip_hex, sizeof EDNS_CLIENT_IP - 1U);
+    } else if (ip_s_len == sizeof EDNS_CLIENT_IP - 1U) {
+        memcpy(edns_hex + EDNS_CLIENT_IP_OFFSET,
+               ip_s, sizeof EDNS_CLIENT_IP - 1U);
+    } else {
+        return -1;
+    }
+    return 0;
 }
 
 int
@@ -62,9 +121,8 @@ dcplugin_init(DCPlugin * const dcplugin, int argc, char *argv[])
     }
     memcpy(edns_hex, EDNS_DATA, edns_hex_size);
     assert(sizeof EDNS_CLIENT_IP - 1U == (size_t) 8U);
-    if (argc > 1 && strlen(argv[1]) == (size_t) 8U) {
-        memcpy(edns_hex + EDNS_CLIENT_IP_OFFSET,
-               argv[1], sizeof EDNS_CLIENT_IP - 1U);
+    if (argc > 1 && argv[1] != NULL) {
+        parse_client_ip(argv[1], edns_hex);
     }
     return 0;
 }

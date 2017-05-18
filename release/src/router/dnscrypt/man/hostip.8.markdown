@@ -20,7 +20,7 @@ dnscrypt-proxy(8) is started.
   * `-h`, `--help`: show usage.
 
   * `-r`, `--resolver-address=<ip>[:port]`: the resolver IP address
-(default: 208.67.220.220, OpenDNS).
+(default: 8.8.8.8, Google DNS).
 
   * `-V`, `--version`: show version number.
 
@@ -30,7 +30,7 @@ dnscrypt-proxy(8) is started.
 
 ## ADVANCED USAGE EXAMPLE
 
-    $ hostip -6 -r 213.154.224.3 www.google.com
+    $ hostip -6 -r 4.2.2.2 www.google.com
 
 ## EXIT STATUS
 
